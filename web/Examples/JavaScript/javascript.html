@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="javascript.js"></script>
+    <style>
+        .comment {
+            color:forestgreen;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+    <title>CIT261 - Shaun Densley</title>
+</head>
+<body onload="populateMajors()">
+    <h1>JavaScript Object Examples</h1>
+    <div>
+        <h2>Simple Example</h2>
+        <p>
+            JavaScript Objects are a way to programatically describe an object.
+            There are many things that can be done with JavaScript Objects.
+            On this page examples will be shown to demonstrate how you can use JavScript Objects.
+        </p>
+        <p>JavaScript Objects are created in one of two ways: using an Object Literal or the keyword New.</p>
+        <p>The format for an Object Literal is as follows: <br />var object = {name:value, name2: value2, ...};</p>
+        <p>The format for the New keyword is as follows:<br />var object = new Object();<br />object.name = value;
+            <br />object.name2 = value2;<br />etc.</p>
+
+        <p>We will start by gathering some information from you to demonstrate.</p>
+        <form id="javascriptObjectData" action="" method="get">
+            <label for="name">Your Name</label><br />
+            <input id="name" type="text" name="name" placeholder="Name" /><br />
+            <label for="age">Your Age</label><br />
+            <input type="number" id="age" name="age" placeholder="25" />
+            <p>Your Major</p>
+            <ul id="majors">
+                <!-- placeholder for majors added through JS -->
+            </ul>
+            <input type="button" name="generate" id="generate" onclick="generateObject()" value="Generate Object" />
+        </form>
+    </div>
+    <br />
+
+    <!-- The location to display the object contents -->
+    <div id="objectResults">This paragraph will be replaced with your object upon clicking the Generate Object button.</div>
+
+    <div>
+        <h2>Advanced JavaScript Objects</h2>
+        <p>JavaScript Objects can also have other JavaScript Objects as properties as well as methods or functions as part 
+            of the object. Press the following button to generate and display some JavaScript objects. The contents are 
+            displayed via a method called showContents(). These methods were created via the prototype property.</p>
+        <p>The JavaScript Code for the two classes is as follows:<br />
+            <span class="comment">// a class to contain the details of a board game</span><br />
+            function Game(name, manufacturer, description) {<br />
+            <span class="comment">// object initialization</span><br />
+            this.name = name;<br />
+            this.manufacturer = manufacturer;<br />
+            this.description = description;<br />
+            }<br /><br />
+            <span class="comment">// prototype method creation</span><br />
+             Game.prototype.showContent = function () {<br />
+            <span class="comment">// return the contents of the object</span><br />
+            return "name: " + this.name + ", manufacturer: " + this.manufacturer + ", description: " + this.description.showContent();<br />
+            }<br /><br />
+            <span class="comment">// a class to contain the details of a description</span><br />
+            function Description(players, ages, time, summary) {<br />
+            <span class="comment">// object initialize</span><br />
+            this.players = players;<br />
+            this.ages = ages;<br />
+            this.time = time;<br />
+            this.summary = summary;<br />
+            }<br /><br />
+            <span class="comment">// prototype method creation</span><br />
+            Description.prototype.showContent = function () {<br />
+            <span class="comment">// return the contents of the object</span><br />
+            return "{ players: " + this.players + ", ages: " + this.ages + ", time: " + this.time + ", summary: " + this.summary  + "}";<br />
+            }
+        </p>
+        <button id="genMultiple" onclick="generateMultiple()">Generate Multiple Objects</button>
+    </div>
+
+    <!-- The location to display multiple object contents -->
+    <div id="multipleObjects" style="display:none;"></div>
+    
+</body>
+</html>

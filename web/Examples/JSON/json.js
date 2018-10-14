@@ -22,4 +22,6 @@ function openJson(filename) {
 
         }
     }
+    xmlhttp.open("GET", filename, true);
+    xmlhttp.send();
 }

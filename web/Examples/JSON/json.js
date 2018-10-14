@@ -15,10 +15,15 @@ function openJson() {
             var rdiObj = JSON.parse(this.responseText);
 
             // loop through the object getting all the properties to display
+            var txt = "";
+            var value = "";
+
+            for (value in rdiObj) {
+                txt += value + "<br/>";
+            }
 
             // display the data from the JSON file in a nice format
-            document.getElementById("rdiDisplay").innerHTML = this.responseText;
-
+            document.getElementById("rdiDisplay").innerHTML = txt;
         }
     }
     xmlhttp.open("GET", "rdi.json", true);

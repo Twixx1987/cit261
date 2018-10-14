@@ -18,7 +18,7 @@ function openJson(filename) {
 
 
             // display the data from the JSON file in a nice format
-            document.getElementById("rdiDisplay").innerHTML = rdiObj;
+            document.getElementById("rdiDisplay").innerHTML = rdiObj.version;
 
         }
     }

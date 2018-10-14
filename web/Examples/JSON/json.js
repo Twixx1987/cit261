@@ -3,7 +3,7 @@
 * Source: https://www.w3schools.com/js/tryit.asp?filename=tryjson_ajax
 **********************************************************************/
 // open the JSON RDI File
-function openJson(filename) {
+function openJson() {
     // initiate a new XMLHttp request
     var xmlhttp = new XMLHttpRequest();
 
@@ -21,6 +21,6 @@ function openJson(filename) {
 
         }
     }
-    xmlhttp.open("GET", filename, true);
+    xmlhttp.open("GET", "rdi.json", true);
     xmlhttp.send();
 }

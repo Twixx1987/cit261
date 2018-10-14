@@ -46,9 +46,9 @@
 	{"name" : "Keet", "race" : "Goblin ", "class" : "Archaeologist", "good" : "Many of the artifacts Keet has dug up belong in a museum!", "bad" : "… but many of them end up as tips for the Wench."},
 	{"name" : "Nitrel", "race" : "Goblin", "class" : "Sapper", "good" : "She knows exactly the right amount of explosive for the job.", "bad" : "Sometimes she uses more just for fun!"},
 	{"name" : "The Magnificent Adonis, Bard of the Ages", "race" : "Human", "class" : "Bard", "good" : "Adonis is a fine specimen of a man.", "bad" : "… and he won’t let you forget it!"}, 
-	{"name" : "The Lich King", "race" : "Lich", "class" : "Mage", "bad" : Good luck getting past his formidable defenses.", "worse" : "He knows how to “throw a punch.” Literally."},
+	{"name" : "The Lich King", "race" : "Lich", "class" : "Mage", "bad" : "Good luck getting past his formidable defenses.", "worse" : "He knows how to “throw a punch.” Literally."},
 	{"name" : "Ohava, the Grand Cleric", "race" : "Elf", "class" : "Grand Cleric", "good" : "The blessings of the All-Mother are a powerful incentive to Ohava’s good works.", "bad" : "Getting four fickle deities to agree on anything takes a LOT of convincing."},
-	{"name" : "Murgath the Blessed", "race" : "Human", "class" : "Blackguard", "bad" : Murgath is a fearsome enemy." , "worse" : "He is this powerful even with Banefall holding him back!"},
+	{"name" : "Murgath the Blessed", "race" : "Human", "class" : "Blackguard", "bad" : "Murgath is a fearsome enemy." , "worse" : "He is this powerful even with Banefall holding him back!"},
 	{"name" : "Chronos the Time Mage", "race" : "Human", "class" : "Mage", "good" : "He's always very careful to avoid messing with the space-time continuum.", "bad": "After a few drinks, who cares about all that timey-wimey stuff?"}]},
 {"version" : "The Red Dragon Inn: Munchkin", "characters" : [
 	{"name" : "Flower", "race" : "Human", "class" : "Munchkin", "good" : "The tavern’s new patrons are eager to make a good impression.", "bad" : "It isn’t working."},

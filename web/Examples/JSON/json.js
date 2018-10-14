@@ -16,10 +16,16 @@ function openJson() {
 
             // loop through the object getting all the properties to display
             var txt = "";
-            var value = "";
+            var arrayInd = 0;
 
-            for (value in rdiObj) {
-                txt += value + "<br/>";
+            // loop through the array
+            for (arrayInd = 0; arrayInd > rdiObj.length; arrayInd++) {
+                txt += rdiObj[arrayInd].version + "<br/>";
+
+                // loop through the object
+                for (var value in rdiObj[arrayInd]) {
+                    txt += value + "<br/>";
+                }
             }
 
             // display the data from the JSON file in a nice format

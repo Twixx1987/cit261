@@ -22,10 +22,10 @@ function openJson() {
             for (arrayInd = 0; arrayInd > rdiObj.length; arrayInd++) {
                 txt += rdiObj[arrayInd].version + "<br/>";
 
-                // loop through the object
-                for (var value in rdiObj[arrayInd]) {
-                    txt += value + "<br/>";
-                }
+                //// loop through the object
+                //for (var value in rdiObj[arrayInd]) {
+                //    txt += value + "<br/>";
+                //}
             }
 
             // display the data from the JSON file in a nice format

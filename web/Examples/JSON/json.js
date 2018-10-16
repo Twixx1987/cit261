@@ -54,6 +54,9 @@ function openRDIfile(xhttp) {
 
     // loop through the object getting all the properties to display
     for (var version in rdiObj.versions) {
+        // add the version as a heading
+        txt += "<h3>" + rdiObj.versions[version].version + "</h3>";
+
         // append the formatted data
         txt += displayVersion(rdiObj.versions[version]);
     }
@@ -70,12 +73,12 @@ function versionSelect(xhttp) {
     // get the select element
     var selectValue = document.getElementById("version").value;
 
-    // Create a Header
-    var txt = "<h2>" + rdiObj.game + "</h2>";
-
     // loop through the object getting all the properties to display
     for (var version in rdiObj.versions) {
         if (rdiObj.versions[version].version == selectValue) {
+            // Create a Header
+            var txt = "<h2>" + rdiObj.versions[version].version + "</h2>";
+
             // append the formatted data
             txt += displayVersion(rdiObj.versions[version]);
         }
@@ -86,8 +89,8 @@ function versionSelect(xhttp) {
 }
 
 function displayVersion(obj) {
-    var txt = "<table><tr><th colspan='6'>" + obj.version + "</th></tr>";
-    txt += "<tr><th>Name</th><th>Race</th><th>Class</th><th>The Good</th><th>The Bad</th><th>The Worse</th></tr>";
+    // start the table and add the columns
+    var txt = "<table><tr><th>Name</th><th>Race</th><th>Class</th><th>The Good</th><th>The Bad</th><th>The Worse</th></tr>";
 
     // loop through the object getting all the characters to display
     for (var character in obj.characters) {

@@ -1,0 +1,8 @@
+td {
+    max-width: 300px;
+    border: thin solid #93160a;
+}
+
+h1, h2, h3 {
+    color: #93160a;
+}

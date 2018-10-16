@@ -1,5 +1,9 @@
 td {
     max-width: 300px;
+    padding: 5px;
+}
+
+table {
     border: thin solid #93160a;
 }
 

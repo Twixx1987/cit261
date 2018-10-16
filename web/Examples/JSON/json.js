@@ -88,28 +88,31 @@ function versionSelect(xhttp) {
     // Create a Header
     var txt = "<h2>" + rdiObj.game + "</h2>";
 
-    txt += this.value;
+    // get the select element
+    txt += document.getElementById("version").value;
 
     //// loop through the object getting all the properties to display
     //for (var version in rdiObj.versions) {
-    //    txt += "<table><tr><th colspan='6'>" + rdiObj.versions[version].version + "</th></tr>";
-    //    txt += "<tr><th>Name</th><th>Race</th><th>Class</th><th>The Good</th><th>The Bad</th><th>The Worse</th></tr>";
+    //    if (rdiObj.versions[version].version == this.value) {
+    //        txt += "<table><tr><th colspan='6'>" + rdiObj.versions[version].version + "</th></tr>";
+    //        txt += "<tr><th>Name</th><th>Race</th><th>Class</th><th>The Good</th><th>The Bad</th><th>The Worse</th></tr>";
 
-    //    // loop through the object getting all the characters to display
-    //    for (var character in rdiObj.versions[version].characters) {
-    //        txt += "<tr><td>" + rdiObj.versions[version].characters[character].name + "</td><td>" +
-    //            rdiObj.versions[version].characters[character].race + "</td><td>" +
-    //            rdiObj.versions[version].characters[character].class + "</td><td>";
-    //        if (rdiObj.versions[version].characters[character].good === undefined) {
-    //            txt += "</td><td>";
-    //        } else {
-    //            txt += rdiObj.versions[version].characters[character].good + "</td><td>";
-    //        }
-    //        txt += rdiObj.versions[version].characters[character].bad + "</td><td>";
-    //        if (rdiObj.versions[version].characters[character].worse === undefined) {
-    //            txt += "</td></tr>";
-    //        } else {
-    //            txt += rdiObj.versions[version].characters[character].worse + "</td></tr>";
+    //        // loop through the object getting all the characters to display
+    //        for (var character in rdiObj.versions[version].characters) {
+    //            txt += "<tr><td>" + rdiObj.versions[version].characters[character].name + "</td><td>" +
+    //                rdiObj.versions[version].characters[character].race + "</td><td>" +
+    //                rdiObj.versions[version].characters[character].class + "</td><td>";
+    //            if (rdiObj.versions[version].characters[character].good === undefined) {
+    //                txt += "</td><td>";
+    //            } else {
+    //                txt += rdiObj.versions[version].characters[character].good + "</td><td>";
+    //            }
+    //            txt += rdiObj.versions[version].characters[character].bad + "</td><td>";
+    //            if (rdiObj.versions[version].characters[character].worse === undefined) {
+    //                txt += "</td></tr>";
+    //            } else {
+    //                txt += rdiObj.versions[version].characters[character].worse + "</td></tr>";
+    //            }
     //        }
     //    }
     //}

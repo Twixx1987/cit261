@@ -106,5 +106,10 @@ function displayVersion(obj) {
             txt += obj.characters[character].worse + "</td></tr>";
         }
     }
+
+    // close the table
+    txt += "</table>";
+
+    // return the content
     return txt;
 }

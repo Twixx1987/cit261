@@ -74,7 +74,7 @@ function versionSelect(xhttp) {
     for (var version in rdiObj.versions) {
         if (rdiObj.versions[version].version == selectValue) {
             // append the formatted data
-            txt += displayVersion(rdiObj.versions[version]);
+            var txt = displayVersion(rdiObj.versions[version]);
         }
     }
 

@@ -54,26 +54,8 @@ function openRDIfile(xhttp) {
 
     // loop through the object getting all the properties to display
     for (var version in rdiObj.versions) {
-        txt += "<table><tr><th colspan='6'>" + rdiObj.versions[version].version + "</th></tr>";
-        txt += "<tr><th>Name</th><th>Race</th><th>Class</th><th>The Good</th><th>The Bad</th><th>The Worse</th></tr>";
-
-        // loop through the object getting all the characters to display
-        for (var character in rdiObj.versions[version].characters) {
-            txt += "<tr><td>" + rdiObj.versions[version].characters[character].name + "</td><td>" +
-                rdiObj.versions[version].characters[character].race + "</td><td>" +
-                rdiObj.versions[version].characters[character].class + "</td><td>";
-            if (rdiObj.versions[version].characters[character].good === undefined) {
-                txt += "</td><td>";
-            } else {
-                txt += rdiObj.versions[version].characters[character].good + "</td><td>";
-            }
-            txt += rdiObj.versions[version].characters[character].bad + "</td><td>";
-            if (rdiObj.versions[version].characters[character].worse === undefined) {
-                txt += "</td></tr>";
-            } else {
-                txt += rdiObj.versions[version].characters[character].worse + "</td></tr>";
-            }
-        }
+        // append the formatted data
+        txt += displayVersion(rdiObj.versions[version]);
     }
 
     // display the data from the JSON file in a nice format
@@ -94,29 +76,35 @@ function versionSelect(xhttp) {
     // loop through the object getting all the properties to display
     for (var version in rdiObj.versions) {
         if (rdiObj.versions[version].version == selectValue) {
-            txt += "<table><tr><th colspan='6'>" + rdiObj.versions[version].version + "</th></tr>";
-            txt += "<tr><th>Name</th><th>Race</th><th>Class</th><th>The Good</th><th>The Bad</th><th>The Worse</th></tr>";
-
-            // loop through the object getting all the characters to display
-            for (var character in rdiObj.versions[version].characters) {
-                txt += "<tr><td>" + rdiObj.versions[version].characters[character].name + "</td><td>" +
-                    rdiObj.versions[version].characters[character].race + "</td><td>" +
-                    rdiObj.versions[version].characters[character].class + "</td><td>";
-                if (rdiObj.versions[version].characters[character].good === undefined) {
-                    txt += "</td><td>";
-                } else {
-                    txt += rdiObj.versions[version].characters[character].good + "</td><td>";
-                }
-                txt += rdiObj.versions[version].characters[character].bad + "</td><td>";
-                if (rdiObj.versions[version].characters[character].worse === undefined) {
-                    txt += "</td></tr>";
-                } else {
-                    txt += rdiObj.versions[version].characters[character].worse + "</td></tr>";
-                }
-            }
+            // append the formatted data
+            txt += displayVersion(rdiObj.versions[version]);
         }
     }
 
     // display the data from the JSON file in a nice format
     document.getElementById("rdiDisplay").innerHTML = txt;
+}
+
+function displayVersion(obj) {
+    var txt = "<table><tr><th colspan='6'>" + obj.version + "</th></tr>";
+    txt += "<tr><th>Name</th><th>Race</th><th>Class</th><th>The Good</th><th>The Bad</th><th>The Worse</th></tr>";
+
+    // loop through the object getting all the characters to display
+    for (var character in obj.characters) {
+        txt += "<tr><td>" + obj.characters[character].name + "</td><td>" +
+            obj.characters[character].race + "</td><td>" +
+            obj.characters[character].class + "</td><td>";
+        if (obj.characters[character].good === undefined) {
+            txt += "</td><td>";
+        } else {
+            txt += obj.characters[character].good + "</td><td>";
+        }
+        txt += obj.characters[character].bad + "</td><td>";
+        if (obj.characters[character].worse === undefined) {
+            txt += "</td></tr>";
+        } else {
+            txt += obj.characters[character].worse + "</td></tr>";
+        }
+    }
+    return txt;
 }

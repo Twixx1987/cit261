@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,7 +13,14 @@
         This object contains multiple nested arrays and objects that are sorted to present a table of 
         all the characters in the Red Dragon Inn along with the version they are from, their race, 
         class, the "Good" about them, the "Bad" about them, and the "Worse" about them.</p>
-        <button onclick="openJson()">Display RDI JSON Content</button>
+        <button onclick="openJson('rdi.json', openRDIfile)">Display RDI JSON Content</button>
+    </div>
+    <div>
+        <p>You can also select a version to display just the characters from that version.</p>
+        <form id="versionSelect" action="" method="post">
+            <select id="version" name="version" onchange="versionSelect(this.value)">
+            </select>
+        </form>
     </div>
     <div id="rdiDisplay"></div>
 </body>

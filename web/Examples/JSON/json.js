@@ -1,5 +1,5 @@
 // generate the select options
-function loadOptions(xhtml) {
+function loadOptions(xhttp) {
     // create an object and parse the JSON file
     var versionsObj = JSON.parse(xhttp.responseText);
 

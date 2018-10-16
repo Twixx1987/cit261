@@ -7,13 +7,13 @@ function loadOptions(xhttp) {
     var selectlist = document.getElementById("version");
 
     // loop through the object members adding items 
-    for (var version in versionsObj) {
+    for (var version in versionsObj.versions) {
         // create the option element
         var option = document.createElement("option");
 
         // set its properties
-        option.setAttribute("value", versionsObj[version]);
-        option.innerHTML = versionsObj[version];
+        option.setAttribute("value", versionsObj.versions[version].version);
+        option.innerHTML = versionsObj.versions[version].version;
 
         // add the option to the list
         selectlist.appendChild(option);

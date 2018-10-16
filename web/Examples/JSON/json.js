@@ -1,3 +1,25 @@
+// generate the select options
+function loadOptions(xhtml) {
+    // create an object and parse the JSON file
+    var versionsObj = JSON.parse(xhttp.responseText);
+
+    // get the select element
+    var selectlist = document.getElementById("version");
+
+    // loop through the object members adding items 
+    for (var version in versionsObj) {
+        // create the option element
+        var option = document.createElement("option");
+
+        // set its properties
+        option.setAttribute("value", versionsObj[version]);
+        option.innerHTML = versionsObj[version];
+
+        // add the option to the list
+        selectlist.appendChild(option);
+    }
+}
+
 /*********************************************************************
 * This function is derived from code on W3Schools.com
 * Source: https://www.w3schools.com/js/js_ajax_http_response.asp
@@ -14,7 +36,6 @@ function openJson(url, callbackFunc) {
             // initiate callback function
             callbackFunc(this);
         }
-            
     }
     // create the request specifics
     xmlhttp.open("GET", url, true);

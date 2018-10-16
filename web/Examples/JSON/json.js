@@ -24,9 +24,9 @@ function openJson(url, callbackFunc) {
 }
 
 // display the RDI File contents
-function openRDIfile() {
+function openRDIfile(xhttp) {
     // create an object and parse the JSON file
-    var rdiObj = JSON.parse(this.responseText);
+    var rdiObj = JSON.parse(xhttp.responseText);
 
     // Create a Header
     var txt = "<h2>" + rdiObj.game + "</h2>";

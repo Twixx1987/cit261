@@ -76,10 +76,9 @@ function versionSelect(xhttp) {
             // append the formatted data
             var txt = displayVersion(rdiObj.versions[version]);
         }
+        // create an object to stringify
+        var obj = { name: rdiObj.versions[version].characters[0].name, version: rdiObj.versions[version].version };
     }
-
-    // create an object to stringify
-    var obj = { name: rdiObj.versions[version].characters[0].name, version: rdiObj.versions[version].version };
 
     // stringify the object
     var stringified = JSON.stringify(obj);

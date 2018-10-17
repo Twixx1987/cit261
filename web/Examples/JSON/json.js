@@ -76,8 +76,26 @@ function versionSelect(xhttp) {
             // append the formatted data
             var txt = displayVersion(rdiObj.versions[version]);
         }
-        // create an object to stringify
-        var obj = { name: rdiObj.versions[version].characters[0].name, version: rdiObj.versions[version].version };
+    }
+
+    // display the data from the JSON file in a nice format
+    document.getElementById("rdiDisplay").innerHTML = txt;
+}
+
+// display the stringified object
+function versionStringify(xhttp) {
+    // create an object and parse the JSON file
+    var rdiObj = JSON.parse(xhttp.responseText);
+
+    // get the select element
+    var selectValue = document.getElementById("version").value;
+
+    // loop through the object getting all the properties to display
+    for (var version in rdiObj.versions) {
+        if (rdiObj.versions[version].version == selectValue) {
+            // create an object to stringify
+            var obj = { name: rdiObj.versions[version].characters[0].name, version: rdiObj.versions[version].version };
+        }
     }
 
     // stringify the object
@@ -85,9 +103,6 @@ function versionSelect(xhttp) {
 
     // display the stringified object on the page
     document.getElementById("stringify").innerHTML = stringified;
-
-    // display the data from the JSON file in a nice format
-    document.getElementById("rdiDisplay").innerHTML = txt;
 }
 
 // display a version in a table format

@@ -78,16 +78,27 @@ function versionSelect(xhttp) {
         }
     }
 
+    // create an object to stringify
+    var obj = { name: rdiObj.versions[version].characters[0].name, version: rdiObj.versions[version].version };
+
+    // stringify the object
+    var stringified = JSON.stringify(obj);
+
+    // display the stringified object on the page
+    document.getElementById("stringify").innerHTML = stringified;
+
     // display the data from the JSON file in a nice format
     document.getElementById("rdiDisplay").innerHTML = txt;
 }
 
+// display a version in a table format
 function displayVersion(obj) {
     // Create a Header
     var txt = "<h2>" + obj.version + "</h2>";
 
     // start the table and add the columns
-    txt += "<table><tr><th>Name</th><th>Race</th><th>Class</th><th>The Good</th><th>The Bad</th><th>The Worse</th></tr>";
+    txt += "<table><tr><th>Name</th><th>Race</th><th>Class</th><th>The Good</th>"
+        + "<th>The Bad</th><th>The Worse</th></tr>";
 
     // loop through the object getting all the characters to display
     for (var character in obj.characters) {

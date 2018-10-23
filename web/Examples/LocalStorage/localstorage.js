@@ -92,7 +92,7 @@ function displayAll() {
         var value = JSON.parse(localStorage.getItem(key));
 
         // display the version
-        txt += displayVersion(selectValue, JSON.parse(localStorage.getItem(selectValue)));
+        txt += displayVersion(key, value);
     }
     // display the data from the local storage in a nice format
     document.getElementById("pandemicDisplay").innerHTML = txt;

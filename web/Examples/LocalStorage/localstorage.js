@@ -36,7 +36,7 @@ function loadStorage(xhttp) {
         // loop through the object adding properties to local storage
         for (var version in pandemicObj.versions) {
             // append version to local storage
-            localStorage.setItem(pandemicObj.versions[version], pandemicObj.versions[roles]);
+            localStorage.setItem(pandemicObj.versions[version], pandemicObj.versions["roles"]);
         }
 
         // load the select options

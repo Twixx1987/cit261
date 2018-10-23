@@ -77,6 +77,27 @@ function loadOptions() {
     }
 }
 
+// display all versions
+function displayAll() {
+    // get the length of the localStorage object
+    var lslen = localStorage.length - 1;
+
+    // create a variable to store the output
+    var txt = "<h1>Pandemic Board Game</h1>";
+
+    // loop through the local storage keys displaying each one
+    for (var count = 0; count < lslen; count++) {
+        // create the option element
+        var key = localStorage.key(count);
+        var value = JSON.parse(localStorage.getItem(key));
+
+        // display the version
+        txt += displayVersion(selectValue, JSON.parse(localStorage.getItem(selectValue)));
+    }
+    // display the data from the local storage in a nice format
+    document.getElementById("pandemicDisplay").innerHTML = txt;
+}
+
 // display the selected version
 function versionSelect() {
     // get the select element
@@ -86,7 +107,7 @@ function versionSelect() {
     var txt = displayVersion(selectValue, JSON.parse(localStorage.getItem(selectValue)));
 
     // display the data from the JSON file in a nice format
-    document.getElementById("rdiDisplay").innerHTML = txt;
+    document.getElementById("pandemicDisplay").innerHTML = txt;
 }
 
 // display a version in a table format

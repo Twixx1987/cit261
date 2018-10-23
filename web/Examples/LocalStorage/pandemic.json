@@ -10,7 +10,7 @@
         },
         {
           "name": "Dispatcher",
-          "abilities": "The Dispatcher may, as an action, either: move any pawn, if its owner agrees, to any city containing another pawn, or move another player’s pawn, if its owner agrees, as if it were his own. The Dispatcher can only move other players’ pawns; he may not direct them to do other actions, such as Treat Disease."
+          "abilities": "The Dispatcher may, as an action, either: move any pawn, if its owner agrees, to any city containing another pawn, or move another player's pawn, if its owner agrees, as if it were his own. The Dispatcher can only move other players' pawns; he may not direct them to do other actions, such as Treat Disease."
         },
         {
           "name": "Medic",
@@ -26,7 +26,7 @@
         },
         {
           "name": "Researcher",
-          "abilities": "When doing the Share Knowledge action, the Researcher may give any City card from her hand to another player in the same city as her, without this card having to match her city. The transfer must be from her hand to the other player’s hand, but it can occur on either player’s turn."
+          "abilities": "When doing the Share Knowledge action, the Researcher may give any City card from her hand to another player in the same city as her, without this card having to match her city. The transfer must be from her hand to the other player's hand, but it can occur on either player's turn."
         },
         {
           "name": "Scientist",
@@ -76,7 +76,7 @@
         },
         {
           "name": "First Responder",
-          "abilities": "As an action, she may move to any city with a research station. After resolving an Epidemic, she may – out of turn – move to the epidemic city and Treat Disease there (before Infections). The \"epidemic city\" is the city matching the card drawn from the bottom of the Infection deck during the Infect step of resolving the Epidemic."
+          "abilities": "As an action, she may move to any city with a research station. After resolving an Epidemic, she may - out of turn - move to the epidemic city and Treat Disease there (before Infections). The \"epidemic city\" is the city matching the card drawn from the bottom of the Infection deck during the Infect step of resolving the Epidemic."
         },
         {
           "name": "Gene Splicer",
@@ -97,7 +97,7 @@
       "roles": [
         {
           "name": "Field Director",
-          "abilities": "The Field Director may: Treat Disease in a city connected to the city he is in (instead of the city he is in), or move another player’s pawn in his city, or a city connected to it, once per turn by Drive/Ferry, as a free bonus action. He must get permission before moving another player’s pawn."
+          "abilities": "The Field Director may: Treat Disease in a city connected to the city he is in (instead of the city he is in), or move another player's pawn in his city, or a city connected to it, once per turn by Drive/Ferry, as a free bonus action. He must get permission before moving another player's pawn."
         },
         {
           "name": "Local Liaison",

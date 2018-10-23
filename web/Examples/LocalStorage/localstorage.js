@@ -36,7 +36,7 @@ function loadStorage(xhttp) {
         // loop through the object adding properties to local storage
         for (var version in pandemicObj.versions) {
             // append version to local storage
-            localStorage.setItem(pandemicObj.versions[version].version, pandemicObj.versions["roles"]);
+            localStorage.setItem(pandemicObj.versions[version].version, JSON.stringify(pandemicObj.versions["roles"]));
             console.log(localStorage.getItem(pandemicObj.versions[version].version));
         }
 
@@ -80,7 +80,7 @@ function versionSelect() {
     var selectValue = document.getElementById("version").value;
 
     // display the selected version
-    var txt = localStorage.getItem(selectValue);
+    var txt = localStorage.getItem(JSON.parse(selectValue));
 
     // display the data from the JSON file in a nice format
     document.getElementById("rdiDisplay").innerHTML = txt;

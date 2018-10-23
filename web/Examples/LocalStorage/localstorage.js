@@ -86,7 +86,7 @@ function displayAll() {
     sessionStorage.clicks = Number(sessionStorage.clicks) + 1;
 
     // update the displayed value
-    document.getElementById("sessionClicks").innerHTML = sessionStorage.clicks;
+    document.getElementById("sessionClick").innerHTML = sessionStorage.clicks;
 
     // get the length of the localStorage object
     var lslen = localStorage.length - 1;

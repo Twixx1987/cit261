@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="localstorage.js"></script>
+    <link rel="stylesheet" href="localstorage.css" />
+    <title>CIT261 - Shaun Densley</title>
+</head>
+<body onload="openJson('pandemic.json', loadStorage)">
+    <h1>localStorage Example</h1>
+    <div>
+        <p>This page is similar to the JSON and AJAX example page. The differences here is that the AJAX 
+           call will load the JSON file into local storage. Once the file is in local storage the data 
+           is accessed from the local storage object.</p>
+        <p>Click on the button to display the contents of the localStorage object in a nice user friendly format. 
+           This object contains key/value pairs. 
+           The data is then sorted to present a table of all the Roles in the Pandemic board game along with 
+           the expansion they are from and the abilities associated with that role.</p>
+        <button onclick="">Display RDI JSON Content</button>
+    </div>
+    <div>
+        <p>You can also select a version and display just the Roles from that version.</p>
+        <form id="versionSelect" action="" method="post">
+            <select id="version" name="version" onchange="">
+            </select>
+        </form>
+    </div>
+    <div id="pandemicDisplay"></div>
+</body>
+</html>

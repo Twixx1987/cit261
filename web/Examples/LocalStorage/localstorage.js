@@ -41,7 +41,6 @@ function loadStorage(xhttp) {
 
             // append version to local storage
             localStorage.setItem(key, value);
-            console.log("The data in: " + key + " is: " + localStorage.getItem(pandemicObj.versions[version].version) + " and should be " + value);
         }
 
         // load the select options
@@ -62,7 +61,7 @@ function loadOptions() {
     var selectlist = document.getElementById("version");
 
     // get the length of the localStorage object
-    var lslen = localStorage.length;
+    var lslen = localStorage.length - 1;
 
     // loop through the local storage keys adding them to the select list
     for (var count = 0; count < lslen; count++) {
@@ -84,16 +83,16 @@ function versionSelect() {
     var selectValue = document.getElementById("version").value;
 
     // display the selected version
-    var txt = localStorage.getItem(JSON.parse(selectValue));
+    var txt = displayVersion(selectValue, JSON.parse(localStorage.getItem(selectValue)));
 
     // display the data from the JSON file in a nice format
     document.getElementById("rdiDisplay").innerHTML = txt;
 }
 
 // display a version in a table format
-function displayVersion(obj) {
+function displayVersion(header, obj) {
     // Create a Header
-    var txt = "<h2>" + obj.version + "</h2>";
+    var txt = "<h2>" + header + "</h2>";
 
     // start the table and add the columns
     txt += "<table><tr><th>Role</th><th>Abilities</th></tr>";

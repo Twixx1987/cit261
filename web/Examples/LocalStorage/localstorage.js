@@ -99,9 +99,9 @@ function displayVersion(obj) {
     txt += "<table><tr><th>Role</th><th>Abilities</th></tr>";
 
     // loop through the object getting all the characters to display
-    for (var role in obj.roles) {
-        txt += "<tr><td>" + obj.roles[role].name + "</td><td>" +
-            obj.roles[role].abilities + "</td></tr>";
+    for (var arrayVal = 0; arrayVal < obj.length; arrayVal++) {
+        txt += "<tr><td>" + obj[arrayVal].name + "</td><td>" +
+            obj[arrayVal].abilities + "</td></tr>";
     }
 
     // close the table

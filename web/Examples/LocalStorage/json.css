@@ -1,0 +1,22 @@
+td {
+    max-width: 300px;
+    padding: 5px;
+    border: thin solid #93160a;
+    border-collapse: collapse;
+}
+
+th {
+    max-width: 300px;
+    padding: 5px;
+    border: thin solid #93160a;
+    border-collapse: collapse;
+    background-color: #fabdb7;
+}
+
+table {
+    border: thin solid #93160a;
+}
+
+h1, h2, h3 {
+    color: #93160a;
+}

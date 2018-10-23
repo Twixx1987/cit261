@@ -37,6 +37,7 @@ function loadStorage(xhttp) {
         for (var version in pandemicObj.versions) {
             // append version to local storage
             localStorage.setItem(pandemicObj.versions[version].version, pandemicObj.versions["roles"]);
+            console.log(localStorage.getItem(pandemicObj.versions[version].version));
         }
 
         // load the select options

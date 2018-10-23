@@ -14,9 +14,8 @@
            call will load the JSON file into local storage. Once the file is in local storage the data 
            is accessed from the local storage object.</p>
         <p>Click on the button to display the contents of the localStorage object in a nice user friendly format. 
-           This object contains key/value pairs. 
-           The data is then sorted to present a table of all the Roles in the Pandemic board game along with 
-           the expansion they are from and the abilities associated with that role.</p>
+           This object contains key/value pairs. The data is then sorted to present a table of all the Roles in the 
+           Pandemic board game along with the expansion they are from and the abilities associated with that role.</p>
         <button onclick="displayAll()">Display Pandemic Roles</button>
     </div>
     <div>
@@ -27,5 +26,13 @@
         </form>
     </div>
     <div id="pandemicDisplay"></div>
+    <h1>sessionStorage Example</h1>
+    <div>
+        <p>The following is an example of sessionStorage. The values will increase each time you change the version or 
+           click the button to display all versions.</p>
+        <p>You have clicked the Display Pandemic Roles button <span id="sessionClick">0</span> times.</p>
+        <p>You have changed the version selector <span id="sessionSelect">0</span>times.</p>
+        <p>The values will continue to increase until you close the tab and re-open it. In that scenario the values will reset to 0.</p>
+    </div>
 </body>
 </html>

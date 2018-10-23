@@ -42,6 +42,9 @@ function loadStorage(xhttp) {
             // append version to local storage
             localStorage.setItem(key, value);
         }
+        // initialize the sessionStorage items
+        sessionStorage.setItem("clicks", 0);
+        sessionStorage.setItem("selectChanges", 0);
 
         // load the select options
         loadOptions();
@@ -79,6 +82,12 @@ function loadOptions() {
 
 // display all versions
 function displayAll() {
+    // update the session storage value
+    sessionStorage.clicks = Number(sessionStorage.clicks) + 1;
+
+    // update the displayed value
+    document.getElementById("sessionClicks").innerHTML = sessionStorage.clicks;
+
     // get the length of the localStorage object
     var lslen = localStorage.length - 1;
 
@@ -100,6 +109,12 @@ function displayAll() {
 
 // display the selected version
 function versionSelect() {
+    // update the session storage value
+    sessionStorage.selectChanges = Number(sessionStorage.selectChanges) + 1;
+
+    // update the displayed value
+    document.getElementById("sessionSelect").innerHTML = sessionStorage.selectChanges;
+
     // get the select element
     var selectValue = document.getElementById("version").value;
 

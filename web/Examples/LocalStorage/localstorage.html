@@ -17,12 +17,12 @@
            This object contains key/value pairs. 
            The data is then sorted to present a table of all the Roles in the Pandemic board game along with 
            the expansion they are from and the abilities associated with that role.</p>
-        <button onclick="">Display Pandemic Roles</button>
+        <button onclick="displayAll">Display Pandemic Roles</button>
     </div>
     <div>
         <p>You can also select a version and display just the Roles from that version.</p>
         <form id="versionSelect" action="versionSelect" method="post">
-            <select id="version" name="version" onchange="">
+            <select id="version" name="version" onchange="versionSelect">
             </select>
         </form>
     </div>

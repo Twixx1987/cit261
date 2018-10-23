@@ -36,7 +36,7 @@ function loadStorage(xhttp) {
         // loop through the object adding properties to local storage
         for (var version in pandemicObj.versions) {
             // append version to local storage
-            localStorage.setItem(pandemicObj.versions[version], pandemicObj.versions["roles"]);
+            localStorage.setItem(pandemicObj.versions[version].version, pandemicObj.versions["roles"]);
         }
 
         // load the select options
@@ -74,46 +74,15 @@ function loadOptions() {
 }
 
 // display the selected version
-function versionSelect(xhttp) {
-    // create an object and parse the JSON file
-    var rdiObj = JSON.parse(xhttp.responseText);
-
+function versionSelect() {
     // get the select element
     var selectValue = document.getElementById("version").value;
 
-    // loop through the object getting all the properties to display
-    for (var version in rdiObj.versions) {
-        if (rdiObj.versions[version].version == selectValue) {
-            // append the formatted data
-            var txt = displayVersion(rdiObj.versions[version]);
-        }
-    }
+    // display the selected version
+    var txt = localStorage.getItem(selectValue);
 
     // display the data from the JSON file in a nice format
     document.getElementById("rdiDisplay").innerHTML = txt;
-}
-
-// display the stringified object
-function versionStringify(xhttp) {
-    // create an object and parse the JSON file
-    var rdiObj = JSON.parse(xhttp.responseText);
-
-    // get the select element
-    var selectValue = document.getElementById("version").value;
-
-    // loop through the object getting all the properties to display
-    for (var version in rdiObj.versions) {
-        if (rdiObj.versions[version].version == selectValue) {
-            // create an object to stringify
-            var obj = { name: rdiObj.versions[version].characters[0].name, version: rdiObj.versions[version].version };
-        }
-    }
-
-    // stringify the object
-    var stringified = JSON.stringify(obj);
-
-    // display the stringified object on the page
-    document.getElementById("stringify").innerHTML = stringified;
 }
 
 // display a version in a table format
@@ -122,25 +91,12 @@ function displayVersion(obj) {
     var txt = "<h2>" + obj.version + "</h2>";
 
     // start the table and add the columns
-    txt += "<table><tr><th>Name</th><th>Race</th><th>Class</th><th>The Good</th>"
-        + "<th>The Bad</th><th>The Worse</th></tr>";
+    txt += "<table><tr><th>Role</th><th>Abilities</th></tr>";
 
     // loop through the object getting all the characters to display
-    for (var character in obj.characters) {
-        txt += "<tr><td>" + obj.characters[character].name + "</td><td>" +
-            obj.characters[character].race + "</td><td>" +
-            obj.characters[character].class + "</td><td>";
-        if (obj.characters[character].good === undefined) {
-            txt += "</td><td>";
-        } else {
-            txt += obj.characters[character].good + "</td><td>";
-        }
-        txt += obj.characters[character].bad + "</td><td>";
-        if (obj.characters[character].worse === undefined) {
-            txt += "</td></tr>";
-        } else {
-            txt += obj.characters[character].worse + "</td></tr>";
-        }
+    for (var role in obj.roles) {
+        txt += "<tr><td>" + obj.roles[role].name + "</td><td>" +
+            obj.roles[role].abilities + "</td></tr>";
     }
 
     // close the table

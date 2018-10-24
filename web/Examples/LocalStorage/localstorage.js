@@ -127,6 +127,12 @@ function loadOptions() {
     }
 }
 
+// clear the local storage
+function deleteLocal() {
+    // call the local storage clear method
+    localStorage.clear();
+}
+
 // display all versions
 function displayAll() {
     // update the session storage value

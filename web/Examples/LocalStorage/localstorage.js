@@ -111,7 +111,7 @@ function loadOptions() {
     var selectlist = document.getElementById("version");
 
     // get the length of the localStorage object
-    var lslen = localStorage.length - 1;
+    var lslen = localStorage.length;
 
     // loop through the local storage keys adding them to the select list
     for (var count = 0; count < lslen; count++) {
@@ -152,7 +152,7 @@ function displayAll() {
     // check to see if local storage exists
     if (localStorage != null) {
         // get the length of the localStorage object
-        var lslen = localStorage.length - 1;
+        var lslen = localStorage.length;
 
         // create a variable to store the output
         txt = "<h1>Pandemic Board Game</h1>";

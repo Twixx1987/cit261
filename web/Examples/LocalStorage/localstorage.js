@@ -49,9 +49,14 @@ function loadStorage(xhttp) {
             // append version to local storage
             localStorage.setItem(key, value);
         }
-        // initialize the sessionStorage items
-        sessionStorage.setItem("clicks", 0);
-        sessionStorage.setItem("selectChanges", 0);
+
+        // check to see if the data is already in storage
+        if (sessionStorage.getItem("clicks") == "undefined") {
+            console.log("The number of clicks is: " + sessionStorage.getItem("clicks"));
+            // initialize the sessionStorage items
+            sessionStorage.setItem("clicks", 0);
+            sessionStorage.setItem("selectChanges", 0);
+        }
 
         // load the select options
         loadOptions();

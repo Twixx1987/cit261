@@ -153,6 +153,7 @@ function displayAll() {
     if (localStorage === null) {
         // display an error message indicating no local storage
         txt = "Error: Local storage is not currently loaded.";
+        console.log(txt);
     } else {
         // get the length of the localStorage object
         var lslen = localStorage.length;
@@ -193,6 +194,7 @@ function versionSelect() {
     if (localStorage === null) {
         // display an error message indicating no local storage
         txt = "Error: Local storage is not currently loaded.";
+        console.log(txt);
     } else {
         // get the select element
         var selectValue = document.getElementById("version").value;

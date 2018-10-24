@@ -150,7 +150,10 @@ function displayAll() {
     var txt = "";
 
     // check to see if local storage exists
-    if (localStorage !== null) {
+    if (localStorage == null) {
+        // display an error message indicating no local storage
+        txt = "Error: Local storage is not currently loaded.";
+    } else {
         // get the length of the localStorage object
         var lslen = localStorage.length;
 
@@ -166,9 +169,6 @@ function displayAll() {
             // display the version
             txt += displayVersion(key, value);
         }
-    } else {
-        // display an error message indicating no local storage
-        txt = "Error: Local storage is not currently loaded.";
     }
     // display the data from the local storage in a nice format
     document.getElementById("pandemicDisplay").innerHTML = txt;
@@ -190,15 +190,15 @@ function versionSelect() {
     var txt = "";
 
     // check to see if local storage exists
-    if (localStorage !== null) {
+    if (localStorage == null) {
+        // display an error message indicating no local storage
+        txt = "Error: Local storage is not currently loaded.";
+    } else {
         // get the select element
         var selectValue = document.getElementById("version").value;
 
         // display the selected version
         txt = displayVersion(selectValue, JSON.parse(localStorage.getItem(selectValue)));
-    } else {
-        // display an error message indicating no local storage
-        txt = "Error: Local storage is not currently loaded.";
     }
     // display the data from the JSON file in a nice format
     document.getElementById("pandemicDisplay").innerHTML = txt;

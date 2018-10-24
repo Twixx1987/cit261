@@ -42,6 +42,7 @@ function loadStorage(xhttp) {
             // check to see if the data is already in storage
             if (localStorage.getItem(key) == value) {
                 // break out of the loop, the data is already in storage no need to repopulate the data
+                concole.log("Data already in storage " + localStorage.getItem(key));
                 break;
             }
 

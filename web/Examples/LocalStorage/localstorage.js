@@ -146,20 +146,29 @@ function displayAll() {
     // update the displayed value
     document.getElementById("sessionClick").innerHTML = sessionStorage.clicks;
 
-    // get the length of the localStorage object
-    var lslen = localStorage.length - 1;
-
     // create a variable to store the output
-    var txt = "<h1>Pandemic Board Game</h1>";
+    var txt = "";
 
-    // loop through the local storage keys displaying each one
-    for (var count = 0; count < lslen; count++) {
-        // create the option element
-        var key = localStorage.key(count);
-        var value = JSON.parse(localStorage.getItem(key));
+    // check to see if local storage exists
+    if (localStorage != null) {
+        // get the length of the localStorage object
+        var lslen = localStorage.length - 1;
 
-        // display the version
-        txt += displayVersion(key, value);
+        // create a variable to store the output
+        txt = "<h1>Pandemic Board Game</h1>";
+
+        // loop through the local storage keys displaying each one
+        for (var count = 0; count < lslen; count++) {
+            // create the option element
+            var key = localStorage.key(count);
+            var value = JSON.parse(localStorage.getItem(key));
+
+            // display the version
+            txt += displayVersion(key, value);
+        }
+    } else {
+        // display an error message indicating no local storage
+        txt = "Error: Local storage is not currently loaded.";
     }
     // display the data from the local storage in a nice format
     document.getElementById("pandemicDisplay").innerHTML = txt;
@@ -177,12 +186,20 @@ function versionSelect() {
     // update the displayed value
     document.getElementById("sessionSelect").innerHTML = sessionStorage.selectChanges;
 
-    // get the select element
-    var selectValue = document.getElementById("version").value;
+    // create a variable to store the output
+    var txt = "";
 
-    // display the selected version
-    var txt = displayVersion(selectValue, JSON.parse(localStorage.getItem(selectValue)));
+    // check to see if local storage exists
+    if (localStorage != null) {
+        // get the select element
+        var selectValue = document.getElementById("version").value;
 
+        // display the selected version
+        txt = displayVersion(selectValue, JSON.parse(localStorage.getItem(selectValue)));
+    } else {
+        // display an error message indicating no local storage
+        txt = "Error: Local storage is not currently loaded.";
+    }
     // display the data from the JSON file in a nice format
     document.getElementById("pandemicDisplay").innerHTML = txt;
 }

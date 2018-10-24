@@ -89,13 +89,17 @@ function loadLocal(xhttp) {
             // append version to local storage
             localStorage.setItem(key, value);
         }
+        // notification text
+        var txt = "<h3>The local storage data has been loaded.</h3>"
+        // Notify the user that local storage is reloaded
+        document.getElementById("pandemicDisplay").innerHTML = txt;
 
         // return that it succeeded
         return true;
     } else {
         // create an error string to display
-        var error = "Your browser does not support web storage,"
-                  + " this page requires local storage support.";
+        var error = "<h3>Your browser does not support web storage,"
+                  + " this page requires local storage support.</h3>";
 
         // Notify the user that local storage is not supported
         document.getElementById("pandemicDisplay").innerHTML = error;
@@ -155,7 +159,7 @@ function displayAll() {
     // check to see if local storage exists
     if (localStorage.getItem(selectValue) === null) {
         // display an error message indicating no local storage
-        txt = "Error: Local storage is not currently loaded.";
+        txt = "<h3>Error: Local storage is not currently loaded.</h3>";
         console.log(txt);
     } else {
         // get the length of the localStorage object
@@ -199,7 +203,7 @@ function versionSelect() {
     // check to see if local storage exists
     if (localStorage.getItem(selectValue) === null) {
         // display an error message indicating no local storage
-        txt = "Error: Local storage is not currently loaded.";
+        txt = "<h3>Error: Local storage is not currently loaded.</h3>";
         console.log(txt);
     } else {
         // display the selected version

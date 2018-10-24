@@ -6,11 +6,12 @@ td {
 }
 
 th {
-    max-width: 300px;
+    max-width: 500px;
     padding: 5px;
     border: thin solid #001b9b;
     border-collapse: collapse;
-    background-color: #859efe;
+    background-color: #001b9b;
+    color: white;
 }
 
 table {

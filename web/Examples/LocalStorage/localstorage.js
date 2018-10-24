@@ -50,6 +50,10 @@ function loadStorage(xhttp) {
             localStorage.setItem(key, value);
         }
 
+        // initialize the session storage displayed data
+        document.getElementById("sessionClick").innerHTML = sessionStorage.clicks;
+        document.getElementById("sessionSelect").innerHTML = sessionStorage.selectChanges;
+
         // load the select options
         loadOptions();
     } else {

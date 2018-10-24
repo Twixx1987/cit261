@@ -50,14 +50,6 @@ function loadStorage(xhttp) {
             localStorage.setItem(key, value);
         }
 
-        // check to see if the data is already in storage
-        if (!sessionStorage.getItem("clicks")) {
-            console.log("The number of clicks is: " + sessionStorage.getItem("clicks"));
-            // initialize the sessionStorage items
-            sessionStorage.setItem("clicks", 0);
-            sessionStorage.setItem("selectChanges", 0);
-        }
-
         // load the select options
         loadOptions();
     } else {
@@ -95,7 +87,11 @@ function loadOptions() {
 // display all versions
 function displayAll() {
     // update the session storage value
-    sessionStorage.clicks = Number(sessionStorage.clicks) + 1;
+    if (sessionStorage.clicks) {
+        sessionStorage.clicks = Number(sessionStorage.clicks) + 1;
+    } else {
+        sessionStorage.clicks = 1;
+    }
 
     // update the displayed value
     document.getElementById("sessionClick").innerHTML = sessionStorage.clicks;
@@ -122,7 +118,11 @@ function displayAll() {
 // display the selected version
 function versionSelect() {
     // update the session storage value
-    sessionStorage.selectChanges = Number(sessionStorage.selectChanges) + 1;
+    if (sessionStorage.selectChanges) {
+        sessionStorage.selectChanges = Number(sessionStorage.selectChanges) + 1;
+    } else {
+        sessionStorage.selectChanges = 1;
+    }
 
     // update the displayed value
     document.getElementById("sessionSelect").innerHTML = sessionStorage.selectChanges;

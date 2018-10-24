@@ -1,0 +1,29 @@
+td {
+    max-width: 500px;
+    padding: 5px;
+    border: thin solid #001b9b;
+    border-collapse: collapse;
+}
+
+th {
+    max-width: 500px;
+    padding: 5px;
+    border: thin solid #001b9b;
+    border-collapse: collapse;
+    background-color: #001b9b;
+    color: white;
+}
+
+table {
+    border: thin solid #001b9b;
+}
+
+h1, h2, h3 {
+    color: #001b9b;
+}
+
+span {
+    font-weight: bold;
+    color: #001b9b;
+    font-size: x-large;
+}

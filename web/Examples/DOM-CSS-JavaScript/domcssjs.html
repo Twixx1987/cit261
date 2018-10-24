@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="localstorage.js"></script>
+    <link rel="stylesheet" href="localstorage.css" />
+    <title>CIT261 - Shaun Densley</title>
+</head>
+<body onload="openJson('pandemic.json', loadStorage)">
+    <h1>localStorage Example</h1>
+    <div>
+        <p>This page is similar to the JSON and AJAX example page. The differences here is that the AJAX 
+           call will load the JSON file into local storage. Once the file is in local storage the data 
+           is accessed from the local storage object.</p>
+        <p>Click on the button to display the contents of the localStorage object in a nice user friendly format. 
+           This object contains key/value pairs. The data is then sorted to present a table of all the Roles in the 
+           Pandemic board game along with the expansion they are from and the abilities associated with that role.</p>
+        <button onclick="displayAll()">Display Pandemic Roles</button>
+    </div>
+    <div>
+        <p>You can also select a version and display just the Roles from that version.</p>
+        <form id="versionSelect" action="versionSelect" method="get">
+            <select id="version" name="version" onchange="versionSelect()">
+            </select><br />
+        </form>
+        <button onclick="deleteLocal()">Delete Local Storage</button><br />
+        <button onclick="openJson('pandemic.json', loadLocal)">Reload Local Storage</button><br />
+    </div>
+    <div id="pandemicDisplay"></div>
+    <h1>sessionStorage Example</h1>
+    <div>
+        <p>The following is an example of sessionStorage. The values will increase each time you change the version or 
+           click the button to display all versions.</p>
+        <p>You have clicked the Display Pandemic Roles button <span id="sessionClick">0</span> times.</p>
+        <p>You have changed the version selector <span id="sessionSelect">0</span> times.</p>
+        <p>The values will continue to increase until you close the tab and re-open it or reloading the page. In those 
+           scenarios, the values will reset to 0.</p>
+    </div>
+</body>
+</html>

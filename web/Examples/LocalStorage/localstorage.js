@@ -41,8 +41,8 @@ function loadStorage(xhttp) {
 
             // check to see if the data is already in storage
             if (localStorage.getItem(key) == value) {
-                // return the data is already in storage no need to repopulate the data
-                return;
+                // break out of the loop, the data is already in storage no need to repopulate the data
+                break;
             }
 
             // append version to local storage

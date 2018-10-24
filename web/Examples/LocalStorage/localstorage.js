@@ -150,7 +150,7 @@ function displayAll() {
     var txt = "";
 
     // check to see if local storage exists
-    if (localStorage === null) {
+    if (localStorage) {
         // display an error message indicating no local storage
         txt = "Error: Local storage is not currently loaded.";
         console.log(txt);
@@ -191,7 +191,7 @@ function versionSelect() {
     var txt = "";
 
     // check to see if local storage exists
-    if (localStorage === null) {
+    if (localStorage) {
         // display an error message indicating no local storage
         txt = "Error: Local storage is not currently loaded.";
         console.log(txt);

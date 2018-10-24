@@ -34,12 +34,12 @@ function loadStorage(xhttp) {
     // check for success
     if (success) {
         // initialize the session storage displayed data
-        if (sessionStorage.clicks !== "undefined") {
+        if (sessionStorage.clicks) {
             document.getElementById("sessionClick").innerHTML = sessionStorage.clicks;
         } else {
             document.getElementById("sessionClick").innerHTML = 0;
         }
-        if (sessionStorage.selectChanges !== "undefined") {
+        if (sessionStorage.selectChanges) {
             document.getElementById("sessionSelect").innerHTML = sessionStorage.selectChanges;
         } else {
             document.getElementById("sessionSelect").innerHTML = 0;

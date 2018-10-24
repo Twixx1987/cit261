@@ -149,8 +149,11 @@ function displayAll() {
     // create a variable to store the output
     var txt = "";
 
+    // get the select element
+    var selectValue = document.getElementById("version").value;
+
     // check to see if local storage exists
-    if (localStorage) {
+    if (localStorage.getItem(selectValue) === null) {
         // display an error message indicating no local storage
         txt = "Error: Local storage is not currently loaded.";
         console.log(txt);
@@ -190,15 +193,15 @@ function versionSelect() {
     // create a variable to store the output
     var txt = "";
 
+    // get the select element
+    var selectValue = document.getElementById("version").value;
+
     // check to see if local storage exists
-    if (localStorage) {
+    if (localStorage.getItem(selectValue) === null) {
         // display an error message indicating no local storage
         txt = "Error: Local storage is not currently loaded.";
         console.log(txt);
     } else {
-        // get the select element
-        var selectValue = document.getElementById("version").value;
-
         // display the selected version
         txt = displayVersion(selectValue, JSON.parse(localStorage.getItem(selectValue)));
     }

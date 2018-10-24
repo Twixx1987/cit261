@@ -131,6 +131,7 @@ function loadOptions() {
 function deleteLocal() {
     // call the local storage clear method
     localStorage.clear();
+    console.log("cleared local storage object");
 }
 
 // display all versions

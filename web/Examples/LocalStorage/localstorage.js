@@ -150,7 +150,7 @@ function displayAll() {
     var txt = "";
 
     // check to see if local storage exists
-    if (localStorage != null) {
+    if (localStorage !== null) {
         // get the length of the localStorage object
         var lslen = localStorage.length;
 
@@ -190,7 +190,7 @@ function versionSelect() {
     var txt = "";
 
     // check to see if local storage exists
-    if (localStorage != null) {
+    if (localStorage !== null) {
         // get the select element
         var selectValue = document.getElementById("version").value;
 

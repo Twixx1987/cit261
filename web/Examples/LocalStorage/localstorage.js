@@ -39,6 +39,12 @@ function loadStorage(xhttp) {
             var key = pandemicObj.versions[version].version;
             var value = JSON.stringify(pandemicObj.versions[version].roles);
 
+            // check to see if the data is already in storage
+            if (localStorage.getItem(key) == value) {
+                // return the data is already in storage no need to repopulate the data
+                return;
+            }
+
             // append version to local storage
             localStorage.setItem(key, value);
         }

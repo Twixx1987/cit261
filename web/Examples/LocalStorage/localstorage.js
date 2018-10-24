@@ -136,6 +136,12 @@ function deleteLocal() {
     // call the local storage clear method
     localStorage.clear();
     console.log("cleared local storage object");
+
+    // display an error message indicating that local storage has been deleted
+    txt = "<h3>Local storage deleted.</h3>";
+
+    // display the data from the local storage in a nice format
+    document.getElementById("pandemicDisplay").innerHTML = txt;
 }
 
 // display all versions

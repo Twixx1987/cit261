@@ -51,7 +51,7 @@ function loadStorage(xhttp) {
         }
 
         // check to see if the data is already in storage
-        if (sessionStorage.getItem("clicks") !== "undefined") {
+        if (sessionStorage.getItem("clicks")) {
             console.log("The number of clicks is: " + sessionStorage.getItem("clicks"));
             // initialize the sessionStorage items
             sessionStorage.setItem("clicks", 0);

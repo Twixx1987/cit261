@@ -23,6 +23,8 @@
         <form id="versionSelect" action="versionSelect" method="post">
             <select id="version" name="version" onchange="versionSelect()">
             </select>
+            <button onclick="deleteLocal">Delete Local Storage</button><br/>
+            <button onclick="openJson('pandemic.json', loadLocal)">Reload Local Storage</button><br/>
         </form>
     </div>
     <div id="pandemicDisplay"></div>

@@ -28,6 +28,38 @@ function openJson(url, callbackFunc) {
 **********************************************************************/
 // load the json file contents into local storage
 function loadStorage(xhttp) {
+    // call load local to load the JSON file
+    var success = loadLocal(xhttp);
+
+    // check for success
+    if (success) {
+        // initialize the session storage displayed data
+        document.getElementById("sessionClick").innerHTML = sessionStorage.clicks;
+        document.getElementById("sessionSelect").innerHTML = sessionStorage.selectChanges;
+
+        // load the select options
+        loadOptions();
+    } else {
+        // create an error string to display
+        var error = "Failed to load the data into storage.";
+
+        // create a p element
+        var errorElement = document.createElement("p");
+
+        // set the content of the p element
+        errorElement.innerHTML = error;
+
+        // append the p to the display div
+        document.getElementById("pandemicDisplay").appendChild(errorElement);
+    }
+}
+
+/*********************************************************************
+* This function is derived from code on W3Schools.com
+* Source: https://www.w3schools.com/jsref/prop_win_localstorage.asp
+**********************************************************************/
+// reload the json file contents into local storage
+function loadLocal(xhttp) {
     // check for storage support
     if (typeof (Storage) !== "undefined") {
         // create an object and parse the JSON file
@@ -50,12 +82,8 @@ function loadStorage(xhttp) {
             localStorage.setItem(key, value);
         }
 
-        // initialize the session storage displayed data
-        document.getElementById("sessionClick").innerHTML = sessionStorage.clicks;
-        document.getElementById("sessionSelect").innerHTML = sessionStorage.selectChanges;
-
-        // load the select options
-        loadOptions();
+        // return that it succeeded
+        return true;
     } else {
         // create an error string to display
         var error = "Your browser does not support web storage,"
@@ -63,6 +91,9 @@ function loadStorage(xhttp) {
 
         // Notify the user that local storage is not supported
         document.getElementById("pandemicDisplay").innerHTML = error;
+
+        // return that it failed
+        return false;
     }
 }
 

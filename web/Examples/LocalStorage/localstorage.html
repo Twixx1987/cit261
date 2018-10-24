@@ -20,12 +20,12 @@
     </div>
     <div>
         <p>You can also select a version and display just the Roles from that version.</p>
-        <form id="versionSelect" action="versionSelect" method="post">
+        <form id="versionSelect" action="versionSelect" method="get">
             <select id="version" name="version" onchange="versionSelect()">
             </select><br />
-            <button onclick="deleteLocal">Delete Local Storage</button><br/>
-            <button onclick="openJson('pandemic.json', loadLocal)">Reload Local Storage</button><br/>
         </form>
+        <button onclick="deleteLocal">Delete Local Storage</button><br />
+        <button onclick="openJson('pandemic.json', loadLocal)">Reload Local Storage</button><br />
     </div>
     <div id="pandemicDisplay"></div>
     <h1>sessionStorage Example</h1>

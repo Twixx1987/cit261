@@ -10,7 +10,7 @@ th {
     padding: 5px;
     border: thin solid #001b9b;
     border-collapse: collapse;
-    background-color: #2a67f7;
+    background-color: #859efe;
 }
 
 table {
@@ -18,5 +18,11 @@ table {
 }
 
 h1, h2, h3 {
-    color: #93160a;
+    color: #001b9b;
+}
+
+span {
+    font-weight: bold;
+    color: #001b9b;
+    font-size: large;
 }

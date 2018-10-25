@@ -231,6 +231,8 @@ function createRandomAssociative() {
     }
 
     // randomize the order of characters
+    // this sort function comes from w3schools.com
+    // source: https://www.w3schools.com/js/js_array_sort.asp
     characters.sort(function (a, b) { return 0.5 - Math.random() });
 
     // create a counter variable

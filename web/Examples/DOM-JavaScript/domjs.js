@@ -45,14 +45,14 @@ function loadData(xhttp) {
         var newTable = document.createElement("table");
 
         // create the table data
-        createTable(newTable, version);
+        createTable(newTable, bfgObj.versions[version].version);
 
         // append the table to the div
         div.appendChild(newTable);
 
         // create a title for the table
         var versionHead = document.createElement("h2");
-        versionHead.innerHTML = bfgObj.versions[version];
+        versionHead.innerHTML = bfgObj.versions[version].version;
 
         // append the title before the table
         div.insertBefore(versionHead, newTable);
@@ -106,7 +106,7 @@ function createTable(appendTo, object) {
     // loop through the characters adding them to the table
     for (var character in object.characters) {
         // create the row
-        createRow(appendTo, character);
+        createRow(appendTo, object.characters[character].characters);
     }
 }
 
@@ -117,7 +117,7 @@ function createRow(appendTo, object) {
 
     // create the character table data point
     var characterElement = document.createElement("td");
-    characterElement.innerHTML = object.character;
+    characterElement.innerHTML = object.name;
 
     // append the character data point to the row
     newRow.appendChild(characterElement);
@@ -126,11 +126,11 @@ function createRow(appendTo, object) {
     for (var level in object.levels) {
         // create the damage die table data point
         var damageElement = document.createElement("td");
-        damageElement.innerHTML = object.character[level].damage;
+        damageElement.innerHTML = object.levels[level].damage;
 
         // create the abilities table data point
         var abilitiesElement = document.createElement("td");
-        abilitiesElement.innerHTML = object.character[level].abilities;
+        abilitiesElement.innerHTML = object.levels[level].abilities;
 
         // append the data points to the row
         newRow.appendChild(damageElement);

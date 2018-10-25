@@ -102,6 +102,7 @@ function createTable(appendTo, object) {
 
     // append the table header to the table
     appendTo.appendChild(tableHeader);
+    appendTo.appendChild(tableHeader2);
 
     // loop through the characters adding them to the table
     for (var character in object.characters) {

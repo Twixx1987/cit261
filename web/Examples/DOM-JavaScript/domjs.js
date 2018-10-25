@@ -87,7 +87,7 @@ function createTable(appendTo, object) {
     // create the Remove node header and append it to table header
     var removeNode = document.createElement("th");
     removeNode.innerHTML = "Remove Row";
-    removeNode.setAttribute("colspan", "2");
+    removeNode.setAttribute("rowspan", "2");
     tableHeader.appendChild(removeNode);
 
     // create a second header row
@@ -164,4 +164,13 @@ function removeElement(id) {
 
     // remove the element
     removeItem.parentElement.removeChild(removeItem);
+}
+
+// A function to restore the tables
+function restoreTables() {
+    // reset the inner html of the rdi-bfgDisplay div
+    document.getElementById("rdi-bfgDisplay").innerHTML = "";
+
+    // call the openJson function with the loadData callback function
+    openJson("rdi-bfg.json", loadData);
 }

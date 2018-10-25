@@ -1,29 +1,29 @@
 td {
     max-width: 400px;
     padding: 5px;
-    border: thin solid #001b9b;
+    border: thin solid #28442d;
     border-collapse: collapse;
 }
 
 th {
     max-width: 400px;
     padding: 5px;
-    border: thin solid #001b9b;
+    border: thin solid #28442d;
     border-collapse: collapse;
-    background-color: #001b9b;
+    background-color: #28442d;
     color: white;
 }
 
 table {
-    border: thin solid #001b9b;
+    border: thin solid #28442d;
 }
 
 h1, h2, h3 {
-    color: #001b9b;
+    color: #28442d;
 }
 
 span {
     font-weight: bold;
-    color: #001b9b;
+    color: #28442d;
     font-size: x-large;
 }

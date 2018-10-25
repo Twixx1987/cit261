@@ -211,6 +211,9 @@ function restoreTables() {
 
 // a function to create a random associative array of player and character
 function createRandomAssociative() {
+    // create an array of the players
+    var players = ["CloudStrife", "JakDaxter4Ever", "LinkToThePast", "MarioManiac", "MasterChief"];
+
     // create empty arrays for the player-character combo and characters that are still on the page
     var playerCharacterArray = [];
     var characters = [];
@@ -224,12 +227,31 @@ function createRandomAssociative() {
         if (tableRows[l].attributes.id) {
             // add the id to the characters list
             characters.push(tableRows[l].attributes.id);
-            console.log(tableRows[l].attributes.id);
         }
     }
 
+    // randomize the order of characters
+    characters.sort(function (a, b) { return 0.5 - Math.random() });
+
+    // create a counter variable
+    var m = 0;
+
+    // populate the associative array
+    do {
+        // populate the array
+        playerCharacterArray[players[m]] = characters[m];
+
+        // increment m
+        m++;
+    } while (m < players.length)
+
     // create a text string to return to the inner html of the results
     var text = "";
+
+    // populate the return text
+    for (var player in playerCharacterArray) {
+        text += '"' + player + '" will play "' + playerCharacterArray[player] + '"<br/>';
+    }
 
     // set the array results innerHTML value   
     document.getElementById("arrayResults").innerHTML = text;

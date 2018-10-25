@@ -45,7 +45,7 @@ function loadData(xhttp) {
         var newTable = document.createElement("table");
 
         // create the table data
-        createTable(newTable, bfgObj.versions[version].version);
+        createTable(newTable, bfgObj.versions[version]);
 
         // append the table to the div
         div.appendChild(newTable);
@@ -84,6 +84,9 @@ function createTable(appendTo, object) {
         tableHeader.appendChild(levelHeader);
     }
 
+    // create a second header row
+    var tableHeader2 = document.createElement("tr");
+
     // loop through the header array adding each item to the header
     for (var j = 0; j < 3; j++) {
         // create the header data
@@ -93,8 +96,8 @@ function createTable(appendTo, object) {
         abilityHeader.innerHTML = headerArray[1];
 
         // append these to the header row
-        tableHeader.appendChild(diceHeader);
-        tableHeader.appendChild(abilityHeader);
+        tableHeader2.appendChild(diceHeader);
+        tableHeader2.appendChild(abilityHeader);
     }
 
     // append the table header to the table

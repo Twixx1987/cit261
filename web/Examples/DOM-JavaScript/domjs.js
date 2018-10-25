@@ -49,18 +49,21 @@ function loadData(xhttp) {
 
         // set the checkbox attributes
         checkbox.setAttribute("type", "checkbox");
-        checkbox.setAttribute("name", "player-" + players[count]);
-        checkbox.setAttribute("id", "player-" + players[count]);
+        checkbox.setAttribute("name", "player-" + count);
+        checkbox.setAttribute("id", "player-" + count);
         checkbox.setAttribute("value", players[count]);
         
         // set the label attributes
-        checkLabel.setAttribute("for", "player-" + players[count]);
+        checkLabel.setAttribute("for", "player-" + count);
         checkLabel.innerHTML = players[count];
 
+        // get the submit button node
+        var submitBtn = document.getElementById("submit");
+
         // append the elements to the form
-        form.appendChild(checkbox);
-        form.appendChild(checkLabel);
-        form.appendChild(lineBreak);
+        form.insertBefore(checkbox, submitBtn);
+        form.insertBefore(checkLabel, submitBtn);
+        form.insertBefore(lineBreak, submitBtn);
 
         // increase count
         count++;
@@ -222,8 +225,20 @@ function restoreTables() {
 
 // a function to create a random associative array of player and character
 function createRandomAssociative() {
-    // create the FormData object
-    var formData = new FormData(document.forms.namedItem("playersForm"));
+    // create an empty array
+    var playerCharacterArray = [];
 
-    document.getElementById("arrayResults").innerHTML = formData.toString;
+    // create a text string to return to the inner html of the results
+    var text = "";
+
+    // get the form
+    var form = document.forms["playersForm"];
+
+    // loop through the checkbox items retrieving the chack values
+    for (var k = 0; k < form.length; k++) {
+        var checked = form["player-" + k].checked;
+        text += form["player-" + k] + " is checked? " + checked + "<br/>";
+    }
+    
+    document.getElementById("arrayResults").innerHTML = text;
 }

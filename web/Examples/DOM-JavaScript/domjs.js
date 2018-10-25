@@ -35,7 +35,7 @@ function loadData(xhttp) {
     var bfgObj = JSON.parse(xhttp.responseText);
 
     // create the header and add it to the rdi-bfgDisplay div
-    var title = document.create("h1");
+    var title = document.createElement("h1");
     title.innerHTML = bfgObj.game;
     div.appendChild(title);
 

@@ -106,7 +106,7 @@ function createTable(appendTo, object) {
     // loop through the characters adding them to the table
     for (var character in object.characters) {
         // create the row
-        createRow(appendTo, object.characters[character].characters);
+        createRow(appendTo, object.characters[character]);
     }
 }
 

@@ -148,7 +148,7 @@ function createRow(appendTo, object) {
     // create the remove button element and button and add them heirarchially
     var removeData = document.createElement("td");
     var removeButton = document.createElement("button");
-    removeButton.setAttribute("onclick", "removeElement(" + object.name + ")");
+    removeButton.setAttribute("onclick", "removeElement('" + object.name + "')");
     removeButton.innerHTML = "Remove " + object.name;
     removeData.appendChild(removeButton);
     newRow.appendChild(removeData);
@@ -163,5 +163,5 @@ function removeElement(id) {
     var removeItem = document.getElementById(id);
 
     // remove the element
-    document.removeChild(removeItem);
+    removeItem.parentElement.removeChild(removeItem);
 }

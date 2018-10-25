@@ -32,7 +32,7 @@ function loadData(xhttp) {
     populateTableData(xhttp);
 
     // create an array of players
-    var players = ["LinkToThePast", "CloudStrife", "JakDaxter4Ever", "MarioManiac", "MasterChief"];
+    var players = ["CloudStrife", "JakDaxter4Ever", "LinkToThePast", "MarioManiac", "MasterChief"];
 
     // get the form element
     var list = document.getElementById("playersList");
@@ -219,7 +219,7 @@ function createRandomAssociative() {
     var tableRows = document.getElementsByTagName("tr");
 
     // loop through the table row elements
-    for (var l = 0; l < tablesRows.length; l++) {
+    for (var l = 0; l < tableRows.length; l++) {
         // check to see that the current row has an ID
         if (tableRows[l].attributes.id) {
             // add the id to the characters list

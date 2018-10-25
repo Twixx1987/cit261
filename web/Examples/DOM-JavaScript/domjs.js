@@ -37,15 +37,15 @@ function loadData(xhttp) {
     // get the form element
     var form = document.getElementById("playersForm");
 
+    // a count variable to process the loop
     var count = 0;
+
     // populate the list of players
     while (count < players.length) {
-        // increase count
-        count++;
-
-        // create chackbox and corresponding label elements
+        // create checkbox, corresponding label, and break elements
         var checkbox = document.createElement("input");
         var checkLabel = document.createElement("label");
+        var lineBreak = document.createElement("br");
 
         // set the checkbox attributes
         checkbox.setAttribute("type", "checkbox");
@@ -60,6 +60,10 @@ function loadData(xhttp) {
         // append the elements to the form
         form.appendChild(checkbox);
         form.appendChild(checkLabel);
+        form.appendChild(lineBreak);
+
+        // increase count
+        count++;
     }
 }
 

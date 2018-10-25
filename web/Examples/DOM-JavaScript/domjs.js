@@ -27,215 +27,116 @@ function openJson(url, callbackFunc) {
 * Source: https://www.w3schools.com/jsref/prop_win_localstorage.asp
 **********************************************************************/
 // load the json file contents into local storage
-function loadStorage(xhttp) {
-    // call load local to load the JSON file
-    var success = loadLocal(xhttp);
+function loadData(xhttp) {
+    // get the rdi-bfgDisplay div
+    var div = document.getElementById("rdi-bfgDisplay");
 
-    // check for success
-    if (success) {
-        // initialize the session storage displayed data
-        if (sessionStorage.clicks) {
-            document.getElementById("sessionClick").innerHTML = sessionStorage.clicks;
-        } else {
-            document.getElementById("sessionClick").innerHTML = 0;
-        }
-        if (sessionStorage.selectChanges) {
-            document.getElementById("sessionSelect").innerHTML = sessionStorage.selectChanges;
-        } else {
-            document.getElementById("sessionSelect").innerHTML = 0;
-        }
+    // parse the response
+    var bfgObj = JSON.parse(xhttp.responseText);
 
-        // load the select options
-        loadOptions();
-    } else {
-        // create an error string to display
-        var error = "Failed to load the data into storage.";
+    // create the header and add it to the rdi-bfgDisplay div
+    var title = document.create("h1");
+    title.innerHTML = bfgObj.game;
+    div.appendChild(title);
 
-        // create a p element
-        var errorElement = document.createElement("p");
+    // loop through the versions of the object adding children
+    for (var version in bfgObj.versions) {
+        // create a table object
+        var newTable = document.createElement("table");
 
-        // set the content of the p element
-        errorElement.innerHTML = error;
+        // create the table data
+        createTable(newTable, version);
 
-        // append the p to the display div
-        document.getElementById("pandemicDisplay").appendChild(errorElement);
+        // append the table to the div
+        div.appendChild(newTable);
+
+        // create a title for the table
+        var versionHead = document.createElement("h2");
+        versionHead.innerHTML = bfgObj.versions[version];
+
+        // append the title before the table
+        div.insertBefore(versionHead, newTable);
     }
-}
-
-/*********************************************************************
-* This function is derived from code on W3Schools.com
-* Source: https://www.w3schools.com/jsref/prop_win_localstorage.asp
-**********************************************************************/
-// reload the json file contents into local storage
-function loadLocal(xhttp) {
-    // check for storage support
-    if (typeof (Storage) !== "undefined") {
-        // create an object and parse the JSON file
-        var pandemicObj = JSON.parse(xhttp.responseText);
-
-        // loop through the object adding properties to local storage
-        for (var version in pandemicObj.versions) {
-            // get the key and value strings from the JSON object
-            var key = pandemicObj.versions[version].version;
-            var value = JSON.stringify(pandemicObj.versions[version].roles);
-
-            // check to see if the data is already in storage
-            if (localStorage.getItem(key) == value) {
-                // break out of the loop, the data is already in storage no need to repopulate the data
-                console.log("Data already in storage " + localStorage.getItem(key));
-                break;
-            }
-
-            // append version to local storage
-            localStorage.setItem(key, value);
-        }
-        // notification text
-        var txt = "<h3>The local storage data has been loaded.</h3>"
-        // Notify the user that local storage is reloaded
-        document.getElementById("pandemicDisplay").innerHTML = txt;
-
-        // return that it succeeded
-        return true;
-    } else {
-        // create an error string to display
-        var error = "<h3>Your browser does not support web storage,"
-                  + " this page requires local storage support.</h3>";
-
-        // Notify the user that local storage is not supported
-        document.getElementById("pandemicDisplay").innerHTML = error;
-
-        // return that it failed
-        return false;
-    }
-}
-
-// generate the select options
-function loadOptions() {
-    // get the select element
-    var selectlist = document.getElementById("version");
-
-    // get the length of the localStorage object
-    var lslen = localStorage.length;
-
-    // loop through the local storage keys adding them to the select list
-    for (var count = 0; count < lslen; count++) {
-        // create the option element
-        var option = document.createElement("option");
-
-        // set its properties
-        option.setAttribute("value", localStorage.key(count));
-        option.innerHTML = localStorage.key(count);
-
-        // add the option to the list
-        selectlist.appendChild(option);
-    }
-}
-
-// clear the local storage
-function deleteLocal() {
-    // call the local storage clear method
-    localStorage.clear();
-    console.log("cleared local storage object");
-
-    // display an error message indicating that local storage has been deleted
-    txt = "<h3>Local storage deleted.</h3>";
-
-    // display the data from the local storage in a nice format
-    document.getElementById("pandemicDisplay").innerHTML = txt;
 }
 
 // display all versions
-function displayAll() {
-    // update the session storage value
-    if (sessionStorage.clicks) {
-        sessionStorage.clicks = Number(sessionStorage.clicks) + 1;
-    } else {
-        sessionStorage.clicks = 1;
+function createTable(appendTo, object) {
+    // create an array for the header details
+    var headerArray = ["Damage Die", "Abilities"];
+
+    // create the header row
+    var tableHeader = document.createElement("tr");
+
+    // create the character header data and append it to table header
+    var charHeader = document.createElement("th");
+    charHeader.innerHTML = "Character";
+    charHeader.setAttribute("rowspan", "2");
+    tableHeader.appendChild(charHeader);
+
+    // create a counter variable
+    var i = 1;
+
+    // loop adding level headers to the table
+    while (i < 4) {
+        // create the level header
+        var levelHeader = document.createElement("th");
+        levelHeader.setAttribute("colspan", "2");
+        levelHeader.innerHTML = "Level " + i;
+
+        // add the header to the header row
+        tableHeader.appendChild(levelHeader);
     }
 
-    // update the displayed value
-    document.getElementById("sessionClick").innerHTML = sessionStorage.clicks;
+    // loop through the header array adding each item to the header
+    for (var j = 0; j < 3; j++) {
+        // create the header data
+        var diceHeader = document.createElement("th");
+        var abilityHeader = document.createElement("th");
+        diceHeader.innerHTML = headerArray[0];
+        abilityHeader.innerHTML = headerArray[1];
 
-    // create a variable to store the output
-    var txt = "";
-
-    // get the select element
-    var selectValue = document.getElementById("version").value;
-
-    // check to see if local storage exists
-    if (localStorage.getItem(selectValue) === null) {
-        // display an error message indicating no local storage
-        txt = "<h3>Error: Local storage is not currently loaded.</h3>";
-        console.log(txt);
-    } else {
-        // get the length of the localStorage object
-        var lslen = localStorage.length;
-
-        // create a variable to store the output
-        txt = "<h1>Pandemic Board Game</h1>";
-
-        // loop through the local storage keys displaying each one
-        for (var count = 0; count < lslen; count++) {
-            // create the option element
-            var key = localStorage.key(count);
-            var value = JSON.parse(localStorage.getItem(key));
-
-            // display the version
-            txt += displayVersion(key, value);
-        }
-    }
-    // display the data from the local storage in a nice format
-    document.getElementById("pandemicDisplay").innerHTML = txt;
-}
-
-// display the selected version
-function versionSelect() {
-    // update the session storage value
-    if (sessionStorage.selectChanges) {
-        sessionStorage.selectChanges = Number(sessionStorage.selectChanges) + 1;
-    } else {
-        sessionStorage.selectChanges = 1;
+        // append these to the header row
+        tableHeader.appendChild(diceHeader);
+        tableHeader.appendChild(abilityHeader);
     }
 
-    // update the displayed value
-    document.getElementById("sessionSelect").innerHTML = sessionStorage.selectChanges;
+    // append the table header to the table
+    appendTo.appendChild(tableHeader);
 
-    // create a variable to store the output
-    var txt = "";
-
-    // get the select element
-    var selectValue = document.getElementById("version").value;
-
-    // check to see if local storage exists
-    if (localStorage.getItem(selectValue) === null) {
-        // display an error message indicating no local storage
-        txt = "<h3>Error: Local storage is not currently loaded.</h3>";
-        console.log(txt);
-    } else {
-        // display the selected version
-        txt = displayVersion(selectValue, JSON.parse(localStorage.getItem(selectValue)));
+    // loop through the characters adding them to the table
+    for (var character in object.characters) {
+        // create the row
+        createRow(appendTo, character);
     }
-    // display the data from the JSON file in a nice format
-    document.getElementById("pandemicDisplay").innerHTML = txt;
 }
 
 // display a version in a table format
-function displayVersion(header, obj) {
-    // Create a Header
-    var txt = "<h2>" + header + "</h2>";
+function createRow(appendTo, object) {
+    // create a table row
+    var newRow = document.createElement("tr");
 
-    // start the table and add the columns
-    txt += "<table><tr><th>Role</th><th>Abilities</th></tr>";
+    // create the character table data point
+    var characterElement = document.createElement("td");
+    characterElement.innerHTML = object.character;
 
-    // loop through the object getting all the characters to display
-    for (var arrayVal = 0; arrayVal < obj.length; arrayVal++) {
-        txt += "<tr><td>" + obj[arrayVal].name + "</td><td>" +
-            obj[arrayVal].abilities + "</td></tr>";
+    // append the character data point to the row
+    newRow.appendChild(characterElement);
+
+    // loop through the levels adding data to the row
+    for (var level in object.levels) {
+        // create the damage die table data point
+        var damageElement = document.createElement("td");
+        damageElement.innerHTML = object.character[level].damage;
+
+        // create the abilities table data point
+        var abilitiesElement = document.createElement("td");
+        abilitiesElement.innerHTML = object.character[level].abilities;
+
+        // append the data points to the row
+        newRow.appendChild(damageElement);
+        newRow.appendChild(abilitiesElement);
     }
 
-    // close the table
-    txt += "</table>";
-
-    // return the content
-    return txt;
+    // append the row to the append to object
+    appendTo.appendChild(newRow);
 }

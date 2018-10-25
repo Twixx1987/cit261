@@ -35,35 +35,21 @@ function loadData(xhttp) {
     var players = ["LinkToThePast", "CloudStrife", "JakDaxter4Ever", "MarioManiac", "MasterChief"];
 
     // get the form element
-    var form = document.getElementById("playersForm");
+    var list = document.getElementById("playersList");
 
     // a count variable to process the loop
     var count = 0;
 
     // populate the list of players
     while (count < players.length) {
-        // create checkbox, corresponding label, and break elements
-        var checkbox = document.createElement("input");
-        var checkLabel = document.createElement("label");
-        var lineBreak = document.createElement("br");
+        // create list item element
+        var listItem = document.createElement("li");
 
-        // set the checkbox attributes
-        checkbox.setAttribute("type", "checkbox");
-        checkbox.setAttribute("name", "player-" + count);
-        checkbox.setAttribute("id", "player-" + count);
-        checkbox.setAttribute("value", players[count]);
+        // set the list item inner html
+        listItem.innerHTML = players[count];
         
-        // set the label attributes
-        checkLabel.setAttribute("for", "player-" + count);
-        checkLabel.innerHTML = players[count];
-
-        // get the submit button node
-        var submitBtn = document.getElementById("submit");
-
-        // append the elements to the form
-        form.insertBefore(checkbox, submitBtn);
-        form.insertBefore(checkLabel, submitBtn);
-        form.insertBefore(lineBreak, submitBtn);
+        // append the element to the list
+        list.appendChild(listItem);
 
         // increase count
         count++;
@@ -225,20 +211,26 @@ function restoreTables() {
 
 // a function to create a random associative array of player and character
 function createRandomAssociative() {
-    // create an empty array
+    // create empty arrays for the player-character combo and characters that are still on the page
     var playerCharacterArray = [];
+    var characters = [];
+
+    // get the character elements
+    var tableRows = document.getElementsByTagName("tr");
+
+    // loop through the table row elements
+    for (var l = 0; l < tablesRows.length; l++) {
+        // check to see that the current row has an ID
+        if (tableRows[l].attributes.id) {
+            // add the id to the characters list
+            characters.push(tableRows[l].attributes.id);
+            console.log(tableRows[l].attributes.id);
+        }
+    }
 
     // create a text string to return to the inner html of the results
     var text = "";
 
-    // get the form
-    var form = document.forms["playersForm"];
-
-    // loop through the checkbox items retrieving the chack values
-    for (var k = 0; k < form.length; k++) {
-        var checked = document.forms["playersForm"]["player-" + k].checked;
-        text += form["player-" + k] + " is checked? " + checked + "<br/>";
-    }
-    
+    // set the array results innerHTML value   
     document.getElementById("arrayResults").innerHTML = text;
 }

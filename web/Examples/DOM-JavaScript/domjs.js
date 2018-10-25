@@ -226,7 +226,7 @@ function createRandomAssociative() {
         // check to see that the current row has an ID
         if (tableRows[l].attributes.id) {
             // add the id to the characters list
-            characters.push(tableRows[l].attributes.id);
+            characters.push(tableRows[l].attributes.id.value);
         }
     }
 

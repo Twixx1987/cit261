@@ -28,6 +28,47 @@ function openJson(url, callbackFunc) {
 **********************************************************************/
 // load the json file contents into local storage
 function loadData(xhttp) {
+    // populate the tables
+    populateTableData(xhttp);
+
+    // create an array of players
+    var players = ["LinkToThePast", "CloudStrife", "JakDaxter4Ever", "MarioManiac", "MasterChief"];
+
+    // get the form element
+    var form = document.getElementById("playersForm");
+
+    var count = 0;
+    // populate the list of players
+    while (count < players.length) {
+        // increase count
+        count++;
+
+        // create chackbox and corresponding label elements
+        var checkbox = document.createElement("input");
+        var checkLabel = document.createElement("label");
+
+        // set the checkbox attributes
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.setAttribute("name", "player-" + players[count]);
+        checkbox.setAttribute("id", "player-" + players[count]);
+        checkbox.setAttribute("value", players[count]);
+        
+        // set the label attributes
+        checkLabel.setAttribute("for", "player-" + players[count]);
+        checkLabel.innerHTML = players[count];
+
+        // append the elements to the form
+        form.appendChild(checkbox);
+        form.appendChild(checkLabel);
+    }
+}
+
+/*********************************************************************
+* This function is derived from code on W3Schools.com
+* Source: https://www.w3schools.com/jsref/prop_win_localstorage.asp
+**********************************************************************/
+// load the json file contents into local storage
+function populateTableData(xhttp) {
     // get the rdi-bfgDisplay div
     var div = document.getElementById("rdi-bfgDisplay");
 
@@ -172,5 +213,10 @@ function restoreTables() {
     document.getElementById("rdi-bfgDisplay").innerHTML = "";
 
     // call the openJson function with the loadData callback function
-    openJson("rdi-bfg.json", loadData);
+    openJson("rdi-bfg.json", populateTableData);
+}
+
+// a function to create a random associative array of player and character
+function createRandomAssociative() {
+
 }

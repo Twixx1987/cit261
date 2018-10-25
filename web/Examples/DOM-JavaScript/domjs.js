@@ -73,11 +73,8 @@ function createTable(appendTo, object) {
     charHeader.setAttribute("rowspan", "2");
     tableHeader.appendChild(charHeader);
 
-    // create a counter variable
-    var i = 0;
-
     // loop adding level headers to the table
-    while (++i < 4) {
+    for (var i = 1; i < 4; i++) {
         // create the level header
         var levelHeader = document.createElement("th");
         levelHeader.setAttribute("colspan", "2");

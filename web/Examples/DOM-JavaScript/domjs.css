@@ -1,12 +1,12 @@
 td {
-    max-width: 500px;
+    max-width: 400px;
     padding: 5px;
     border: thin solid #001b9b;
     border-collapse: collapse;
 }
 
 th {
-    max-width: 500px;
+    max-width: 400px;
     padding: 5px;
     border: thin solid #001b9b;
     border-collapse: collapse;

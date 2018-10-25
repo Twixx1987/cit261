@@ -84,6 +84,12 @@ function createTable(appendTo, object) {
         tableHeader.appendChild(levelHeader);
     }
 
+    // create the Remove node header and append it to table header
+    var removeNode = document.createElement("th");
+    removeNode.innerHTML = "Remove Row";
+    removeNode.setAttribute("colspan", "2");
+    tableHeader.appendChild(removeNode);
+
     // create a second header row
     var tableHeader2 = document.createElement("tr");
 
@@ -115,6 +121,7 @@ function createTable(appendTo, object) {
 function createRow(appendTo, object) {
     // create a table row
     var newRow = document.createElement("tr");
+    newRow.setAttribute("id", object.name);
 
     // create the character table data point
     var characterElement = document.createElement("td");
@@ -138,6 +145,23 @@ function createRow(appendTo, object) {
         newRow.appendChild(abilitiesElement);
     }
 
+    // create the remove button element and button and add them heirarchially
+    var removeData = document.createElement("td");
+    var removeButton = document.createElement("button");
+    removeButton.setAttribute("onclick", "removeElement(" + object.name + ")");
+    removeButton.innerHTML = "Remove " + object.name;
+    removeData.appendChild(removeButton);
+    newRow.appendChild(removeData);
+
     // append the row to the append to object
     appendTo.appendChild(newRow);
+}
+
+// a function to remove an element from the DOM
+function removeElement(id) {
+    // get the element by id
+    var removeItem = document.getElementById(id);
+
+    // remove the element
+    document.removeChild(removeItem);
 }

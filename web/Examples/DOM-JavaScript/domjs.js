@@ -218,5 +218,8 @@ function restoreTables() {
 
 // a function to create a random associative array of player and character
 function createRandomAssociative() {
+    // create the FormData object
+    var formData = new FormData(document.forms.namedItem("playersForm"));
 
+    document.getElementById("arrayResults").innerHTML = formData.toString;
 }

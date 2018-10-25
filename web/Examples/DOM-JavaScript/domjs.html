@@ -24,8 +24,9 @@
     <div>
         <p>The following contains some additional examples of JavaScript functionality.</p>
         <p>Start by selecting the names of a few players.</p>
-        <form id="playersForm" action="createRandomAssociative()" method="get">
+        <form id="playersForm" name="playersForm" action="" onsubmit="createRandomAssociative(); return false;" method="get">
         </form>
     </div>
+    <div id="arrayResults"></div>
 </body>
 </html>

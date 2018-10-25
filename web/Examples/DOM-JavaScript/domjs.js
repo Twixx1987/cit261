@@ -236,7 +236,7 @@ function createRandomAssociative() {
 
     // loop through the checkbox items retrieving the chack values
     for (var k = 0; k < form.length; k++) {
-        var checked = form["player-" + k].checked;
+        var checked = document.forms["playersForm"]["player-" + k].checked;
         text += form["player-" + k] + " is checked? " + checked + "<br/>";
     }
     

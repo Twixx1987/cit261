@@ -118,10 +118,56 @@ function displayImage(key, obj) {
     txt += " class='thumbnail' id='" + key + "'";
     txt += "onmouseover='mouseFocus(this)'";
     txt += "onmouseout='mouseLostFocus(this)' ";
-    txt += "onclick='displayCharacter(this)' /></div>";
+    txt += "onclick='transformCharacter(this)' /></div>";
 
     // return the content
     return txt;
+}
+
+// a function to transform the character display
+function transformCharacter(element) {
+    // get the character header and body
+    let header = document.getElementById("characterHeader");
+    let content = document.getElementById("characterDetails");
+
+    // set the rotation variable
+    let rotation = 0;
+
+    // set the timer interval
+    let interval = setInterval(frame, 3);
+
+    // rotation transform the elements
+    function frame() {
+        // if the elements are rotated 90 degrees
+        if (rotation == 90) {
+            clearInterval(interval);
+        } else {
+            // increment the rotation variable
+            rotation++;
+
+            // update the elements
+            header.style.transform = "rotateX(" + rotation + "deg)";
+            content.style.transform = "rotateX(" + rotation + "deg)";
+        }
+    }
+
+    // update the contents
+    displayCharacter(element);
+
+    // rotation transform the elements
+    function frame() {
+        // if the elements are rotated 0 degrees
+        if (rotation == 0) {
+            clearInterval(interval);
+        } else {
+            // increment the rotation variable
+            rotation--;
+
+            // update the elements
+            header.style.transform = "rotateX(" + rotation + "deg)";
+            content.style.transform = "rotateX(" + rotation + "deg)";
+        }
+    }
 }
 
 // display a character's details
@@ -157,7 +203,7 @@ function displayCharacter(element) {
 
     // update the content
     document.getElementById("characterHeader").innerHTML = obj.name;
-    document.getElementById('characterDetails').innerHTML = txt;
+    document.getElementById("characterDetails").innerHTML = txt;
 }
 
 // a function to animate the image on mouse over

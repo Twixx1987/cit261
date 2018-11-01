@@ -115,7 +115,8 @@ function displayImage(key, obj) {
     // Create the image tag
     let txt = "<img src='" + obj.image + "'";
     txt += " alt='" + obj.name + "'";
-    txt += " class='thumbnail' id='" + key + "'>";
+    txt += " class='thumbnail' id='" + key + "'";
+    txt += "onmouseover='mouseFocus(this)'>";
 
     // return the content
     return txt;
@@ -147,4 +148,33 @@ function displayCharacter(obj) {
 
     // return the content
     return txt;
+}
+
+// a function to animate the image on mouse over
+function mouseFocus(element) {
+    // get the id attribute of the element
+    let id = element.id;
+    console.log(id);
+    // get the width and height
+    let width = element.width;
+    let height = element.height;
+    console.log(width + " x " + height);
+    // set the timer interval
+    let interval = setInterval(frame, 5);
+    
+    // animate the image to be 50% larger and 100% opaque
+    function frame() {
+        // if the image is 50% larger stop animation
+        if (width == 225) {
+            clearInterval(interval);
+        } else {
+            // increment width and height
+            width++;
+            height++;
+
+            // update the element
+            element.style.width = width + 'px';
+            element.style.height = height + 'px';
+        }
+    }
 }

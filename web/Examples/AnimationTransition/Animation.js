@@ -145,11 +145,14 @@ function transformCharacter(element) {
             // update the contents
             displayCharacter(element);
 
+            // set the timer interval
+            let interval2 = setInterval(frame, 10);
+
             // rotation transform the elements back to starting position
             function frame() {
                 // if the elements are rotated 0 degrees
                 if (rotation == 0) {
-                    clearInterval(interval);
+                    clearInterval(interval2);
                 } else {
                     // increment the rotation variable
                     rotation--;

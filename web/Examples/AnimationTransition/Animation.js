@@ -157,14 +157,9 @@ function mouseFocus(element) {
     let width = element.width;
     let height = element.height;
 
-    // get the top and left of the element
-    let top = element.style.top;
-    let left = element.style.left;
-    console.log(top + " <- top : left -> " + left);
-
-    // get the opacity of the element
-    let opacity = element.opacity;
-    console.log(opacity);
+    // set the position and opacity variables
+    let position = 0;
+    let opacity = 0.5;
 
     // set the timer interval
     let interval = setInterval(frame, 5);
@@ -179,9 +174,8 @@ function mouseFocus(element) {
             width += 2;
             height += 2;
 
-            // decrement the top and left
-            top--;
-            left--;
+            // decrement the position variable
+            position--;
             
             // increment opacity
             opacity += 0.01;
@@ -189,8 +183,8 @@ function mouseFocus(element) {
             // update the element
             element.style.width = width + 'px';
             element.style.height = height + 'px';
-            element.style.top = top;
-            element.style.left = left;
+            element.style.top = position + 'px';
+            element.style.left = position + 'px';
             element.style.opacity = opacity;
         }
     }
@@ -202,12 +196,9 @@ function mouseLostFocus(element) {
     let width = element.width;
     let height = element.height;
 
-    // get the top and left of the element
-    let top = element.style.top;
-    let left = element.style.left;
-
-    // get the opacity of the element
-    let opacity = element.style.opacity;
+    // set the position and opacity variables
+    let position = 0;
+    let opacity = 0.5;
 
     // set the timer interval
     let interval = setInterval(frame, 3);
@@ -223,8 +214,7 @@ function mouseLostFocus(element) {
             height -= 2;
 
             // increment the top and left
-            top++;
-            left++;
+            position++;
 
             // increment opacity
             opacity -= 0.01;
@@ -232,8 +222,8 @@ function mouseLostFocus(element) {
             // update the element
             element.style.width = width + 'px';
             element.style.height = height + 'px';
-            element.style.top = top;
-            element.style.left = left;
+            element.style.top = position + 'px';
+            element.style.left = position + 'px';
             element.style.opacity = opacity;
         }
     }

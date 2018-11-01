@@ -156,7 +156,11 @@ function mouseFocus(element) {
     // get the width and height
     let width = element.width;
     let height = element.height;
-    console.log(width + " x " + height);
+
+    // get the top and left of the element
+    let top = element.style.top;
+    let left = element.style.left;
+
     // get the opacity of the element
     let opacity = element.opacity;
 
@@ -173,12 +177,18 @@ function mouseFocus(element) {
             width += 2;
             height += 2;
 
+            // decrement the top and left
+            top--;
+            left--;
+            
             // increment opacity
             opacity += 0.01;
 
             // update the element
             element.style.width = width + 'px';
             element.style.height = height + 'px';
+            element.style.top = top;
+            element.style.left = left;
             element.style.opacity = opacity;
         }
     }
@@ -189,7 +199,11 @@ function mouseLostFocus(element) {
     // get the width and height
     let width = element.width;
     let height = element.height;
-    console.log(width + " x " + height);
+
+    // get the top and left of the element
+    let top = element.style.top;
+    let left = element.style.left;
+
     // get the opacity of the element
     let opacity = element.style.opacity;
 
@@ -206,12 +220,18 @@ function mouseLostFocus(element) {
             width -= 2;
             height -= 2;
 
+            // increment the top and left
+            top++;
+            left++;
+
             // increment opacity
             opacity -= 0.01;
 
             // update the element
             element.style.width = width + 'px';
             element.style.height = height + 'px';
+            element.style.top = top;
+            element.style.left = left;
             element.style.opacity = opacity;
         }
     }

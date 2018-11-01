@@ -6,6 +6,11 @@ checkbox {
     width: 150px;
     margin: 10px;
     padding: 10px;
+    opacity: 0.5;
+}
+
+.thumbnail:hover {
+    opacity: 1.0;
 }
 
 h1, h2, h3 {

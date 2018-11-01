@@ -8,11 +8,11 @@
   flex-wrap: wrap;
 }
 
-.imageContainer  {
-    position: relative;
-    margin: 50px;
-    width: 150px;
-    height: 150px;
+.flex-container > div {
+  width: 150px;
+  margin: 50px;
+  line-height: 150px;
+  position: relative;
 }
 
 .thumbnail {

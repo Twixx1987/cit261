@@ -92,7 +92,7 @@ function loadContent(xhttp) {
             document.getElementById("characterHeader").innerHTML = "The Red Dragon Inn Card Game";
 
             // create a string variable to store the display contents
-            let txt = "";
+            var txt = "";
 
             // loop through the session storage keys displaying each one
             for (let count = 0; count < lslen; count++) {

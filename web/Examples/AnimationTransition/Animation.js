@@ -159,6 +159,9 @@ function mouseFocus(element) {
     let width = element.width;
     let height = element.height;
     console.log(width + " x " + height);
+    // get the opacity of the element
+    let opacity = element.opacity;
+
     // set the timer interval
     let interval = setInterval(frame, 5);
     
@@ -172,9 +175,13 @@ function mouseFocus(element) {
             width++;
             height++;
 
+            // increment opacity
+            opacity += 0.0066;
+
             // update the element
             element.style.width = width + 'px';
             element.style.height = height + 'px';
+            element.style.opacity = opacity;
         }
     }
 }

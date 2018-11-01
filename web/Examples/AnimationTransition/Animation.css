@@ -11,11 +11,7 @@ checkbox {
     margin: 10px;
     padding: 10px;
     opacity: 0.5;
-    position: absolute;
-}
-
-.thumbnail:hover {
-    opacity: 1.0;
+    position: relative;
 }
 
 h1, h2, h3 {

@@ -92,7 +92,7 @@ function loadContent(xhttp) {
             let lslen = sessionStorage.length;
 
             // Populate the header
-            document.getElementById("characterHeader").innerHTML = "The Red Dragon Inn Card Game";
+            document.getElementById("characterDetails").innerHTML = "<h2>The Red Dragon Inn Card Game</h2>";
 
             // loop through the session storage keys displaying each one
             for (let count = 0; count < lslen; count++) {
@@ -126,8 +126,7 @@ function displayImage(key, obj) {
 
 // a function to transform the character display
 function transformCharacter(element) {
-    // get the character header and body
-    let header = document.getElementById("characterHeader");
+    // get the character details element
     let content = document.getElementById("characterDetails");
 
     // set the rotation variable
@@ -136,7 +135,7 @@ function transformCharacter(element) {
     // set the timer interval
     let interval = setInterval(frame, 3);
 
-    // rotation transform the elements
+    // rotation transform the element
     function frame() {
         // if the elements are rotated 90 degrees
         if (rotation == 90) {
@@ -148,7 +147,7 @@ function transformCharacter(element) {
             // set the timer interval
             let interval2 = setInterval(frame, 3);
 
-            // rotation transform the elements back to starting position
+            // rotation transform the element back to starting position
             function frame() {
                 // if the elements are rotated 0 degrees
                 if (rotation == 0) {
@@ -157,8 +156,7 @@ function transformCharacter(element) {
                     // increment the rotation variable
                     rotation--;
 
-                    // update the elements
-                    header.style.transform = "rotateX(" + rotation + "deg)";
+                    // update the element
                     content.style.transform = "rotateX(" + rotation + "deg)";
                 }
             }
@@ -166,8 +164,7 @@ function transformCharacter(element) {
             // increment the rotation variable
             rotation++;
 
-            // update the elements
-            header.style.transform = "rotateX(" + rotation + "deg)";
+            // update the element
             content.style.transform = "rotateX(" + rotation + "deg)";
         }
     }
@@ -186,7 +183,7 @@ function displayCharacter(element) {
     let txt = "<table>";
 
     // display the character details
-    txt += "<tr><td><h3>" + obj.name + "</h3>" + obj.race + " - " + obj.class + "</td><td>";
+    txt += "<tr><td><h2>" + obj.name + "</h2>" + obj.race + " - " + obj.class + "</td><td>";
     if (obj.good === undefined) {
         txt += "";
     } else {
@@ -204,8 +201,7 @@ function displayCharacter(element) {
     // close the table
     txt += "</table>";
 
-    // update the content
-    document.getElementById("characterHeader").innerHTML = obj.name;
+    // update the character details
     document.getElementById("characterDetails").innerHTML = txt;
 }
 

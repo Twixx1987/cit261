@@ -99,7 +99,7 @@ function loadContent(xhttp) {
             }
         }
         // display the data from the session storage in a nice format
-        document.getElementById("pandemicDisplay").innerHTML = txt;
+        document.getElementById("charactersList").innerHTML = txt;
     }
 }
 

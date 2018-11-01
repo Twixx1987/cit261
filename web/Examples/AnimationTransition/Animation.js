@@ -105,7 +105,7 @@ function loadContent(xhttp) {
         document.getElementById("charactersList").innerHTML = txt;
 
         // Display an initial character
-        displayCharacter(value);
+        displayCharacter(JSON.parse(sessionStorage.getItem("Character_1")));
 
     }
 }

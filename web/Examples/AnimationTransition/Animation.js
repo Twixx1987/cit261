@@ -115,7 +115,7 @@ function displayImage(key, obj) {
     // Create the image tag
     let txt = "<img src='" + obj.image + "'";
     txt += " alt='" + obj.name + "'";
-    txt += " height='200' width='200' id='" + key + "'>";
+    txt += " class='thumbnail' id='" + key + "'>";
 
     // return the content
     return txt;

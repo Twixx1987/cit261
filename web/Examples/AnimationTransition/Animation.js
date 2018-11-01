@@ -117,14 +117,21 @@ function displayImage(key, obj) {
     txt += " alt='" + obj.name + "'";
     txt += " class='thumbnail' id='" + key + "'";
     txt += "onmouseover='mouseFocus(this)'";
-    txt += "onmouseout='mouseLostFocus(this)' /></div>";
+    txt += "onmouseout='mouseLostFocus(this)' ";
+    txt += "onclick='displayCharacter(this)' /></div>";
 
     // return the content
     return txt;
 }
 
 // display a character's details
-function displayCharacter(obj) {
+function displayCharacter(element) {
+    // get the id of the element
+    let id = element.id;
+
+    // load the sessionStorage object
+    let obj = sessionStorage.getItem(id);
+
     // start the table and add the columns
     let txt = "<table>";
 
@@ -147,8 +154,9 @@ function displayCharacter(obj) {
     // close the table
     txt += "</table>";
 
-    // return the content
-    return txt;
+    // update the content
+    document.getElementById("characterHeader").innerHTML = obj.name;
+    document.getElementById('characterDetails').innerHTML = txt;
 }
 
 // a function to animate the image on mouse over
@@ -162,7 +170,7 @@ function mouseFocus(element) {
     let opacity = 0.5;
 
     // set the timer interval
-    let interval = setInterval(frame, 5);
+    let interval = setInterval(frame, 3);
     
     // animate the image to be 50% larger and 100% opaque
     function frame() {
@@ -201,7 +209,7 @@ function mouseLostFocus(element) {
     let opacity = 1;
 
     // set the timer interval
-    let interval = setInterval(frame, 3);
+    let interval = setInterval(frame, 2);
 
     // animate the image to be 50% larger and 100% opaque
     function frame() {

@@ -42,14 +42,14 @@ function loadLocal(xhttp) {
             for (let character in rdiObj.versions[version].characters) {
                 // get the character image string for the key
                 let key = "Character_" + count;
-                console.log("line 43 " + key);
-                // get the character object and append the version to its members
+
+                // get the character object and append the version and key to its members
                 let characterObj = rdiObj.versions[version].characters[character];
                 characterObj.version = rdiObj.versions[version].version;
-                console.log("line 47 " + characterObj.version);
+
                 // stringify the character objectto store it in session storage
                 let value = JSON.stringify(characterObj);
-                console.log("line 50 " + value);
+
                 // append the character to session storage
                 sessionStorage.setItem(key, value);
 
@@ -101,7 +101,8 @@ function loadContent(xhttp) {
                 let value = JSON.parse(sessionStorage.getItem(key));
 
                 // display the version
-                txt += displayImage(value);
+                txt += displayImage(key, value);
+                console.log(key + " with " + sessionStorage.getItem(key));
             }
         }
         // display the data from the session storage in a nice format
@@ -110,11 +111,11 @@ function loadContent(xhttp) {
 }
 
 // genearte the code for an image
-function displayImage(obj) {
+function displayImage(key, obj) {
     // Create the image tag
     let txt = "<img src='" + obj.image + "'";
     txt += " alt='" + obj.name + "'";
-    txt += " height='200' width='200' id='" + obj.image + "'>";
+    txt += " height='200' width='200' id='" + key + "'>";
 
     // return the content
     return txt;

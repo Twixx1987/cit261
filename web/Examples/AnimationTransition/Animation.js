@@ -197,8 +197,8 @@ function mouseLostFocus(element) {
     let height = element.height;
 
     // set the position and opacity variables
-    let position = 0;
-    let opacity = 0.5;
+    let position = -50;
+    let opacity = 1;
 
     // set the timer interval
     let interval = setInterval(frame, 3);

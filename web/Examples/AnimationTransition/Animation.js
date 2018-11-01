@@ -127,7 +127,7 @@ function displayImage(key, obj) {
 // display a character's details
 function displayCharacter(element) {
     // get the id of the element
-    let id = element.id;
+    let id = element.getAttribute("id");
     console.log(id);
 
     // load the sessionStorage object
@@ -137,17 +137,17 @@ function displayCharacter(element) {
     let txt = "<table>";
 
     // display the character details
-    txt += "<tr><td>" + obj.name + "</td><td>" + obj.race + "</td><td>" + obj.class + "</td><td>";
+    txt += "<tr><td><h3>" + obj.name + "</h3>" + obj.race + " - " + obj.class + "</td><td>";
     if (obj.good === undefined) {
+        txt += "";
+    } else {
+        txt += "<p><em>The Good:</em> " + obj.good + "</p>";
+    }
+    txt += "<p><em>The Bad:</em> " + obj.bad + "</p>";
+    if (obj.worse === undefined) {
         txt += "</td><td>";
     } else {
-        txt += obj.good + "</td><td>";
-    }
-    txt += obj.bad + "</td><td>";
-    if (obj.worse === undefined) {
-        txt += "</td></tr>";
-    } else {
-        txt += obj.worse + "</td><td>";
+        txt += "<p><em>The Worse:</em> " + obj.worse + "</p></td><td>";
     }
     txt += "<img src='" + obj.image + "'" + " alt='" + obj.name + "'"
         + " height='200' width='200' id='" + obj.image + "'></td></tr>";

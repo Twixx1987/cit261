@@ -113,11 +113,11 @@ function loadContent(xhttp) {
 // genearte the code for an image
 function displayImage(key, obj) {
     // Create the image tag
-    let txt = "<img src='" + obj.image + "'";
+    let txt = "<div class='imageContainer'><img src='" + obj.image + "'";
     txt += " alt='" + obj.name + "'";
     txt += " class='thumbnail' id='" + key + "'";
     txt += "onmouseover='mouseFocus(this)'";
-    txt += "onmouseout='mouseLostFocus(this)'>";
+    txt += "onmouseout='mouseLostFocus(this)' /></div>";
 
     // return the content
     return txt;

@@ -35,9 +35,6 @@ function loadLocal(xhttp) {
 
         // loop through the object adding properties to session storage
         for (let version in rdiObj.versions) {
-            // get the version from the JSON object
-            let version = rdiObj.versions[version].version;
-
             // loop through the characters adding them to session storage
             for (let character in rdiObj.versions[version].characters) {
                 // get the character image string for the key
@@ -45,7 +42,7 @@ function loadLocal(xhttp) {
 
                 // get the character object and append the version to its members
                 let characterObj = rdiObj.versions[version].characters[character];
-                characterObj.version = version;
+                characterObj.version = rdiObj.versions[version].version;
 
                 // stringify the character objectto store it in session storage
                 let value = JSON.stringify(characterObj);

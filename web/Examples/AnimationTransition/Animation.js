@@ -90,10 +90,7 @@ function loadContent(xhttp) {
         } else {
             // get the length of the sessionStorage object
             let lslen = sessionStorage.length;
-
-            // Populate the header
-            document.getElementById("characterDetails").innerHTML = "<h2>The Red Dragon Inn Card Game</h2>";
-
+            
             // loop through the session storage keys displaying each one
             for (let count = 0; count < lslen; count++) {
                 // create the option element
@@ -106,6 +103,10 @@ function loadContent(xhttp) {
         }
         // display the data from the session storage in a nice format
         document.getElementById("charactersList").innerHTML = txt;
+
+        // Display an initial character
+        displayCharacter(value);
+
     }
 }
 

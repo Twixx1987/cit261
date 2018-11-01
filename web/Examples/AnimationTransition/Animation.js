@@ -86,7 +86,7 @@ function loadContent(xhttp) {
         if (sessionStorage.getItem("Character_1") === null) {
             // display an error message indicating no session storage
             txt = "<h3>Error: Local storage is not currently loaded.</h3>";
-            console.log(txt);
+
         } else {
             // get the length of the sessionStorage object
             let lslen = sessionStorage.length;
@@ -102,7 +102,6 @@ function loadContent(xhttp) {
 
                 // display the version
                 txt += displayImage(key, value);
-                console.log(key + " with " + sessionStorage.getItem(key));
             }
         }
         // display the data from the session storage in a nice format
@@ -174,7 +173,6 @@ function transformCharacter(element) {
 function displayCharacter(element) {
     // get the id of the element
     let id = element.getAttribute("id");
-    console.log(id);
 
     // load the sessionStorage object
     let obj = JSON.parse(sessionStorage.getItem(id));

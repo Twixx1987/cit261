@@ -160,6 +160,7 @@ function mouseFocus(element) {
     // get the top and left of the element
     let top = element.style.top;
     let left = element.style.left;
+    console.log(top + " <- top : left -> " + left);
 
     // get the opacity of the element
     let opacity = element.opacity;

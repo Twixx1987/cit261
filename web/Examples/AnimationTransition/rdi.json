@@ -266,7 +266,7 @@
       "characters": [
         {
           "name": "Pooky the Vicious",
-          "image": "",
+          "image": "Pooky.jpeg",
           "race": "Magical",
           "class": "Familiar",
           "good": "In the dungeon, Pooky's psychotic behavior has gotten the party out of some pretty nasty jams.",
@@ -322,7 +322,7 @@
         },
         {
           "name": "Zariah the Summoner",
-          "image": "",
+          "image": "Zariah.png",
           "race": "Human",
           "class": "Mage",
           "good": "Those summons are soooo cuuute!!!",
@@ -378,7 +378,7 @@
         },
         {
           "name": "Murgath the Blessed",
-          "image": "Murgath.png",
+          "image": "Murgath.jpg",
           "race": "Human",
           "class": "Blackguard",
           "bad": "Murgath is a fearsome enemy.",

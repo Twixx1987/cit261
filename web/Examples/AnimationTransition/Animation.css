@@ -3,6 +3,12 @@
     margin: 50px;
 }
 
+#explanation {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -24,6 +30,11 @@
     z-index: 5;
     border: thin solid white;
     background-color: white;
+}
+
+#mainContent {
+    padding-top: 300px;
+    top: 300px;
 }
 
 .thumbnail {

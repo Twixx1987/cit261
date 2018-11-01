@@ -126,6 +126,12 @@ function displayImage(key, obj) {
 
 // a function to transform the character display
 function transformCharacter(element) {
+    // get the id of the element
+    let id = element.getAttribute("id");
+
+    // load the sessionStorage object
+    let obj = JSON.parse(sessionStorage.getItem(id));
+
     // get the character details element
     let content = document.getElementById("characterDetails");
 
@@ -142,7 +148,7 @@ function transformCharacter(element) {
             clearInterval(interval);
 
             // update the contents
-            displayCharacter(element);
+            displayCharacter(obj);
 
             // set the timer interval
             let interval2 = setInterval(frame, 3);
@@ -171,13 +177,7 @@ function transformCharacter(element) {
 }
 
 // display a character's details
-function displayCharacter(element) {
-    // get the id of the element
-    let id = element.getAttribute("id");
-
-    // load the sessionStorage object
-    let obj = JSON.parse(sessionStorage.getItem(id));
-
+function displayCharacter(obj) {
     // start the table and add the columns
     let txt = "<table>";
 

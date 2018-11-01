@@ -164,6 +164,7 @@ function mouseFocus(element) {
 
     // get the opacity of the element
     let opacity = element.opacity;
+    console.log(opacity);
 
     // set the timer interval
     let interval = setInterval(frame, 5);

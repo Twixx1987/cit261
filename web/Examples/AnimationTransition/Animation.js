@@ -153,9 +153,6 @@ function displayCharacter(obj) {
 
 // a function to animate the image on mouse over
 function mouseFocus(element) {
-    // set the element to absolute position
-    element.style.position = "absolute";
-    
     // get the width and height
     let width = element.width;
     let height = element.height;
@@ -189,9 +186,6 @@ function mouseFocus(element) {
 
 // a function to animate the image on mouse over
 function mouseLostFocus(element) {
-    // set the element to relative position
-    element.style.position = "relative";
-
     // get the width and height
     let width = element.width;
     let height = element.height;

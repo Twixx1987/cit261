@@ -113,7 +113,7 @@ function loadContent(xhttp) {
 // genearte the code for an image
 function displayImage(key, obj) {
     // Create the image tag
-    let txt = "<div>" + obj.name + "<img src='" + obj.image + "'";
+    let txt = "<div>" + key + "<img src='" + obj.image + "'";
     txt += " alt='" + obj.name + "'";
     txt += " class='thumbnail' id='" + key + "'";
     txt += "onmouseover='mouseFocus(this)'";
@@ -134,7 +134,7 @@ function transformCharacter(element) {
     let rotation = 0;
 
     // set the timer interval
-    let interval = setInterval(frame, 10);
+    let interval = setInterval(frame, 3);
 
     // rotation transform the elements
     function frame() {
@@ -146,7 +146,7 @@ function transformCharacter(element) {
             displayCharacter(element);
 
             // set the timer interval
-            let interval2 = setInterval(frame, 10);
+            let interval2 = setInterval(frame, 3);
 
             // rotation transform the elements back to starting position
             function frame() {

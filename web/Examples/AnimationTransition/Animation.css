@@ -6,8 +6,9 @@
 #explanation {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 20px;
     background-color: white;
+    width:auto;
     z-index: 50;
 }
 

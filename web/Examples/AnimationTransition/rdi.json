@@ -6,6 +6,7 @@
       "characters": [
         {
           "name": "Deirdre the Priestess",
+          "image": "Deirdre.jpg",
           "race": "Elf",
           "class": "Priestess",
           "good": "The Goddess keeps Deirdre protected from harm.",
@@ -13,6 +14,7 @@
         },
         {
           "name": "Fiona the Volatile",
+          "image": "Fiona.jpg",
           "race": "Human",
           "class": "Fighter",
           "good": "She's more than capable of dishing out and taking serious physical abuse, and her formidable constitution allows her to drink a lot!",
@@ -20,6 +22,7 @@
         },
         {
           "name": "Gerki the Sneak",
+          "image": "Gerki.jpg",
           "race": "Hafling",
           "class": "Thief",
           "good": "Gerki is so good at gambling that some people suspect that he might be cheating.",
@@ -27,6 +30,7 @@
         },
         {
           "name": "Zot the Wizard",
+          "image": "Zot.jpg",
           "race": "Human",
           "class": "Wizard",
           "good": "Zot is good at card tricks, and, hence, is good at gambling. His mastery of many magical spells keeps him well protected, whether he's roughhousing, drinking, or gambling.",
@@ -39,6 +43,7 @@
       "characters": [
         {
           "name": "Gog the Half Ogre",
+          "image": "Gog.jpg",
           "race": "Half-Ogre",
           "class": "Barbarian",
           "good": "Gog is really Strong!",
@@ -46,6 +51,7 @@
         },
         {
           "name": "Fleck the Bard",
+          "image": "Fleck.jpg",
           "race": "Half-Elf",
           "class": "Bard",
           "good": "Women want him, Men want to be him.",
@@ -53,6 +59,7 @@
         },
         {
           "name": "Eve the Illusionist",
+          "image": "Eve.jpg",
           "race": "Human",
           "class": "Illusionist",
           "good": "Eve is a very skilled Illusionist.",
@@ -60,6 +67,7 @@
         },
         {
           "name": "Dimli the Dwarf",
+          "image": "Dimli.jpg",
           "race": "Dwarf",
           "class": "Fighter",
           "good": "He's got a lot of Gold and can pretty much drink anyone under the table!",
@@ -72,6 +80,7 @@
       "characters": [
         {
           "name": "Wizgille the Tinkerer",
+          "image": "Wizgille.jpg",
           "race": "Gnome",
           "class": "Artificer",
           "good": "Many of her creations are legendary among the Gnomish Inventors Guild and have been featured in Adventurer's Gazette.",
@@ -79,6 +88,7 @@
         },
         {
           "name": "Brewmaster Phrenk",
+          "image": "Phrenk.jpg",
           "race": "Troll",
           "class": "Alchemist",
           "good": "He's more than capable of brewing enough healing potions to keep his companions on their feet.",
@@ -86,6 +96,7 @@
         },
         {
           "name": "Kaylin the Renegade",
+          "image": "Kaylin.jpg",
           "race": "Pixie",
           "class": "Enchanter",
           "good": "Wulfric is a noble companion who always helps his friends.",
@@ -93,6 +104,7 @@
         },
         {
           "name": "Serena the Pious",
+          "image": "Serena.jpg",
           "race": "Orc",
           "class": "Paladin",
           "good": "With her holy blade at her side, she lives to smite evil.",
@@ -105,6 +117,7 @@
       "characters": [
         {
           "name": "Captain Whitehawk",
+          "image": "CaptainWhitehawk.png",
           "race": "Human",
           "class": "Sailor",
           "good": "Captain Whitehawk is a brilliant judge of character and quick to action in any scenario.",
@@ -112,6 +125,7 @@
         },
         {
           "name": "First Mate Remy",
+          "image": "Remy.png",
           "race": "Drence",
           "class": "Fighter",
           "good": "Remy keeps an eye on the crew and makes sure ne'er-do-wells get their comeuppance.",
@@ -119,6 +133,7 @@
         },
         {
           "name": "Bryn the Boatswain",
+          "image": "Bryn.png",
           "race": "Human",
           "class": "Sailor",
           "good": "She's strong enough to carry a cannon.",
@@ -126,6 +141,7 @@
         },
         {
           "name": "Tara the Navigator",
+          "image": "Tara.png",
           "race": "Human",
           "class": "Seer",
           "good": "She can tell you your future.",
@@ -139,6 +155,7 @@
       "characters": [
         {
           "name": "Sera the Fleetfooted",
+          "image": "Sera.png",
           "race": "Human",
           "class": "Rogue",
           "good": "She hones her skills by sparring with her friends.",
@@ -146,6 +163,7 @@
         },
         {
           "name": "Lizwick the Collector",
+          "image": "Lizwick.png",
           "race": "Gnome",
           "class": "Rogue",
           "good": "Lizwick's collection is the envy of academies, guilds and hoarders alike!",
@@ -153,6 +171,7 @@
         },
         {
           "name": "Joran the Trickster",
+          "image": "Joran.png",
           "race": "Human",
           "class": "Mage",
           "good": "Joran's talent for misdirection makes him the perfect weapon against enemy spell-casters.",
@@ -160,6 +179,7 @@
         },
         {
           "name": "Zakhan the Drunken Master",
+          "image": "Zakhan.png",
           "race": "Half-Elf",
           "class": "Monk",
           "good": "Zakhan's drunken fighting techniques make him a formidable foe.",
@@ -172,6 +192,7 @@
       "characters": [
         {
           "name": "Daareka the Mindbreaker",
+          "image": "Daareka.png",
           "race": "Deep One",
           "class": "Mentalist",
           "bad": "This femme fatale makes sure you make all the right choices in life.",
@@ -179,6 +200,7 @@
         },
         {
           "name": "Baron von Vlazlo",
+          "image": "BaronVlazlo.png",
           "race": "Human",
           "class": "Vampire",
           "bad": "He's not looking for a pint of ale.",
@@ -186,6 +208,7 @@
         },
         {
           "name": "Amundyr the Cursed",
+          "image": "Amundyr.png",
           "race": "Elf",
           "class": "Mummy",
           "bad": "Her pet scarabs help her take care of those greedy dungeon-delvers.",
@@ -193,6 +216,7 @@
         },
         {
           "name": "Torglesnarf Duncleton, First of His Name",
+          "image": "Torglesnarf.png",
           "race": "Goblin",
           "class": "King",
           "bad": "Torglesnarf isn't particularly intimidating or powerful.",
@@ -205,6 +229,7 @@
       "characters": [
         {
           "name": "Warthorn Redbeard",
+          "image": "Warthorn.png",
           "race": "Dwarf",
           "class": "Businessman",
           "good": "Warthorn knows a bit about almost everything!",
@@ -212,6 +237,7 @@
         },
         {
           "name": "Molly the Stablehand",
+          "image": "Molly.png",
           "race": "Halfling",
           "class": "Laborer",
           "good": "Molly's made friends with a whole menagerie of magical and mundane mounts!",
@@ -219,6 +245,7 @@
         },
         {
           "name": "Jasper the Bouncer",
+          "image": "Jasper.png",
           "race": "Human",
           "class": "Mage",
           "good": "Jasper keeps folks from sneak-thievin' the customers.",
@@ -226,6 +253,7 @@
         },
         {
           "name": "The Wench!",
+          "image": "Wench.png",
           "race": "Human",
           "class": "Waitress",
           "good": "The special reserve drinks are some of the best in the land!",
@@ -238,6 +266,7 @@
       "characters": [
         {
           "name": "Pooky the Vicious",
+          "image": "",
           "race": "Magical",
           "class": "Familiar",
           "good": "In the dungeon, Pooky's psychotic behavior has gotten the party out of some pretty nasty jams.",
@@ -245,6 +274,7 @@
         },
         {
           "name": "Erin the Ever-Changing",
+          "image": "Erin.png",
           "race": "Elf",
           "class": "Druid",
           "good": "Erin's always ready with a kind word and a healing chant to smooth ruffled feathers or mend wounded flesh.",
@@ -252,6 +282,7 @@
         },
         {
           "name": "Cormac the Mighty",
+          "image": "Cormac.jpg",
           "race": "Human",
           "class": "Barbarian",
           "good": "Cormac adheres to the ancient traditions of barbarian honor.",
@@ -259,6 +290,7 @@
         },
         {
           "name": "Witchdoctor Natyli",
+          "image": "Natyli.png",
           "race": "Troll",
           "class": "Shaman",
           "good": "Natyli has a doll for each party member and uses them in the dungeons to enhance her friends' abilities.",
@@ -266,6 +298,7 @@
         },
         {
           "name": "Ozrik the Adept",
+          "image": "Ozrik.png",
           "race": "Human",
           "class": "Elementalist",
           "good": "Ozrik's phenomenal control of the elements is useful versus undead, monstrous humanoids, and other evil dungeon dwellers.",
@@ -273,6 +306,7 @@
         },
         {
           "name": "Brother Bastian",
+          "image": "BrotherBastian.png",
           "race": "Human",
           "class": "Cleric",
           "good": "Brother Bastian knows many powerful prayers and knows exactly when to use each one.",
@@ -280,6 +314,7 @@
         },
         {
           "name": "Wrench",
+          "image": "Wrench.png",
           "race": "Kobold",
           "class": "Artificer",
           "good": "He can quickly build gizmos that can do amazing things.",
@@ -287,6 +322,7 @@
         },
         {
           "name": "Zariah the Summoner",
+          "image": "",
           "race": "Human",
           "class": "Mage",
           "good": "Those summons are soooo cuuute!!!",
@@ -294,6 +330,7 @@
         },
         {
           "name": "Halden the Unhinged",
+          "image": "Halden.png",
           "race": "Human",
           "class": "Shaman",
           "good": "Halden can draw on the wisdom and power of countless lifetimes.",
@@ -301,6 +338,7 @@
         },
         {
           "name": "Keet",
+          "image": "Keet.png",
           "race": "Goblin ",
           "class": "Archaeologist",
           "good": "Many of the artifacts Keet has dug up belong in a museum!",
@@ -308,6 +346,7 @@
         },
         {
           "name": "Nitrel",
+          "image": "Nitrel.png",
           "race": "Goblin",
           "class": "Sapper",
           "good": "She knows exactly the right amount of explosive for the job.",
@@ -315,6 +354,7 @@
         },
         {
           "name": "The Magnificent Adonis, Bard of the Ages",
+          "image": "Adonis.png",
           "race": "Human",
           "class": "Bard",
           "good": "Adonis is a fine specimen of a man.",
@@ -322,6 +362,7 @@
         },
         {
           "name": "The Lich King",
+          "image": "LichKing.png",
           "race": "Lich",
           "class": "Mage",
           "bad": "Good luck getting past his formidable defenses.",
@@ -329,6 +370,7 @@
         },
         {
           "name": "Ohava, the Grand Cleric",
+          "image": "Ohava.png",
           "race": "Elf",
           "class": "Grand Cleric",
           "good": "The blessings of the All-Mother are a powerful incentive to Ohava's good works.",
@@ -336,6 +378,7 @@
         },
         {
           "name": "Murgath the Blessed",
+          "image": "Murgath.png",
           "race": "Human",
           "class": "Blackguard",
           "bad": "Murgath is a fearsome enemy.",
@@ -343,6 +386,7 @@
         },
         {
           "name": "Chronos the Time Mage",
+          "image": "Chronos.png",
           "race": "Human",
           "class": "Mage",
           "good": "He's always very careful to avoid messing with the space-time continuum.",
@@ -355,6 +399,7 @@
       "characters": [
         {
           "name": "Flower",
+          "image": "Flower.png",
           "race": "Human",
           "class": "Munchkin",
           "good": "The tavern's new patrons are eager to make a good impression.",
@@ -362,6 +407,7 @@
         },
         {
           "name": "Spyke",
+          "image": "Spyke.png",
           "race": "Human",
           "class": "Munchkin",
           "good": "The tavern's new patrons are eager to make a good impression.",

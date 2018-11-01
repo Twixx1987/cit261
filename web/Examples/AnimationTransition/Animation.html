@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="Animation.js"></script>
+    <link rel="stylesheet" href="Animation.css" />
+    <title>CIT261 - Shaun Densley</title>
+</head>
+<body onload="openJson('rdi.json', loadContent)">
+    <h1>Animatin and Transitions Using JavaScript Example</h1>
+    <div>
+        <p>This page displays the contents of rdi.json in a nice user friendly format. When 
+            you click on an image the top section will display the details of that character.
+            Mousing over the image will display a larger image along with the character's name.</p>
+    </div>
+    <div>
+        <h2 id="characterHeader">No Character Selected</h2>
+        <div id="characterDetails">Character Details will display here after selecting a character.</div>
+    </div>
+    <br/>
+    <div id="charactersList"></div>
+</body>
+</html>

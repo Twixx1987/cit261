@@ -77,6 +77,9 @@ function loadContent(xhttp) {
     // call load session to load the JSON file
     let success = loadLocal(xhttp);
 
+    // create a string variable to store the display contents
+    let txt = "";
+
     // check to see that loadLocal executed
     if (success) {
         // check to see if session storage exists
@@ -90,9 +93,6 @@ function loadContent(xhttp) {
 
             // Populate the header
             document.getElementById("characterHeader").innerHTML = "The Red Dragon Inn Card Game";
-
-            // create a string variable to store the display contents
-            var txt = "";
 
             // loop through the session storage keys displaying each one
             for (let count = 0; count < lslen; count++) {

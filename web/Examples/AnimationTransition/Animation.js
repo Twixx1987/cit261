@@ -33,12 +33,15 @@ function loadLocal(xhttp) {
         // create an object and parse the JSON file
         let rdiObj = JSON.parse(xhttp.responseText);
 
+        // create a counter to use as the key for session storage
+        let count = 1;
+
         // loop through the object adding properties to session storage
         for (let version in rdiObj.versions) {
             // loop through the characters adding them to session storage
             for (let character in rdiObj.versions[version].characters) {
                 // get the character image string for the key
-                let key = rdiObj.versions[version].characters[character].image;
+                let key = "Character_" + count;
                 console.log("line 43 " + key);
                 // get the character object and append the version to its members
                 let characterObj = rdiObj.versions[version].characters[character];
@@ -49,6 +52,9 @@ function loadLocal(xhttp) {
                 console.log("line 50 " + value);
                 // append the character to session storage
                 sessionStorage.setItem(key, value);
+
+                // increment count
+                count++;
             }
         }
         // return that it succeeded

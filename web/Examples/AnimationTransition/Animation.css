@@ -9,10 +9,21 @@
 }
 
 .flex-container > div {
+  background-color: #f1f1f1;
+  color:  #f1f1f1;
   width: 150px;
-  margin: 50px;
+  margin: 25px;
+  text-align: center;
   line-height: 150px;
   position: relative;
+}
+
+#footer {
+    text-align: center;
+    color: #93160a;
+    z-index: 5;
+    border: thin solid white;
+    background-color: white;
 }
 
 .thumbnail {

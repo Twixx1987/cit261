@@ -32,6 +32,7 @@ function loadLocal(xhttp) {
     if (typeof (Storage) !== "undefined") {
         // create an object and parse the JSON file
         let rdiObj = JSON.parse(xhttp.responseText);
+        console.log("line 35");
 
         // loop through the object adding properties to session storage
         for (let version in rdiObj.versions) {
@@ -39,18 +40,20 @@ function loadLocal(xhttp) {
             for (let character in rdiObj.versions[version].characters) {
                 // get the character image string for the key
                 let key = rdiObj.versions[version].characters[character].image;
-
+                console.log("line 43");
                 // get the character object and append the version to its members
                 let characterObj = rdiObj.versions[version].characters[character];
                 characterObj.version = rdiObj.versions[version].version;
-
+                console.log("line 47");
                 // stringify the character objectto store it in session storage
                 let value = JSON.stringify(characterObj);
-
+                console.log("line 50");
                 // append the character to session storage
                 sessionStorage.setItem(key, value);
+                console.log("line 53");
             }
         }
+        console.log("line 56");
         // return that it succeeded
         return true;
     } else {

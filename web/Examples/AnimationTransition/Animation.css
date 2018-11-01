@@ -3,6 +3,11 @@
     margin: 50px;
 }
 
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .imageContainer  {
     position: relative;
     margin: 50px;

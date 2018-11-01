@@ -128,9 +128,10 @@ function displayImage(key, obj) {
 function displayCharacter(element) {
     // get the id of the element
     let id = element.id;
+    console.log(id);
 
     // load the sessionStorage object
-    let obj = sessionStorage.getItem(id);
+    let obj = JSON.parse(sessionStorage.getItem(id));
 
     // start the table and add the columns
     let txt = "<table>";

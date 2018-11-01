@@ -166,12 +166,12 @@ function mouseFocus(element) {
     // animate the image to be 50% larger and 100% opaque
     function frame() {
         // if the image is 50% larger stop animation
-        if (width == 225) {
+        if (width == 250) {
             clearInterval(interval);
         } else {
             // increment width and height
-            width++;
-            height++;
+            width += 2;
+            height += 2;
 
             // increment opacity
             opacity += 0.01;
@@ -194,7 +194,7 @@ function mouseLostFocus(element) {
     let opacity = element.opacity;
 
     // set the timer interval
-    let interval = setInterval(frame, 5);
+    let interval = setInterval(frame, 3);
 
     // animate the image to be 50% larger and 100% opaque
     function frame() {
@@ -203,8 +203,8 @@ function mouseLostFocus(element) {
             clearInterval(interval);
         } else {
             // increment width and height
-            width--;
-            height--;
+            width -= 2;
+            height -= 2;
 
             // increment opacity
             opacity -= 0.01;

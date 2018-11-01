@@ -124,58 +124,6 @@ function displayImage(key, obj) {
     return txt;
 }
 
-// a function to transform the character display
-function transformCharacter(element) {
-    // get the id of the element
-    let id = element.getAttribute("id");
-
-    // load the sessionStorage object
-    let obj = JSON.parse(sessionStorage.getItem(id));
-
-    // get the character details element
-    let content = document.getElementById("characterDetails");
-
-    // set the rotation variable
-    let rotation = 0;
-
-    // set the timer interval
-    let interval = setInterval(frame, 3);
-
-    // rotation transform the element
-    function frame() {
-        // if the elements are rotated 90 degrees
-        if (rotation == 90) {
-            clearInterval(interval);
-
-            // update the contents
-            displayCharacter(obj);
-
-            // set the timer interval
-            let interval2 = setInterval(frame, 3);
-
-            // rotation transform the element back to starting position
-            function frame() {
-                // if the elements are rotated 0 degrees
-                if (rotation == 0) {
-                    clearInterval(interval2);
-                } else {
-                    // increment the rotation variable
-                    rotation--;
-
-                    // update the element
-                    content.style.transform = "rotateX(" + rotation + "deg)";
-                }
-            }
-        } else {
-            // increment the rotation variable
-            rotation++;
-
-            // update the element
-            content.style.transform = "rotateX(" + rotation + "deg)";
-        }
-    }
-}
-
 // display a character's details
 function displayCharacter(obj) {
     // start the table and add the columns
@@ -278,6 +226,58 @@ function mouseLostFocus(element) {
             element.style.top = position + 'px';
             element.style.left = position + 'px';
             element.style.opacity = opacity;
+        }
+    }
+}
+
+// a function to transform the character display
+function transformCharacter(element) {
+    // get the id of the element
+    let id = element.getAttribute("id");
+
+    // load the sessionStorage object
+    let obj = JSON.parse(sessionStorage.getItem(id));
+
+    // get the character details element
+    let content = document.getElementById("characterDetails");
+
+    // set the rotation variable
+    let rotation = 0;
+
+    // set the timer interval
+    let interval = setInterval(frame, 3);
+
+    // rotation transform the element
+    function frame() {
+        // if the elements are rotated 90 degrees
+        if (rotation == 90) {
+            clearInterval(interval);
+
+            // update the contents
+            displayCharacter(obj);
+
+            // set the timer interval
+            let interval2 = setInterval(frame, 3);
+
+            // rotation transform the element back to starting position
+            function frame() {
+                // if the elements are rotated 0 degrees
+                if (rotation == 0) {
+                    clearInterval(interval2);
+                } else {
+                    // increment the rotation variable
+                    rotation--;
+
+                    // update the element
+                    content.style.transform = "rotateX(" + rotation + "deg)";
+                }
+            }
+        } else {
+            // increment the rotation variable
+            rotation++;
+
+            // update the element
+            content.style.transform = "rotateX(" + rotation + "deg)";
         }
     }
 }

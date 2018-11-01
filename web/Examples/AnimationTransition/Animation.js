@@ -116,8 +116,8 @@ function displayImage(key, obj) {
     let txt = "<div>" + key + "<img src='" + obj.image + "'";
     txt += " alt='" + obj.name + "'";
     txt += " class='thumbnail' id='" + key + "'";
-    txt += "onmouseover='mouseFocus(this)'";
-    txt += "onmouseout='mouseLostFocus(this)' ";
+    txt += "onmouseenter='mouseFocus(this)'";
+    txt += "onmouseleave='mouseLostFocus(this)' ";
     txt += "onclick='transformCharacter(this)' /></div>";
 
     // return the content

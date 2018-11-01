@@ -134,34 +134,34 @@ function transformCharacter(element) {
     let rotation = 0;
 
     // set the timer interval
-    let interval = setInterval(frame, 3);
+    let interval = setInterval(frame, 10);
 
     // rotation transform the elements
     function frame() {
         // if the elements are rotated 90 degrees
         if (rotation == 90) {
             clearInterval(interval);
+
+            // update the contents
+            displayCharacter(element);
+
+            // rotation transform the elements back to starting position
+            function frame() {
+                // if the elements are rotated 0 degrees
+                if (rotation == 0) {
+                    clearInterval(interval);
+                } else {
+                    // increment the rotation variable
+                    rotation--;
+
+                    // update the elements
+                    header.style.transform = "rotateX(" + rotation + "deg)";
+                    content.style.transform = "rotateX(" + rotation + "deg)";
+                }
+            }
         } else {
             // increment the rotation variable
             rotation++;
-
-            // update the elements
-            header.style.transform = "rotateX(" + rotation + "deg)";
-            content.style.transform = "rotateX(" + rotation + "deg)";
-        }
-    }
-
-    // update the contents
-    displayCharacter(element);
-
-    // rotation transform the elements
-    function frame() {
-        // if the elements are rotated 0 degrees
-        if (rotation == 0) {
-            clearInterval(interval);
-        } else {
-            // increment the rotation variable
-            rotation--;
 
             // update the elements
             header.style.transform = "rotateX(" + rotation + "deg)";

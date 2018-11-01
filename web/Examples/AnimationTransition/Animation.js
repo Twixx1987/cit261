@@ -77,7 +77,7 @@ function loadContent(xhttp) {
     // check to see that loadLocal executed
     if (success) {
         // check to see if session storage exists
-        if (sessionStorage.getItem("The Red Dragon Inn") === null) {
+        if (sessionStorage.getItem("Deirdre.jpg") === null) {
             // display an error message indicating no session storage
             txt = "<h3>Error: Local storage is not currently loaded.</h3>";
             console.log(txt);

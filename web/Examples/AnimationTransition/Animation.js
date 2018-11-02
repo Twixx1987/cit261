@@ -154,80 +154,14 @@ function displayCharacter(obj) {
 
 // a function to animate the image on mouse over
 function mouseFocus(element) {
-    // get the width and height
-    let width = element.width;
-    let height = element.height;
-
-    // set the position and opacity variables
-    let position = 0;
-    let opacity = 0.5;
-
-    // set the timer interval
-    let interval = setInterval(frame, 3);
-    
-    // animate the image to be 50% larger and 100% opaque
-    function frame() {
-        // if the image is 50% larger stop animation
-        if (width == 250) {
-            clearInterval(interval);
-        } else {
-            // increment width and height
-            width += 2;
-            height += 2;
-
-            // decrement the position variable
-            position--;
-            
-            // increment opacity
-            opacity += 0.01;
-
-            // update the element
-            element.style.width = width + 'px';
-            element.style.height = height + 'px';
-            element.style.top = position + 'px';
-            element.style.left = position + 'px';
-            element.style.opacity = opacity;
-        }
-    }
+    // add the image-expand class
+    element.classList.add("image-expand");
 }
 
 // a function to animate the image on mouse over
 function mouseLostFocus(element) {
-    // get the width and height
-    let width = element.width;
-    let height = element.height;
-
-    // set the position and opacity variables
-    let position = -50;
-    let opacity = 1;
-
-    // set the timer interval
-    let interval = setInterval(frame, 2);
-
-    // animate the image to be 50% larger and 100% opaque
-    function frame() {
-        // if the image is 50% larger stop animation
-        if (width == 150) {
-            clearInterval(interval);
-        } else {
-            // increment width and height
-            width -= 2;
-            height -= 2;
-
-            // increment the top and left
-            position++;
-
-            // increment opacity
-            opacity -= 0.01;
-
-            // update the element
-            element.style.width = width + 'px';
-            element.style.height = height + 'px';
-            element.style.top = position + 'px';
-            element.style.left = position + 'px';
-            element.style.opacity = opacity;
-        }
-    }
+    // remove the image-expand class
+    element.classList.remove("image-expand");
 }
 
 // a function to transform the character display

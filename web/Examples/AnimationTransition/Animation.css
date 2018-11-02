@@ -35,6 +35,14 @@
     background-color: white;
 }
 
+.image-expand {
+    height: 250px;
+    width: 250px;
+    opacity: 1;
+    top: -50px;
+    left: -50px;
+}
+
 #mainContent {
     padding-top: 350px;
     top: 350px;
@@ -47,6 +55,10 @@
     position: absolute;
     top: 0px;
     left: 0px;
+    -webkit-transition: width 2s ease, height 2s ease, top 2s ease, left 2s ease, opacity 2s ease, position 2s ease;
+    -moz-transition: width 2s ease, height 2s ease, top 2s ease, left 2s ease, opacity 2s ease, position 2s ease;
+    -o-transition: width 2s ease, height 2s ease, top 2s ease, left 2s ease, opacity 2s ease, position 2s ease;
+    transition: width 2s ease, height 2s ease, top 2s ease, left 2s ease, opacity 2s ease, position 2s ease;
 }
 
 h1, h2, h3 {

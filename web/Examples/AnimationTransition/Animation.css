@@ -38,7 +38,7 @@
 .image-expand {
     height: 250px;
     width: 250px;
-    opacity: 1;
+    opacity: 1.0;
     transform: translate(-50px, -50px) scale(1.5, 1.5);
 }
 

@@ -257,10 +257,10 @@ function transformCharacter(element) {
             displayCharacter(obj);
 
             // set the timer interval
-            let interval2 = setInterval(frame, 3);
+            let interval2 = setInterval(frame2, 3);
 
             // rotation transform the element back to starting position
-            function frame() {
+            function frame2() {
                 // if the elements are rotated 0 degrees
                 if (rotation == 0) {
                     clearInterval(interval2);

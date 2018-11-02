@@ -39,7 +39,7 @@
     height: 250px;
     width: 250px;
     opacity: 1;
-    transform: translate(-50px, -50px);
+    transform: translate(-50px, -50px) scale(1.5, 1.5);
 }
 
 #mainContent {
@@ -54,10 +54,10 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    -webkit-transition: width 2s ease, height 2s ease, transform 2s ease, opacity 2s ease, position 2s ease;
-    -moz-transition: width 2s ease, height 2s ease, transform 2s ease, opacity 2s ease, position 2s ease;
-    -o-transition: width 2s ease, height 2s ease, transform 2s ease, opacity 2s ease, position 2s ease;
-    transition: width 2s ease, height 2s ease, transform 2s ease, opacity 2s ease, position 2s ease;
+    -webkit-transition: transform 2s ease, opacity 2s ease;
+    -moz-transition: transform 2s ease, opacity 2s ease;
+    -o-transition: transform 2s ease, opacity 2s ease;
+    transition: transform 2s ease, opacity 2s ease;
 }
 
 h1, h2, h3 {

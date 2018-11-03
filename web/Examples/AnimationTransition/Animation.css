@@ -18,8 +18,7 @@
 }
 
 .flex-container > div {
-  background-color: #f1f1f1;
-  color:  #f1f1f1;
+  color:  white;
   width: 150px;
   margin: 25px;
   text-align: center;
@@ -46,16 +45,16 @@
 }
 
 .thumbnail {
-    height: 150px;
-    width: 150px;
     opacity: 0.5;
     position: absolute;
     top: 0px;
     left: 0px;
-    -webkit-transition: transform 2s ease-out, opacity 2s ease-out;
-    -moz-transition: transform 2s ease-out, opacity 2s ease-out;
-    -o-transition: transform 2s ease-out, opacity 2s ease-out;
-    transition: transform 2s ease-out, opacity 2s ease-out;
+    height: 150px;
+    width: 150px;
+    -webkit-transition: transform 2s ease, opacity 2s ease;
+    -moz-transition: transform 2s ease, opacity 2s ease;
+    -o-transition: transform 2s ease, opacity 2s ease;
+    transition: transform 2s ease, opacity 2s ease;
 }
 
 h1, h2, h3 {

@@ -35,7 +35,6 @@
 }
 
 .image-expand {
-    opacity: 1.0;
     transform: scale(1.5, 1.5);
 }
 
@@ -55,6 +54,10 @@
     -moz-transition: transform 2s ease, opacity 2s ease;
     -o-transition: transform 2s ease, opacity 2s ease;
     transition: transform 2s ease, opacity 2s ease;
+}
+
+.thumbnail:hover {
+    opacity: 1.0;
 }
 
 h1, h2, h3 {

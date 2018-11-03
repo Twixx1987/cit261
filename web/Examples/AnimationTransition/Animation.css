@@ -50,10 +50,10 @@
     left: 0px;
     height: 150px;
     width: 150px;
-    -webkit-transition: transform 2s ease, opacity 2s ease;
-    -moz-transition: transform 2s ease, opacity 2s ease;
-    -o-transition: transform 2s ease, opacity 2s ease;
-    transition: transform 2s ease, opacity 2s ease;
+    -webkit-transition: transform 1s ease, opacity 1s ease;
+    -moz-transition: transform 1s ease, opacity 1s ease;
+    -o-transition: transform 1s ease, opacity 1s ease;
+    transition: transform 1s ease, opacity 1s ease;
 }
 
 .thumbnail:hover {

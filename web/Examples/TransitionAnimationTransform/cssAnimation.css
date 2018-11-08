@@ -39,8 +39,8 @@
 }
 
 #mainContent {
-    padding-top: 350px;
-    top: 350px;
+    padding-top: 380px;
+    top: 380px;
 }
 
 .thumbnail {
@@ -58,6 +58,7 @@
 
 .thumbnail:hover {
     opacity: 1.0;
+    transform: scale(1.5, 1.5);
 }
 
 h1, h2, h3 {

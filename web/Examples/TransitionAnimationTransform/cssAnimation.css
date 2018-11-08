@@ -79,10 +79,12 @@ td {
     perspective: 550px;
     transform-style: preserve-3d;
     transform: rotate3d(0.25, 0.75, 0.25, 0.5turn);
+    z-index: 1;
 }
 
 .element-3d:hover {
     transform: rotate3d(0,0,0,0turn) scale3d(1.5, 1.5, 1.5);
+    z-index: 5;
 }
 
 .transition-all {

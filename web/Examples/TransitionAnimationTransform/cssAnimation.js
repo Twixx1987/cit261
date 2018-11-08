@@ -129,7 +129,7 @@ function displayRole(obj) {
 
     // display the character details
     txt += "<tr><td><h2>" + obj.name + "</h2></td><td>";
-    txt += "<p>" + obj.abilities + "</p>";
+    txt += "<p>" + obj.abilities + "</p></td><td>";
     txt += "<img src='" + obj.image + "'" + " alt='" + obj.name + "'"
         + " height='200' width='200' id='" + obj.image + "'></td></tr>";
 

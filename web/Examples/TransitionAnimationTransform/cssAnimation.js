@@ -160,8 +160,9 @@ function transformCharacter(element) {
     // get the character details element
     let content = document.getElementById("roleDetails");
 
-    // set the rotation variable
+    // set the fade and move variables
     let fade = 100;
+    let move = 0;
 
     // set the timer interval
     let interval = setInterval(frame, 3);
@@ -170,16 +171,21 @@ function transformCharacter(element) {
     function frame() {
         // if the elements are rotated 90 degrees
         if (fade == 0) {
+            // stop the animation
             clearInterval(interval);
 
             // update the contents
             displayRole(obj);
         } else {
-            // increment the fade variable
+            // decrement the fade variable
             fade--;
 
+            // decrement the move variable
+            move -= 10;
+
             // update the object
-            content.style.opacity = fade/100;
+            content.style.opacity = fade / 100;
+            content.style.transform = 'translateX(' + fade + 'px)';
         }
     }
 }

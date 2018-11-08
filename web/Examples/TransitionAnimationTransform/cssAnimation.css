@@ -74,19 +74,19 @@ td {
 
 @keyframes rotateCard {
     0% { 
-        transform: rotate3d(1,1,1,0deg);
+        transform: rotateY(0deg) rotateZ(-45deg);
     }
     25% { 
-        transform: rotate3d(1,1,1,90deg);
+        transform: rotateY(90deg) rotateZ(-45deg);
     }
     50% { 
-        transform: rotate3d(1,1,1,180deg);
+        transform: rotateY(180deg) rotateZ(-45deg);
     }
     75% { 
-        transform: rotate3d(1,1,1,270deg);
+        transform: rotateY(270deg) rotateZ(-45deg);
     }
     100% { 
-        transform: rotate3d(1,1,1,360deg);
+        transform: rotateY(360deg) rotateZ(-45deg);
     }
 }
 

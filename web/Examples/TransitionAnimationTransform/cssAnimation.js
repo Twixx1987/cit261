@@ -105,7 +105,7 @@ function loadContent(xhttp) {
         document.getElementById("rolesList").innerHTML = txt;
 
         // Display an initial character
-        displayCharacter(JSON.parse(sessionStorage.getItem("Role_1")));
+        displayRole(JSON.parse(sessionStorage.getItem("Role_1")));
 
     }
 }

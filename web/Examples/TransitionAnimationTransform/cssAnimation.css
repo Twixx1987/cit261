@@ -78,12 +78,10 @@ td {
     height: 150px;
     perspective: 550px;
     transform-style: preserve-3d;
-    opacity: 0.5;
     transform: rotate3d(0.25, 0.75, 0.25, 0.5turn);
 }
 
 .element-3d:hover {
-    opacity: 1.0;
     transform: rotate3d(0,0,0,0turn) scale3d(1.5, 1.5, 1.5);
 }
 

@@ -72,7 +72,7 @@ td {
     border-collapse: collapse;
 }
 
-@keyframes animateCard {
+@keyframes rotateCard {
     0% { 
         transform: rotateY(0deg);
         transform: rotateZ(-45deg);
@@ -96,7 +96,7 @@ td {
 }
 
 #animateCard {
-    animation: animateCard 2s ease-in infinite;
+    animation: rotateCard 2s ease-in infinite;
     transform: rotate3d(0, 0, 1, 45deg);
 }
 

@@ -181,7 +181,7 @@ function transformCharacter(element) {
             displayRole(obj);
         } else {
             // decrement the fade variable
-//            fade--;
+            fade--;
 
             // decrement the move variable
             move -= 10;

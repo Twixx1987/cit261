@@ -18,11 +18,9 @@
 }
 
 .flex-container > div.table {
-  color:  white;
   width: 1000px;
   margin: 25px;
   text-align: center;
-  line-height: 150px;
   position: relative;
 }
 

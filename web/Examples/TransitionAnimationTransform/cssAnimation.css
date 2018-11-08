@@ -88,24 +88,24 @@ td {
 
 @keyframes animateCard {
     0% { 
-        transform: rotate3d(0.25, 0.75, 0.25, 0.5turn);
+        transform: rotateY(0deg);
     }
     25% { 
-        transform: rotate3d(0.25, 0.75, 0.25, 0.5turn);
+        transform: rotateY(80deg);
     }
     50% { 
-        transform: rotate3d(0.25, 0.75, 0.25, 0.5turn);
+        transform: rotateY(180deg);
     }
     75% { 
-        transform: rotate3d(0.25, 0.75, 0.25, 0.5turn);
+        transform: rotateY(270deg)
     }
     100% { 
-        transform: rotate3d(0.25, 0.75, 0.25, 0.5turn);
+        transform: rotateY(360deg);
     }
 }
 
 #addCard {
-    animation: animateTable 1s ease-in;
+    animation: animateTable 2s ease-in infinite;
 }
 
 /* code from MDN.org transform function */

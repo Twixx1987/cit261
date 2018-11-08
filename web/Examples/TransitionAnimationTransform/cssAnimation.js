@@ -131,7 +131,7 @@ function displayRole(obj) {
     txt += "<tr><td><h2>" + obj.name + "</h2></td><td>";
     txt += "<p>" + obj.abilities + "</p></td><td>";
     txt += "<img src='" + obj.image + "'" + " alt='" + obj.name + "'"
-        + " height='200' width='200' id='" + obj.image + "'></td></tr>";
+        + " height='255' width='183' id='" + obj.image + "'></td></tr>";
 
     // close the table
     txt += "</table>";

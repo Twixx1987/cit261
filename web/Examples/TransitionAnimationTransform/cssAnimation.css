@@ -17,7 +17,16 @@
   flex-wrap: wrap;
 }
 
-.flex-container > div {
+.flex-container > div.table {
+  color:  white;
+  width: 108px;
+  margin: 25px;
+  text-align: center;
+  line-height: 150px;
+  position: relative;
+}
+
+.flex-container > div.card {
   color:  white;
   width: 108px;
   margin: 25px;

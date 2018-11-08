@@ -168,7 +168,7 @@ function transformCharacter(element) {
     let move = 0;
 
     // set the timer interval
-    let interval = setInterval(frame, 3);
+    let interval = setInterval(frame, 5);
 
     // rotation transform the element
     function frame() {

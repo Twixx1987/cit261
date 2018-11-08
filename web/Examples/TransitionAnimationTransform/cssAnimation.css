@@ -45,13 +45,13 @@
 
 @keyframes animateTable {
     0% { transform: translateX(-1000px);
-         opacity: 0;
+
     }
     25% {
     }
     50% {
     }
-    75% { opacity: 1;
+    75% { 
     }
     100% { transform: translateX(0px);
     }

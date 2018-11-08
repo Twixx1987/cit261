@@ -181,13 +181,13 @@ function transformCharacter(element) {
             displayRole(obj);
         } else {
             // decrement the fade variable
-            fade--;
+//            fade--;
 
             // decrement the move variable
             move -= 10;
 
             // update the object
-            content.style.opacity = fade / 100;
+//            content.style.opacity = fade / 100;
             content.style.transform = 'translateX(' + fade + 'px)';
         }
     }

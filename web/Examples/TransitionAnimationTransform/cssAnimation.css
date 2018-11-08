@@ -1,3 +1,7 @@
+body {
+    font-size: 14px;
+}
+
 #rolesList {
     position: relative;
     margin: 50px;
@@ -11,7 +15,6 @@
 .flex-container > div.table {
   width: 1000px;
   margin: 25px;
-  text-align: center;
   position: relative;
 }
 
@@ -62,7 +65,7 @@
 }
 
 h1, h2, h3 {
-    color: #93160a;
+    color: #006600;
 }
 
 td {

@@ -140,8 +140,8 @@ function displayRole(obj) {
     let txt = "<table id='addTable'>";
 
     // display the character details
-    txt += "<tr><td><h2>" + obj.name + "</h2></td><td>";
-    txt += "<p>" + obj.abilities + "</p></td><td>";
+    txt += "<tr><td style='width:400px'><h2>" + obj.name + "</h2>";
+    txt += "<p>" + obj.abilities + "</p></td><td style='width:200px'>";
     txt += "<img src='" + obj.image + "'" + " alt='" + obj.name + "'"
         + " height='255' width='183' id='" + obj.image + "'></td></tr>";
 

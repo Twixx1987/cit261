@@ -11,7 +11,7 @@
         },
         {
           "name": "Dispatcher",
-          "image": "dispatcher",
+          "image": "dispatcher.jpg",
           "abilities": "The Dispatcher may, as an action, either: move any pawn, if its owner agrees, to any city containing another pawn, or move another player's pawn, if its owner agrees, as if it were his own. The Dispatcher can only move other players' pawns; he may not direct them to do other actions, such as Treat Disease."
         },
         {
@@ -26,7 +26,7 @@
         },
         {
           "name": "Quarantine Specialist",
-          "image": "quarentineSpecialist.jpg",
+          "image": "quarantineSpecialist.jpg",
           "abilities": "The Quarantine Specialist prevents both outbreaks and the placement of disease cubes in the city she is in and all cities connected to that city. She does not affect cubes placed during setup. "
         },
         {

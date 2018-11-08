@@ -104,8 +104,11 @@ function loadContent(xhttp) {
         // display the data from the session storage in a nice format
         document.getElementById("rolesList").innerHTML = txt;
 
+        // get the role details element
+        element = document.getElementById("roleDetails");
+
         // Display an initial character
-        displayRole(JSON.parse(sessionStorage.getItem("Role_1")));
+        displayRole(element, JSON.parse(sessionStorage.getItem("Role_1")));
 
     }
 }
@@ -132,21 +135,27 @@ function displayImage(key, obj) {
 }
 
 // display a character's details
-function displayRole(obj) {
-    // start the table and add the columns
-    let txt = "<table id='addTable'>";
+function displayRole(parentElement, obj) {
+    // get the current table element
+    let current = document.getElementById("addTable");
+
+    // create a new table via DOM manipulation
+    let table = document.createElement("table");
+
+    // set the table's id attribute
+    table.id = 'addTable';
 
     // display the character details
-    txt += "<tr><td><h2>" + obj.name + "</h2></td><td>";
-    txt += "<p>" + obj.abilities + "</p></td><td>";
-    txt += "<img src='" + obj.image + "'" + " alt='" + obj.name + "'"
+    let txt = "<tr><td><h2>" + obj.name + "</h2></td><td>"
+        + "<p>" + obj.abilities + "</p></td><td>"
+        + "<img src='" + obj.image + "'" + " alt='" + obj.name + "'"
         + " height='255' width='183' id='" + obj.image + "'></td></tr>";
 
-    // close the table
-    txt += "</table>";
+    // set the table contents
+    table.innerHTML = txt;
 
     // update the character details
-    document.getElementById("roleDetails").innerHTML = txt;
+    parentElement.replaceChild(table, current);
 }
 
 // a function to transform the character display
@@ -173,7 +182,7 @@ function transformCharacter(element) {
             clearInterval(interval);
 
             // update the contents
-            displayRole(obj);
+            displayRole(content, obj);
         } else {
             // increment the fade variable
             fade--;

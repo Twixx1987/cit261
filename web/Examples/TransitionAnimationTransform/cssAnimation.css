@@ -66,6 +66,7 @@ h1, h2, h3 {
 }
 
 td {
+    min-width: 150px;
     max-width: 300px;
     padding: 5px;
     border-collapse: collapse;

@@ -88,6 +88,28 @@ td {
     border-collapse: collapse;
 }
 
+@keyframes animateCard {
+    0% { 
+        transform: rotate3d(0.25, 0.75, 0.25, 0.5turn);
+    }
+    25% { 
+        transform: rotate3d(0.25, 0.75, 0.25, 0.5turn);
+    }
+    50% { 
+        transform: rotate3d(0.25, 0.75, 0.25, 0.5turn);
+    }
+    75% { 
+        transform: rotate3d(0.25, 0.75, 0.25, 0.5turn);
+    }
+    100% { 
+        transform: rotate3d(0.25, 0.75, 0.25, 0.5turn);
+    }
+}
+
+#addCard {
+    animation: animateTable 1s ease-in;
+}
+
 /* code from MDN.org transform function */
 .element-3d {
     width: 108px;

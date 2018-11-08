@@ -105,7 +105,7 @@ td {
 }
 
 #addCard {
-    animation: animateTable 2s ease-in infinite;
+    animation: animateCard 2s ease-in infinite;
 }
 
 /* code from MDN.org transform function */

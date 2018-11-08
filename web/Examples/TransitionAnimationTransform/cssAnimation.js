@@ -115,9 +115,7 @@ function displayImage(key, obj) {
     // Create the image tag
     let txt = "<div>" + key + "<img src='" + obj.image + "'";
     txt += " alt='" + obj.name + "'";
-    txt += " class='thumbnail' id='" + key + "'";
-    txt += "onmouseenter='mouseFocus(this)'";
-    txt += "onmouseleave='mouseLostFocus(this)' ";
+    txt += " class='thumbnail' id='" + key + "'"
     txt += "onclick='transformCharacter(this)' /></div>";
 
     // return the content
@@ -166,7 +164,7 @@ function transformCharacter(element) {
             clearInterval(interval);
 
             // update the contents
-            displayCharacter(obj);
+            displayRole(obj);
 
         } else {
             // increment the rotation variable

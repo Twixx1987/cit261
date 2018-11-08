@@ -161,7 +161,7 @@ function transformCharacter(element) {
     let content = document.getElementById("roleDetails");
 
     // set the rotation variable
-    let fade = 1.0;
+    let fade = 100;
 
     // set the timer interval
     let interval = setInterval(frame, 3);
@@ -176,10 +176,10 @@ function transformCharacter(element) {
             displayRole(obj);
         } else {
             // increment the fade variable
-            fade -= 0.01;
+            fade--;
 
             // update the object
-            content.style.opacity = fade;
+            content.style.opacity = fade/100;
         }
     }
 }

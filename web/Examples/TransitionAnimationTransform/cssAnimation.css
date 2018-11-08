@@ -48,7 +48,7 @@
     to {}
 }
 
-table {
+#addTable {
 
 }
 
@@ -70,10 +70,6 @@ td {
 
 /* code from MDN.org transform function */
 .element-3d {
-    -webkit-transition: transform 1s ease, opacity 1s ease;
-    -moz-transition: transform 1s ease, opacity 1s ease;
-    -o-transition: transform 1s ease, opacity 1s ease;
-    transition: transform 1s ease, opacity 1s ease;
     width: 108px;
     height: 150px;
     perspective: 550px;
@@ -88,7 +84,7 @@ td {
 }
 
 .transition-all {
-    transition: all .3s ease-in;
+    transition: all .4s ease-in;
 }
 
 .front {

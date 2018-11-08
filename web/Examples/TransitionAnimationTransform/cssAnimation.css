@@ -85,7 +85,7 @@ td {
 
 .element-3d:hover {
     opacity: 1.0;
-    transform: rotate3d(0, 0, 0, 0turn);
+    transform: rotate3d(0,0,0,0turn) scale3d(1.5, 1.5, 1.5);
 }
 
 .transition-all {

@@ -113,7 +113,7 @@ function loadContent(xhttp) {
 // genearte the code for an image
 function displayImage(key, obj) {
     // Create the image tag
-    let txt = "<div id='" + key + "' class='transition-all'"
+    let txt = "<div id='" + key + "' class='transition-all element-3d'"
        + " onclick='transformCharacter(this)' >"
        + "<div class='face front'><img src='" + obj.image + "'"
        + " alt='" + obj.name + "'"

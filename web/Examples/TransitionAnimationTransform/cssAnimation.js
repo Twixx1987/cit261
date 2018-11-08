@@ -188,7 +188,7 @@ function transformCharacter(element) {
 
             // update the object
             content.style.opacity = fade / 100;
-            content.style.transform = 'translateX(' + fade + 'px)';
+            content.style.transform = 'translateX(' + move + 'px)';
         }
     }
 }

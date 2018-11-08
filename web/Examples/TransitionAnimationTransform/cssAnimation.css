@@ -3,15 +3,6 @@
     margin: 50px;
 }
 
-#explanation {
-    position: fixed;
-    top: 0;
-    left: 20px;
-    background-color: white;
-    width:auto;
-    z-index: 50;
-}
-
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -43,11 +34,6 @@
 
 .image-expand {
     transform: scale(1.5, 1.5);
-}
-
-#mainContent {
-    padding-top: 380px;
-    top: 380px;
 }
 
 @keyframes animateTable {

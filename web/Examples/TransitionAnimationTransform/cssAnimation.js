@@ -137,7 +137,7 @@ function displayRole(obj) {
     document.getElementById("roleDetails").innerHTML = "";
 
     // start the table and add the columns
-    let txt = "<table class='addTable'>";
+    let txt = "<table id='addTable'>";
 
     // display the character details
     txt += "<tr><td><h2>" + obj.name + "</h2></td><td>";
@@ -161,7 +161,7 @@ function transformCharacter(element) {
     let obj = JSON.parse(sessionStorage.getItem(id));
 
     // get the character details element
-    let content = document.getElementById("roleDetails");
+    let content = document.getElementById("addTable");
 
     // set the fade and move variables
     let fade = 100;

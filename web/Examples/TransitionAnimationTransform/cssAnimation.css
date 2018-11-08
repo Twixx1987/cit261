@@ -1,0 +1,71 @@
+#rolesList {
+    position: relative;
+    margin: 50px;
+}
+
+#explanation {
+    position: fixed;
+    top: 0;
+    left: 20px;
+    background-color: white;
+    width:auto;
+    z-index: 50;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-container > div {
+  color:  white;
+  width: 150px;
+  margin: 25px;
+  text-align: center;
+  line-height: 150px;
+  position: relative;
+}
+
+#footer {
+    text-align: center;
+    color: #93160a;
+    z-index: 5;
+    border: thin solid white;
+    background-color: white;
+}
+
+.image-expand {
+    transform: scale(1.5, 1.5);
+}
+
+#mainContent {
+    padding-top: 350px;
+    top: 350px;
+}
+
+.thumbnail {
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 150px;
+    width: 108px;
+    -webkit-transition: transform 1s ease, opacity 1s ease;
+    -moz-transition: transform 1s ease, opacity 1s ease;
+    -o-transition: transform 1s ease, opacity 1s ease;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.thumbnail:hover {
+    opacity: 1.0;
+}
+
+h1, h2, h3 {
+    color: #93160a;
+}
+
+td {
+    max-width: 300px;
+    padding: 5px;
+    border-collapse: collapse;
+}

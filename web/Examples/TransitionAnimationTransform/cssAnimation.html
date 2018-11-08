@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="cssAnimation.js"></script>
+    <link rel="stylesheet" href="cssAnimation.css" />
+    <title>CIT261 - Shaun Densley</title>
+</head>
+<body onload="openJson('pandemic.json', loadContent)">
+    <div id="explanation">
+        <h1>CSS3 Animations, Transitions, and Transforms Example</h1>
+        <p>
+            This page displays the contents of pandemic.json in a nice user friendly format. 
+            When you click on an image, the top section will display the details of that 
+            character. It will also remain in full color until you click on it again. When 
+            you mouse over an image it will flip into focus. This is very similar to the 
+            transitions and animations with JavaScript page only this time all the transitions 
+            and animations are triggered via CSS.
+        </p>
+        <div id="roleDisplay">
+            <div id="roleDetails">Role Details will display here after selecting 
+                a role.</div>
+        </div>
+    </div>
+    <div id="mainContent">
+        <div id="rolesList" class="flex-container"></div>
+        <div id="footer">Images copyright Z-man Games.</div>
+    </div>
+</body>
+</html>

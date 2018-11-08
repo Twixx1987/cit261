@@ -152,7 +152,7 @@ function transformCharacter(element) {
     let content = document.getElementById("roleDetails");
 
     // set the rotation variable
-    let rotation = 0;
+    let fade = 1.0;
 
     // set the timer interval
     let interval = setInterval(frame, 3);
@@ -160,15 +160,17 @@ function transformCharacter(element) {
     // rotation transform the element
     function frame() {
         // if the elements are rotated 90 degrees
-        if (rotation == 90) {
+        if (rotation == 0) {
             clearInterval(interval);
 
             // update the contents
             displayRole(obj);
-
         } else {
-            // increment the rotation variable
-            rotation++;
+            // increment the fade variable
+            fade -= 0.01;
+
+            // update the object
+            content.style.opacity = fade;
         }
     }
 }

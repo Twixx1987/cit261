@@ -59,17 +59,18 @@ table {
     left: 0px;
     height: 150px;
     width: 108px;
-    -webkit-transition: transform 1s ease, opacity 1s ease;
+/*    -webkit-transition: transform 1s ease, opacity 1s ease;
     -moz-transition: transform 1s ease, opacity 1s ease;
     -o-transition: transform 1s ease, opacity 1s ease;
     transition: transform 1s ease, opacity 1s ease;
+*/
 }
-
+/*
 .thumbnail:hover {
     opacity: 1.0;
     transform: scale(1.5, 1.5) rotate(360deg);
 }
-
+*/
 h1, h2, h3 {
     color: #93160a;
 }
@@ -83,50 +84,67 @@ td {
 
 /* code from MDN.org transform function */
 #3d-element {
+    -webkit-transition: transform 1s ease, opacity 1s ease;
+    -moz-transition: transform 1s ease, opacity 1s ease;
+    -o-transition: transform 1s ease, opacity 1s ease;
+    transition: transform 1s ease, opacity 1s ease;
     width: 108px;
     height: 150px;
     perspective: 550px;
     transform-style: preserve-3d;
 }
+
+#3d-element:hover {
+    opacity: 1.0;
+    transform: scale(1.5, 1.5) rotate(360deg);
+}
+
 .transition-all {
     transition: all .3s ease-in;
 }
+
 .front {
     background: white;
     transform: translateZ(1px);
     width: 100%;
     height: 100%;
 }
+
 .back {
     background: #051539;
     transform: rotateY(180deg) translateZ(1px);
     width: 100%;
     height: 100%;
 }
+
 .right {
     background: #051539;
     transform: rotateY(90deg) translateZ(107px);
     width: 0.925%;
     height: 100%;
 }
+
 .left {
     background: #051539;
     transform: rotateY(-90deg) translateZ(1px);
     width: 0.925%;
     height: 100%;
 }
+
 .top {
     background: #051539;
     transform: rotateX(90deg) translateZ(1px);
     width: 100%;
     height: 0.66%;
 }
+
 .bottom {
     background: #051539;
     transform: rotateX(-90deg) translateZ(149px);
     width: 100%;
     height: 0.66%;
 }
+
 .face {
     display: flex;
     align-items: center;

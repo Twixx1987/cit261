@@ -90,7 +90,7 @@ td {
     }
 }
 
-#addCard {
+#animateCard {
     animation: animateCard 2s ease-in infinite;
     transform: rotate3d(0, 0, 1, 45deg);
 }

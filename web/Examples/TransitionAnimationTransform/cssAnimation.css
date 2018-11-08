@@ -91,7 +91,7 @@ td {
 }
 
 #animateCard {
-    animation: rotateCard 2s ease-in infinite;
+    animation: rotateCard 2s linear infinite;
     transform: rotate3d(0, 0, 1, 45deg);
 }
 

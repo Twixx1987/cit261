@@ -57,7 +57,7 @@
     }
 }
 
-#addTable {
+.addTable {
     animation: animateTable 3s ease-in;
 }
 

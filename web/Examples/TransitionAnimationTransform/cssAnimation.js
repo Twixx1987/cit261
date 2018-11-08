@@ -104,11 +104,8 @@ function loadContent(xhttp) {
         // display the data from the session storage in a nice format
         document.getElementById("rolesList").innerHTML = txt;
 
-        // get the role details element
-        element = document.getElementById("roleDetails");
-
         // Display an initial character
-        displayRole(element, JSON.parse(sessionStorage.getItem("Role_1")));
+        displayRole(JSON.parse(sessionStorage.getItem("Role_1")));
 
     }
 }
@@ -136,26 +133,20 @@ function displayImage(key, obj) {
 
 // display a character's details
 function displayRole(parentElement, obj) {
-    // get the current table element
-    let current = document.getElementById("addTable");
-
-    // create a new table via DOM manipulation
-    let table = document.createElement("table");
-
-    // set the table's id attribute
-    table.id = 'addTable';
+    // start the table and add the columns
+    let txt = "<table class='addTable'>";
 
     // display the character details
-    let txt = "<tr><td><h2>" + obj.name + "</h2></td><td>"
-        + "<p>" + obj.abilities + "</p></td><td>"
-        + "<img src='" + obj.image + "'" + " alt='" + obj.name + "'"
+    txt += "<tr><td><h2>" + obj.name + "</h2></td><td>";
+    txt += "<p>" + obj.abilities + "</p></td><td>";
+    txt += "<img src='" + obj.image + "'" + " alt='" + obj.name + "'"
         + " height='255' width='183' id='" + obj.image + "'></td></tr>";
 
-    // set the table contents
-    table.innerHTML = txt;
+    // close the table
+    txt += "</table>";
 
     // update the character details
-    parentElement.replaceChild(table, current);
+    document.getElementById("roleDetails").innerHTML = txt;
 }
 
 // a function to transform the character display
@@ -182,7 +173,7 @@ function transformCharacter(element) {
             clearInterval(interval);
 
             // update the contents
-            displayRole(content, obj);
+            displayRole(obj);
         } else {
             // increment the fade variable
             fade--;

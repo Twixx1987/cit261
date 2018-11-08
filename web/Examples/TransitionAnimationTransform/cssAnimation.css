@@ -13,7 +13,7 @@ body {
 }
 
 .flex-container > div.table {
-  width: 1000px;
+  width: 600px;
   margin: 25px;
   position: relative;
 }
@@ -41,7 +41,7 @@ body {
 
 @keyframes animateTable {
     0% { 
-        transform: translateX(-1000px);
+        transform: translateX(-600px);
         opacity: 0;
     }
     25% {

@@ -184,7 +184,7 @@ function transformCharacter(element) {
             fade--;
 
             // decrement the move variable
-            move -= 10;
+            move -= 6;
 
             // update the object
             content.style.opacity = fade / 100;

@@ -132,7 +132,7 @@ function displayImage(key, obj) {
 }
 
 // display a character's details
-function displayRole(parentElement, obj) {
+function displayRole(obj) {
     // start the table and add the columns
     let txt = "<table class='addTable'>";
 

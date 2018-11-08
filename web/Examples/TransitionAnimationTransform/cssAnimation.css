@@ -44,12 +44,21 @@
 }
 
 @keyframes animateTable {
-    from {}
-    to {}
+    0% { transform: translateX(-1000px);
+         opacity: 0;
+    }
+    25% {
+    }
+    50% {
+    }
+    75% { opacity: 1;
+    }
+    100% { transform: translateX(0px);
+    }
 }
 
 #addTable {
-
+    animation: animateTable 3s ease-in;
 }
 
 .thumbnail {

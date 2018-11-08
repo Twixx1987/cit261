@@ -160,7 +160,7 @@ function transformCharacter(element) {
     // rotation transform the element
     function frame() {
         // if the elements are rotated 90 degrees
-        if (rotation == 0) {
+        if (fade == 0) {
             clearInterval(interval);
 
             // update the contents

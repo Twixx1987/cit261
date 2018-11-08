@@ -82,7 +82,7 @@ td {
 }
 
 /* code from MDN.org transform function */
-#example-element {
+#3d-element {
     width: 108px;
     height: 150px;
     perspective: 550px;
@@ -92,37 +92,37 @@ td {
     transition: all .3s ease-in;
 }
 .front {
-    background: rgba(90,90,90,1);
+    background: white;
     transform: translateZ(1px);
         width: 100%;
     height: 100%;
 }
 .back {
-    background: rgba(0,210,0,1);
+    background: #051539;
     transform: rotateY(180deg) translateZ(1px);
         width: 100%;
     height: 100%;
 }
 .right {
-    background: rgba(210,0,0,1);
+    background: #051539;
     transform: rotateY(90deg) translateZ(107px);
         width: 0.925%;
     height: 100%;
 }
 .left {
-    background: rgba(0,0,210,1);
+    background: #051539;
     transform: rotateY(-90deg) translateZ(1px);
         width: 0.925%;
     height: 100%;
 }
 .top {
-    background: rgba(210,210,0,1);
+    background: #051539;
     transform: rotateX(90deg) translateZ(1px);
         width: 100%;
     height: 0.66%;
 }
 .bottom {
-    background: rgba(210,0,210,1);
+    background: #051539;
     transform: rotateX(-90deg) translateZ(149px);
         width: 100%;
     height: 0.66%;

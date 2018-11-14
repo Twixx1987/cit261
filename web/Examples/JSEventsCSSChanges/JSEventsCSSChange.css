@@ -72,7 +72,7 @@ td {
 }
 
 #addTable {
-    animation: animateDiv 1s linear;
+    animation: animateTable 1s linear;
 }
 
 #characterDetails {

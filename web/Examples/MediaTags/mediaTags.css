@@ -1,0 +1,35 @@
+h1, h2, h3 {
+    color: #001b9b;
+}
+
+.flex-container {
+    display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-container > div {
+    margin: 5px;
+    padding: 5px;
+}
+
+.audio {
+    width: 440px;
+}
+
+.audio-header {
+    width: 440px;
+    height: 60px;
+}
+
+.video {
+    width: 440px;
+    height: 360px;
+}
+
+.video-header {
+    width: 420px;
+    height: 60px;
+}
+#canvas {
+    border: 1px solid black;
+}

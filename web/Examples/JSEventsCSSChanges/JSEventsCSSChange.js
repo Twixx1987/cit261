@@ -127,7 +127,7 @@ function displayImage(key, obj, rootElement) {
     character.innerHTML = txt;
 
     // append the div to the root
-    root.appendChild(character);
+    rootElement.appendChild(character);
 
     // Add event listeners to modify content based on certain actions being performed
     character.addEventListener("animationstart", myStartFunction);

@@ -138,7 +138,7 @@ function displayImage(key, obj, rootElement) {
 // display a character's details
 function displayCharacter(obj) {
     // start the table and add the columns
-    let txt = "<table>";
+    let txt = "<table id='addTable'>";
 
     // display the character details
     txt += "<tr><td><h2>" + obj.name + "</h2>" + obj.race + " - " + obj.class + "</td><td>";

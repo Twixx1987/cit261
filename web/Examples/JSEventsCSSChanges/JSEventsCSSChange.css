@@ -62,7 +62,7 @@ td {
     border-collapse: collapse;
 }
 
-@keyframes animateDiv {
+@keyframes animateTable {
     0% { 
         transform: rotateX(-90deg);
     }
@@ -71,8 +71,11 @@ td {
     }
 }
 
-#characterDetails {
+#addTable {
     animation: animateDiv 1s linear;
+}
+
+#characterDetails {
     width: 750px;
     margin: 5px;
     position: relative;

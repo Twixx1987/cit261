@@ -55,3 +55,16 @@ td {
     padding: 5px;
     border-collapse: collapse;
 }
+
+@keyframes animateDiv {
+    0% { 
+        transform: rotateX(-90deg);
+    }
+    100% { 
+        transform: rotateX(0deg);
+    }
+}
+
+#characterDetails {
+    animation: animateDiv 1s linear;
+}

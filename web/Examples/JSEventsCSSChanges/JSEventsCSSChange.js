@@ -88,22 +88,22 @@ function loadContent(xhttp) {
             txt = "<h3>Error: Local storage is not currently loaded.</h3>";
 
         } else {
+            // get the characters list element
+            let root = document.getElementById("charactersList");
+
             // get the length of the sessionStorage object
             let lslen = sessionStorage.length;
 
             // loop through the session storage keys displaying each one
             for (let count = 0; count < lslen; count++) {
-                // create the option element
+                // create the elements
                 let key = sessionStorage.key(count);
                 let value = JSON.parse(sessionStorage.getItem(key));
 
-                // display the version
-                txt += displayImage(key, value);
+                // append the character to root
+                displayImage(key, value, root);
             }
         }
-        // display the data from the session storage in a nice format
-        document.getElementById("charactersList").innerHTML = txt;
-
         // Display an initial character
         displayCharacter(JSON.parse(sessionStorage.getItem("Character_1")));
 
@@ -111,17 +111,27 @@ function loadContent(xhttp) {
 }
 
 // genearte the code for an image
-function displayImage(key, obj) {
+function displayImage(key, obj, rootElement) {
     // Create the image tag
-    let txt = "<div>" + key + "<img src='" + obj.image + "'";
+    let txt = key + "<img src='" + obj.image + "'";
     txt += " alt='" + obj.name + "'";
     txt += " class='thumbnail' id='" + key + "'";
     txt += "onmouseenter='mouseFocus(this)'";
     txt += "onmouseleave='mouseLostFocus(this)' ";
-    txt += "onclick='transformCharacter(this)' /></div>";
+    txt += "onclick='transformCharacter(this)' />";
 
-    // return the content
-    return txt;
+    // create a div element to store the image
+    let character = document.createElement("div");
+
+    // set the content of the div
+    character.innerHTML = txt;
+
+    // append the div to the root
+    root.appendChild(character);
+
+    // Add event listeners to modify content based on certain actions being performed
+    character.addEventListener("animationstart", myStartFunction);
+    character.addEventListener("animationend", myEndFunction);
 }
 
 // display a character's details
@@ -189,23 +199,6 @@ function transformCharacter(element) {
 
             // update the contents
             displayCharacter(obj);
-
-            // set the timer interval
-            let interval2 = setInterval(frame2, 3);
-
-            // rotation transform the element back to starting position
-            function frame2() {
-                // if the elements are rotated 0 degrees
-                if (rotation == 0) {
-                    clearInterval(interval2);
-                } else {
-                    // increment the rotation variable
-                    rotation--;
-
-                    // update the element
-                    content.style.transform = "rotateX(" + rotation + "deg)";
-                }
-            }
         } else {
             // increment the rotation variable
             rotation++;
@@ -214,4 +207,22 @@ function transformCharacter(element) {
             content.style.transform = "rotateX(" + rotation + "deg)";
         }
     }
+}
+
+// a function to display content based on animation start
+function myStartFunction() {
+    // get the status display div
+    let status = document.getElementById("StatusDisplay");
+
+    // set the status text
+    status.innerHTML = "Here I come.";
+}
+
+// a function to display content based on animation end
+function myEndFunction() {
+    // get the status display div
+    let status = document.getElementById("StatusDisplay");
+
+    // set the status text
+    status.innerHTML = "Good day adventurer.";
 }

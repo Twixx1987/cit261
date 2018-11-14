@@ -1,0 +1,79 @@
+{
+  "game": "The Red Darageon Inn",
+  "versions": [
+    {
+      "version": "The Red Dragon Inn",
+      "characters": [
+        {
+          "name": "Deirdre the Priestess",
+          "image": "Deirdre.jpg",
+          "race": "Elf",
+          "class": "Priestess",
+          "good": "The Goddess keeps Deirdre protected from harm.",
+          "bad": "The Goddess's protection does not help against alcohol. Deirdre is a cheap date."
+        },
+        {
+          "name": "Fiona the Volatile",
+          "image": "Fiona.jpg",
+          "race": "Human",
+          "class": "Fighter",
+          "good": "She's more than capable of dishing out and taking serious physical abuse, and her formidable constitution allows her to drink a lot!",
+          "bad": "For all her strengths, she's not very good at keeping track of her Gold."
+        },
+        {
+          "name": "Gerki the Sneak",
+          "image": "Gerki.jpg",
+          "race": "Hafling",
+          "class": "Thief",
+          "good": "Gerki is so good at gambling that some people suspect that he might be cheating.",
+          "bad": "Yeah, he's cheating."
+        },
+        {
+          "name": "Zot the Wizard",
+          "image": "Zot.jpg",
+          "race": "Human",
+          "class": "Wizard",
+          "good": "Zot is good at card tricks, and, hence, is good at gambling. His mastery of many magical spells keeps him well protected, whether he's roughhousing, drinking, or gambling.",
+          "bad": "That rabbit is insane. Seriously."
+        }
+      ]
+    },
+    {
+      "version": "The Red Dragon Inn 2",
+      "characters": [
+        {
+          "name": "Gog the Half Ogre",
+          "image": "Gog.jpg",
+          "race": "Half-Ogre",
+          "class": "Barbarian",
+          "good": "Gog is really Strong!",
+          "bad": "\"Sorry! Gog Not Know Own Strength.\""
+        },
+        {
+          "name": "Fleck the Bard",
+          "image": "Fleck.jpg",
+          "race": "Half-Elf",
+          "class": "Bard",
+          "good": "Women want him, Men want to be him.",
+          "bad": "Sometimes... well okay, often... it goes to his head."
+        },
+        {
+          "name": "Eve the Illusionist",
+          "image": "Eve.jpg",
+          "race": "Human",
+          "class": "Illusionist",
+          "good": "Eve is a very skilled Illusionist.",
+          "bad": "She's been known to use her skills on her fellow party members when she gets bored."
+        },
+        {
+          "name": "Dimli the Dwarf",
+          "image": "Dimli.jpg",
+          "race": "Dwarf",
+          "class": "Fighter",
+          "good": "He's got a lot of Gold and can pretty much drink anyone under the table!",
+          "bad": "Sometimes, he gets a little grumpy..."
+        }
+      ]
+    }
+  ]
+}

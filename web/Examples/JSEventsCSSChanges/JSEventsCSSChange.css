@@ -8,7 +8,13 @@
   flex-wrap: wrap;
 }
 
-.flex-container > div {
+#statusDisplay {
+    width: 250px;
+    margin: 5px;
+    position: relative;
+}
+
+.character {
   color:  white;
   width: 150px;
   margin: 25px;
@@ -51,7 +57,7 @@ h1, h2, h3 {
 }
 
 td {
-    max-width: 300px;
+    width: 240px;
     padding: 5px;
     border-collapse: collapse;
 }
@@ -67,4 +73,7 @@ td {
 
 #characterDetails {
     animation: animateDiv 1s linear;
+    width: 750px;
+    margin: 5px;
+    position: relative;
 }

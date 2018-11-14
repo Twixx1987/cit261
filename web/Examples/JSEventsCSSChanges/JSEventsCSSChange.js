@@ -122,6 +122,7 @@ function displayImage(key, obj, rootElement) {
 
     // create a div element to store the image
     let character = document.createElement("div");
+    character.setAttribute("class", "character");
 
     // set the content of the div
     character.innerHTML = txt;
@@ -212,7 +213,7 @@ function transformCharacter(element) {
 // a function to display content based on animation start
 function myStartFunction() {
     // get the status display div
-    let status = document.getElementById("StatusDisplay");
+    let status = document.getElementById("statusDisplay");
 
     // set the status text
     status.innerHTML = "Here I come.";
@@ -221,7 +222,7 @@ function myStartFunction() {
 // a function to display content based on animation end
 function myEndFunction() {
     // get the status display div
-    let status = document.getElementById("StatusDisplay");
+    let status = document.getElementById("statusDisplay");
 
     // set the status text
     status.innerHTML = "Good day adventurer.";

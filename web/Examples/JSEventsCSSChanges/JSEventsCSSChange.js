@@ -257,11 +257,11 @@ function transEndFunction() {
     // use session storage to track transition count
     if (sessionStorage.transitionCount) {
         // increment transition count
-        transitionCount = Number(sessionStorage.transitionCount) + 1;
+        transitionCount = Number(sessionStorage.transitionCount) + .5;
         console.log("transition count = " + transitionCount + " Session count = " + sessionStorage.transitionCount);
     } else {
         // initialize transition count session storage
-        transitionCount = 1;
+        transitionCount = .5;
         console.log("transition count = " + transitionCount + " Session count = " + sessionStorage.transitionCount);
     }
     // store transition count

@@ -170,6 +170,7 @@ function displayCharacter(obj) {
     // Add event listeners to modify content based on certain actions being performed
     table.addEventListener("animationstart", animStartFunction);
     table.addEventListener("animationend", animEndFunction);
+    table.addEventListener("touchstart", touchStartFunction);
 
     // update the character details
     document.getElementById("characterDetails").appendChild(table);
@@ -253,21 +254,47 @@ function transEndFunction() {
 
     // a variable to store the transition count
     let transitionCount;
-    console.log("transition count = " + transitionCount + " Session count = " + sessionStorage.transitionCount);
+
     // use session storage to track transition count
     if (sessionStorage.transitionCount) {
         // increment transition count
         transitionCount = Number(sessionStorage.transitionCount) + .5;
-        console.log("transition count = " + transitionCount + " Session count = " + sessionStorage.transitionCount);
     } else {
         // initialize transition count session storage
         transitionCount = .5;
-        console.log("transition count = " + transitionCount + " Session count = " + sessionStorage.transitionCount);
     }
     // store transition count
     sessionStorage.transitionCount = transitionCount;
-    console.log("transition count = " + transitionCount + " Session count = " + sessionStorage.transitionCount);
-
+    
     // set the status text
     status.innerHTML = "<h3>The transition count is: " + transitionCount + ".</h3>";
+}
+
+// a function to spin the table when touched
+function touchStartFunction() {
+    // get the element
+    let content = this;
+    
+    // set the rotation variable
+    let rotation = 0;
+
+    // set the timer interval
+    let interval = setInterval(frame, 3);
+
+    // rotation transform the element
+    function frame() {
+        // if the elements are rotated 90 degrees
+        if (rotation == 360) {
+            clearInterval(interval);
+
+            // update the contents
+            displayCharacter(obj);
+        } else {
+            // increment the rotation variable
+            rotation++;
+
+            // update the element
+            content.style.transform = "rotateY(" + rotation + "deg)";
+        }
+    }
 }

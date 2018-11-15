@@ -10,14 +10,14 @@
 <body onload="openJson('rdi.json', loadContent)">
     <div>
         <h1>JavaScript Events Example</h1>
-        <p>
+        <p id="trackFinger">
             This page displays the contents of rdi.json in a nice user friendly format.
             When you click on an image the top section will display the details of that
-            character. It will rotate the current contents out of view and the new
-            contents into view. Mousing over the image will bring the image into focus
-            by removing the opacity and increasing the size of the image. When scrolling
-            down to see more characters the currently selected character and explanation
-            remain at the top of the screen.
+            character. As the display is changing notifications will display indicating 
+            states of animation change. As you mouse over the characters, the transition 
+            counter will increase. Upon touching this paragraph ad moving your finger, 
+            the location of your finger will be displayed below the transition count. 
+            Upon touching the details it will spin around.
         </p>
         <div id="characterDisplay" class="flex-container">
             <div id="characterDetails"></div>

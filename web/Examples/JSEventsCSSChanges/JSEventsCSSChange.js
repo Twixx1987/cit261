@@ -140,11 +140,14 @@ function displayCharacter(obj) {
     // clear the contents of role details
     document.getElementById("characterDetails").innerHTML = "";
 
-    // start the table and add the columns
-    let txt = "<table id='addTable'>";
+    // create a table element
+    let table = document.createElement("table");
+
+    // set the table's id
+    table.setAttribute("id", "addTable");
 
     // display the character details
-    txt += "<tr><td><h2>" + obj.name + "</h2>" + obj.race + " - " + obj.class + "</td><td>";
+    let txt = "<tr><td><h2>" + obj.name + "</h2>" + obj.race + " - " + obj.class + "</td><td>";
     if (obj.good === undefined) {
         txt += "";
     } else {
@@ -159,11 +162,15 @@ function displayCharacter(obj) {
     txt += "<img src='" + obj.image + "'" + " alt='" + obj.name + "'"
         + " height='200' width='200' id='" + obj.image + "'></td></tr>";
 
-    // close the table
-    txt += "</table>";
+    // set the content of table
+    table.innerHTML = txt;
+
+    // Add event listeners to modify content based on certain actions being performed
+    table.addEventListener("animationstart", myStartFunction);
+    table.addEventListener("animationend", myEndFunction);
 
     // update the character details
-    document.getElementById("characterDetails").innerHTML = txt;
+    document.getElementById("characterDetails").appendChild(table);
 }
 
 // a function to animate the image on mouse over

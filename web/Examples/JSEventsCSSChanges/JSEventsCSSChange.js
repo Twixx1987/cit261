@@ -190,6 +190,12 @@ function transformCharacter(element) {
     // get the id of the element
     let id = element.getAttribute("id");
 
+    // get the status display div
+    let status = document.getElementById("statusDisplay");
+
+    // set the status text
+    status.innerHTML = "<h3>Good bye adventurer.</h3>";
+
     // load the sessionStorage object
     let obj = JSON.parse(sessionStorage.getItem(id));
 
@@ -226,7 +232,7 @@ function myStartFunction() {
     let status = document.getElementById("statusDisplay");
 
     // set the status text
-    status.innerHTML = "Here I come.";
+    status.innerHTML = "<h3>Here I come.</h3>";
 }
 
 // a function to display content based on animation end
@@ -235,5 +241,5 @@ function myEndFunction() {
     let status = document.getElementById("statusDisplay");
 
     // set the status text
-    status.innerHTML = "Good day adventurer.";
+    status.innerHTML = "<h3>Good day adventurer.</h3>";
 }

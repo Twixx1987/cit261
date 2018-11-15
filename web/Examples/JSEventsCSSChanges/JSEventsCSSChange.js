@@ -100,8 +100,11 @@ function loadContent(xhttp) {
                 let key = sessionStorage.key(count);
                 let value = JSON.parse(sessionStorage.getItem(key));
 
-                // append the character to root
-                displayImage(key, value, root);
+                // only look at the characters
+                if (key != "transitionCount") {
+                    // append the character to root
+                    displayImage(key, value, root);
+                }
             }
         }
         // Display an initial character
@@ -254,7 +257,7 @@ function transEndFunction() {
     // use session storage to track transition count
     if (sessionStorage.transitionCount) {
         // increment transition count
-        transitionCount = sessionStorage.transitionCount + 1;
+        transitionCount = Number(sessionStorage.transitionCount) + 1;
         console.log("transition count = " + transitionCount + " Session count = " + sessionStorage.transitionCount);
     } else {
         // initialize transition count session storage

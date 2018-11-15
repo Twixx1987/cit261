@@ -249,18 +249,21 @@ function transEndFunction() {
     let status = document.getElementById("transitionCount");
 
     // a variable to store the transition count
-    let transitionCount = 0;
-
+    let transitionCount;
+    console.log("transition count = " + transitionCount + " Session count = " + sessionStorage.transitionCount);
     // use session storage to track transition count
     if (sessionStorage.transitionCount) {
         // increment transition count
         transitionCount = sessionStorage.transitionCount++;
+        console.log("transition count = " + transitionCount + " Session count = " + sessionStorage.transitionCount);
     } else {
         // initialize transition count session storage
         transitionCount = 1;
+        console.log("transition count = " + transitionCount + " Session count = " + sessionStorage.transitionCount);
     }
     // store transition count
     sessionStorage.transitionCount = transitionCount;
+    console.log("transition count = " + transitionCount + " Session count = " + sessionStorage.transitionCount);
 
     // set the status text
     status.innerHTML = "<h3>The transition count is: " + transitionCount + ".</h3>";

@@ -310,5 +310,5 @@ function trackFingerFunction() {
     // get the movement
     let x = event.touches[0].clientX;
     let y = event.touches[0].clientY;
-    content.innerHTML = "Finger position: " + x + ", " + y;
+    content.innerHTML = "<h3>Finger position: " + x + ", " + y + "</h3>";
 }

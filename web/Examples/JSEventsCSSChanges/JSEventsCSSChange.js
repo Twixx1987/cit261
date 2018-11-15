@@ -138,7 +138,7 @@ function displayImage(key, obj, rootElement) {
 // display a character's details
 function displayCharacter(obj) {
     // clear the contents of role details
-    document.getElementById("roleDetails").innerHTML = "";
+    document.getElementById("characterDetails").innerHTML = "";
 
     // start the table and add the columns
     let txt = "<table id='addTable'>";

@@ -253,14 +253,12 @@ function transEndFunction() {
 
     // use session storage to track transition count
     if (sessionStorage.transitionCount) {
-        transitionCount = sessionStorage.transitionCount;
+        // increment transition count
+        transitionCount = sessionStorage.transitionCount++;
     } else {
-        transitionCount = 0;
+        // initialize transition count session storage
+        transitionCount = 1;
     }
-
-    // increment transition count
-    transitionCount++;
-
     // store transition count
     sessionStorage.transitionCount = transitionCount;
 

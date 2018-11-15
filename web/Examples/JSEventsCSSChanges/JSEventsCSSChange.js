@@ -80,6 +80,11 @@ function loadContent(xhttp) {
     // create a string variable to store the display contents
     let txt = "";
 
+    // get the paragraph to add an event listener
+    let paragraph = document.getElementById("trackFinger");
+
+    // Add event listener to modify content based on certain actions being performed
+    paragraph.addEventListener("touchmove", trackFingerFunction);
     // check to see that loadLocal executed
     if (success) {
         // check to see if session storage exists
@@ -109,7 +114,6 @@ function loadContent(xhttp) {
         }
         // Display an initial character
         displayCharacter(JSON.parse(sessionStorage.getItem("Character_1")));
-
     }
 }
 
@@ -297,4 +301,14 @@ function touchStartFunction() {
             content.style.transform = "rotateY(" + rotation + "deg)";
         }
     }
+}
+
+function trackFingerFunction() {
+    // get the element to display the movement
+    let content = document.getElementById("fingerLocation");
+
+    // get the movement
+    let x = event.touches[0].clientX;
+    let y = event.touches[0].clientY;
+    content.innerHTML = "Finger position: " + x + ", " + y;
 }

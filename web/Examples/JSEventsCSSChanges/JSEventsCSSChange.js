@@ -137,6 +137,9 @@ function displayImage(key, obj, rootElement) {
 
 // display a character's details
 function displayCharacter(obj) {
+    // clear the contents of role details
+    document.getElementById("roleDetails").innerHTML = "";
+
     // start the table and add the columns
     let txt = "<table id='addTable'>";
 
@@ -184,7 +187,7 @@ function transformCharacter(element) {
     let obj = JSON.parse(sessionStorage.getItem(id));
 
     // get the character details element
-    let content = document.getElementById("characterDetails");
+    let content = document.getElementById("addTable");
 
     // set the rotation variable
     let rotation = 0;

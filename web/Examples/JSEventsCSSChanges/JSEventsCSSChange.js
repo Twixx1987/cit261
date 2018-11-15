@@ -130,9 +130,8 @@ function displayImage(key, obj, rootElement) {
     // append the div to the root
     rootElement.appendChild(character);
 
-    // Add event listeners to modify content based on certain actions being performed
-    character.addEventListener("animationstart", myStartFunction);
-    character.addEventListener("animationend", myEndFunction);
+    // Add event listener to modify content based on certain actions being performed
+    character.addEventListener("transitionend", transEndFunction);
 }
 
 // display a character's details
@@ -166,8 +165,8 @@ function displayCharacter(obj) {
     table.innerHTML = txt;
 
     // Add event listeners to modify content based on certain actions being performed
-    table.addEventListener("animationstart", myStartFunction);
-    table.addEventListener("animationend", myEndFunction);
+    table.addEventListener("animationstart", animStartFunction);
+    table.addEventListener("animationend", animEndFunction);
 
     // update the character details
     document.getElementById("characterDetails").appendChild(table);
@@ -191,7 +190,7 @@ function transformCharacter(element) {
     let id = element.getAttribute("id");
 
     // get the status display div
-    let status = document.getElementById("statusDisplay");
+    let status = document.getElementById("characterGreet");
 
     // set the status text
     status.innerHTML = "<h3>Good bye adventurer.</h3>";
@@ -227,19 +226,44 @@ function transformCharacter(element) {
 }
 
 // a function to display content based on animation start
-function myStartFunction() {
+function animStartFunction() {
     // get the status display div
-    let status = document.getElementById("statusDisplay");
+    let status = document.getElementById("characterGreet");
 
     // set the status text
     status.innerHTML = "<h3>Here I come.</h3>";
 }
 
 // a function to display content based on animation end
-function myEndFunction() {
+function animEndFunction() {
     // get the status display div
-    let status = document.getElementById("statusDisplay");
+    let status = document.getElementById("characterGreet");
 
     // set the status text
     status.innerHTML = "<h3>Good day adventurer.</h3>";
+}
+
+// a function to display the transition count
+function transEndFunction() {
+    // get the status display div
+    let status = document.getElementById("transitionCount");
+
+    // a variable to store the transition count
+    let transitionCount = 0;
+
+    // use session storage to track transition count
+    if (sessionStorage.transitionCount) {
+        transitionCount = sessionStorage.transitionCount;
+    } else {
+        transitionCount = 0;
+    }
+
+    // increment transition count
+    transitionCount++;
+
+    // store transition count
+    sessionStorage.transitionCount = transitionCount;
+
+    // set the status text
+    status.innerHTML = "<h3>The transition count is: " + transitionCount + ".</h3>";
 }

@@ -73,7 +73,7 @@ td {
 }
 
 #addTable {
-    animation: animateTable 1s ease-in;
+    animation: animateTable 1s ease-out;
 }
 
 #characterDetails {

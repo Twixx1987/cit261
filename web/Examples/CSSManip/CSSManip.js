@@ -58,8 +58,8 @@ function part1() {
     // change the content of the start button
     let start = document.getElementById("start");
     start.innerHTML = "Transform?";
-    start.style.color = "#0033cc";
-    start.style.backgroundColor = "#ffff66";
+    start.style.color = "#f2f2f2";
+    start.style.backgroundColor = "#0d0d0d";
 
     // the next part of the story
     let text = "The HTML warrior began a transformative journey through the internet.";
@@ -79,8 +79,8 @@ function part2() {
     // change the content of the start button
     let start = document.getElementById("start");
     start.innerHTML = "Color?";
-    start.style.color = "#0022aa";
-    start.style.backgroundColor = "#ffff77";
+    start.style.color = "#e6e6e6";
+    start.style.backgroundColor = "#1a1a1a";
 
     // the next part of the story
     let text = "He encountered a rotation transform that made it hard to see so he turned back.";
@@ -104,8 +104,8 @@ function part3() {
     // change the content of the start button
     let start = document.getElementById("start");
     start.innerHTML = "Border?";
-    start.style.color = "#002288";
-    start.style.backgroundColor = "#ffff88";
+    start.style.color = "#d9d9d9";
+    start.style.backgroundColor = "#262626";
 
     // the next part of the story
     let text = "He found what looked like a cool color pallet but was really contrasting.";
@@ -130,8 +130,8 @@ function part4() {
     // change the content of the start button
     let start = document.getElementById("start");
     start.innerHTML = "Scale?";
-    start.style.color = "#002266";
-    start.style.backgroundColor = "#ffff99";
+    start.style.color = "#cccccc";
+    start.style.backgroundColor = "#333333";
 
     // the next part of the story
     let text = "After fixing his color the border crashed down on him.";
@@ -159,8 +159,8 @@ function part5() {
     // change the content of the start button
     let start = document.getElementById("start");
     start.innerHTML = "Fade?";
-    start.style.color = "#001155";
-    start.style.backgroundColor = "#ffffaa";
+    start.style.color = "#d9d9d9";
+    start.style.backgroundColor = "#262626";
 
     // the next part of the story
     let text = "Luckily, he found a way to push that border away.";
@@ -186,8 +186,8 @@ function part6() {
     // change the content of the start button
     let start = document.getElementById("start");
     start.innerHTML = "Reset?";
-    start.style.color = "#001133";
-    start.style.backgroundColor = "#ffffbb";
+    start.style.color = "#e6e6e6";
+    start.style.backgroundColor = "#1a1a1a";
 
     // the next part of the story
     let text = "But in escaping he began to fade.";
@@ -214,8 +214,8 @@ function part7() {
     // change the content of the start button
     let start = document.getElementById("start");
     start.innerHTML = "Start Over?";
-    start.style.color = "#000000";
-    start.style.backgroundColor = "#ffffff";
+    start.style.color = "#f2f2f2";
+    start.style.backgroundColor = "#0d0d0d";
 
     // the next part of the story
     let text = "To avoid fading entirely he ran back to where he started.";
@@ -253,4 +253,6 @@ function reset() {
     // change the content of the start button
     let start = document.getElementById("start");
     start.innerHTML = "Start";
+    start.style.color = "#ffffff";
+    start.style.backgroundColor = "#000000";
 }

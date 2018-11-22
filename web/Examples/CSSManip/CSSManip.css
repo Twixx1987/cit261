@@ -20,12 +20,16 @@
 }
 
 #demoText {
-
+    transition: all 1s ease-in-out;
+    width: 300px;
+    height: 300px;
+    padding: 25px;
 }
 
 #demoInner {
     transition: all 1s ease-in-out;
 }
+
 #history {
     list-style-type: none;
 }

@@ -7,32 +7,20 @@
     <link rel="stylesheet" href="CSSManip.css" />
     <title>CIT261 - Shaun Densley</title>
 </head>
-<body>
+<body onload="resetStorage()">
     <h1>Manipulating CSS Class Properties with JavaScript Examples</h1>
     <div>
         <p>
             This page will show a number of CSS Class Manipulations triggered 
-            using JavaScript. Click the button to begin a story with visuals.
+            using JavaScript. Click the button to begin a silly story with 
+            some visual effects.
         </p>
-        <button id="start" onclick="story">Let's start.</button>
+        <button id="start" onclick="startStory()">Let's start.</button>
         <div id="demoOuter">
             <h2 id="demoHeader">Part <span id="clickCount">1</span></h2>
             <p id="demoText">
-                The HTML warrior began a transformative journey through the internet.
-                He encountered a rotation transform that made it hard to see so he turned back.
-                He found what looked like a cool color pallet but was really contrasting.
-                After fixing his color he ran into a border.
-                Luckily, he found a way to escape that border.
-                But in escaping he began to fade.
-                To avoid fading entirely he ran back to where he started.
             </p>
-            <div id="demoInner">
-            </div>
         </div>
-    </div>
-    <div>
-        <ul id="history">
-        </ul>
     </div>
 </body>
 </html>

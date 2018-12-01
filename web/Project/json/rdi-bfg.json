@@ -1,0 +1,204 @@
+{
+  "game": "Red Dragon Inn: Battle for Greyport",
+  "versions": [
+    {
+      "version": "Red Dragon Inn: Battle for Greyport",
+      "characters": [
+        {
+          "name": "Zot the Wizard",
+          "image": "Zot.jpg",
+          "levels": [
+            {
+              "level": "Level 1",
+              "abilities": "Splash 2",
+              "damage": "Yellow Die"
+            },
+            {
+              "level": "Level 2",
+              "abilities": "Splash 3, Pierce 1",
+              "damage": "Yellow Die"
+            },
+            {
+              "level": "Level 3",
+              "abilities": "Splash 3, Pierce 1. After the fight, each player may retire a card from their hand.",
+              "damage": "Yellow Die"
+            }
+          ]
+        },
+        {
+          "name": "Deirdre the Priestess",
+          "image": "Deirdre.jpg",
+          "levels": [
+            {
+              "level": "Level 1",
+              "abilities": "A player of your choice draws a card.",
+              "damage": "Yellow Die"
+            },
+            {
+              "level": "Level 2",
+              "abilities": "Shield 1. A player of your choice draws a card.",
+              "damage": "Yellow Die"
+            },
+            {
+              "level": "Level 3",
+              "abilities": "Shield 1. A player of your choice draws a card. Dual Wield.",
+              "damage": "White Die"
+            }
+          ]
+        },
+        {
+          "name": "Fiona the Volatile",
+          "image": "Fiona.jpg",
+          "levels": [
+            {
+              "level": "Level 1",
+              "abilities": "Cleave",
+              "damage": "Yellow Die"
+            },
+            {
+              "level": "Level 2",
+              "abilities": "Taunt. Cleave.",
+              "damage": "White Die"
+            },
+            {
+              "level": "Level 3",
+              "abilities": "Taunt. Cleave. +2 damage if Fiona has an item.",
+              "damage": "White Die"
+            }
+          ]
+        },
+        {
+          "name": "Gerki the Sneak",
+          "image": "Gerki.jpg",
+          "levels": [
+            {
+              "level": "Level 1",
+              "abilities": "Snipe 2.",
+              "damage": "Yellow Die"
+            },
+            {
+              "level": "Level 2",
+              "abilities": "Snipe 2. Gerki may fight any monster in play.",
+              "damage": "Yellow Die"
+            },
+            {
+              "level": "Level 3",
+              "abilities": "Snipe 3. Gerki may fight any monster in play. +2 damage if Gerki has an item.",
+              "damage": "Yellow Die"
+            }
+          ]
+        },
+        {
+          "name": "Chronos the Time Mage",
+          "image": "Chronos.png",
+          "levels": [
+            {
+              "level": "Level 1",
+              "abilities": "You may reroll a Yellow or White die used in this fight. You must keep the new result.",
+              "damage": "Yellow Die"
+            },
+            {
+              "level": "Level 2",
+              "abilities": "Dual Wield. You may reroll any single die used in this fight. You must keep the new result.",
+              "damage": "White Die"
+            },
+            {
+              "level": "Level 3",
+              "abilities": "Dual Wield. You may reroll any dice used in this fight. You must keep the new result.",
+              "damage": "White Die"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "Battle for Greyport: Pirates",
+      "characters": [
+        {
+          "name": "First Mate Remy",
+          "image": "Remy.png",
+          "levels": [
+            {
+              "level": "Level 1",
+              "abilities": "Whenever Remy equips an item, draw a card.",
+              "damage": "Yellow Die"
+            },
+            {
+              "level": "Level 2",
+              "abilities": "Dual Wield. Whenever Remy equips an item, draw a card.",
+              "damage": "Yellow Die"
+            },
+            {
+              "level": "Level 3",
+              "abilities": "Triple Wield. Whenever Remy equips an item, draw a card.",
+              "damage": "Yellow Die"
+            }
+          ]
+        },
+        {
+          "name": "Bryn the Boatswain",
+          "image": "Bryn.png",
+          "levels": [
+            {
+              "level": "Level 1",
+              "abilities": "",
+              "damage": "White Die"
+            },
+            {
+              "level": "Level 2",
+              "abilities": "",
+              "damage": "Green Die"
+            },
+            {
+              "level": "Level 3",
+              "abilities": "+1 damage per active monster.",
+              "damage": "Green Die"
+            }
+          ]
+        },
+        {
+          "name": "Tara the Navigator",
+          "image": "Tara.png",
+          "levels": [
+            {
+              "level": "Level 1",
+              "abilities": "Vision 2",
+              "damage": "Yellow Die"
+            },
+            {
+              "level": "Level 2",
+              "abilities": "Vision 3, then a player of your choice draws a card.",
+              "damage": "Yellow Die"
+            },
+            {
+              "level": "Level 3",
+              "abilities": "Vision 3. You may retire one of the cards you reveal. A player of your choice draws a card.",
+              "damage": "Yellow Die"
+            }
+          ]
+        },
+        {
+          "name": "Captain Whitehawk",
+          "image": "CaptainWhitehawk.png",
+          "levels": [
+            {
+              "level": "Level 1",
+              "abilities": "+Hero",
+              "damage": "Yellow Die"
+            },
+            {
+              "level": "Level 2",
+              "abilities": "+Hero. After the fight, Snipe X, where X equals the number of heroes you have in play.",
+              "damage": "Yellow Die"
+            },
+            {
+              "level": "Level 3",
+              "abilities": "+Hero, +Hero. After the fight, Snipe X, where X equals the number of heroes you have in play.",
+              "damage": "White Die"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

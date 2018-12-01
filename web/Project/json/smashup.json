@@ -1,0 +1,400 @@
+{
+  "game": "Smash Up",
+  "versions": [
+    {
+      "version": "Smash Up",
+      "factions": [
+        {
+          "name": "Aliens",
+          "description": "Return minions to their owners' hands, gain victory points instantly, and manipulate bases.",
+          "image": "Aliens.png"
+        },
+        {
+          "name": "Dinosaurs",
+          "description": "Play high-powered minions and actions with some protection and destruction.",
+          "image": "Dinosaurs.png"
+        },
+        {
+          "name": "Ninjas",
+          "description": "Destroy minions and actions, and sneak onto bases at the last second using special abilities.",
+          "image": "Ninjas.png"
+        },
+        {
+          "name": "Pirates",
+          "description": "Move around from base to base and destroy weak minions, usually several at the same time.",
+          "image": "Pirates.png"
+        },
+        {
+          "name": "Robots",
+          "description": "Play several weak minions in a single turn, often with power bonuses or useful abilities.",
+          "image": "Robots.png"
+        },
+        {
+          "name": "Tricksters",
+          "description": "Force other players to discard and make bases undesirable to play on.",
+          "image": "Tricksters.png"
+        },
+        {
+          "name": "Wizards",
+          "description": "Draw and play extra cards each turn, especially actions.",
+          "image": "Wizards.png"
+        },
+        {
+          "name": "Zombies",
+          "description": "Play minions directly from the discard pile or retrieve discarded cards into your deck/hand.",
+          "image": "Zombies.png"
+        }
+      ]
+    },
+    {
+      "version": "Awesome Level 9000",
+      "factions": [
+        {
+          "name": "Bear Cavalry",
+          "description": "Move other players' minions away from bases you have minions on, and destroy moving minions.",
+          "image": "Bear_Cavalry.png"
+        },
+        {
+          "name": "Ghosts",
+          "description": "Can shrink hand size and gain benefits from having 2 or fewer cards in your hand.",
+          "image": "Ghosts.png"
+        },
+        {
+          "name": "Killer Plants",
+          "description": "Play extra minions, usually straight from the deck, and grow more powerful on bases through multi-turn abilities.",
+          "image": "Killer_Plant.png"
+        },
+        {
+          "name": "Steampunks",
+          "description": "Play powerful base actions that can be salvaged from the discard pile, and move your minions between bases.",
+          "image": "Steampunks.png"
+        }
+      ]
+    },
+    {
+      "version": "The Obligatory Cthulhu",
+      "factions": [
+        {
+          "name": "Elder Things",
+          "description": "This faction gives Madness to other players, and has strong minions that are difficult to play.",
+          "image": "Elder_Things.png"
+        },
+        {
+          "name": "Innsmouth",
+          "description": "Ten copies of the same power-2 minion and actions that benefit your weak minions and those that have the same name as each other.",
+          "image": "Innsmouth.png"
+        },
+        {
+          "name": "Minions of Cthulhu a.k.a. Cthulhu Cultists",
+          "description": "Play lots of actions, recover cards from the discard pile, and slow the game down all the while gaining Madness.",
+          "image": "Minions_of_Cthulhu.png"
+        },
+        {
+          "name": "Miskatonic University",
+          "description": "Gain, use, and lose Madness to accomplish a little of everything.",
+          "image": "Miskatonic_University.png"
+        }
+      ]
+    },
+    {
+      "version": "Science Fiction Double Feature",
+      "factions": [
+        {
+          "name": "Cyborg Apes",
+          "description": "Play lots of actions on minions to power them up.",
+          "image": "Cyborg_Apes.png"
+        },
+        {
+          "name": "Shapeshifters",
+          "description": "Copy other players' power and abilities, destroy and replace your minions.",
+          "image": "Shapeshifters.png"
+        },
+        {
+          "name": "Super Spies",
+          "description": "Sabotage other players' hands and deck while improving yours, and play specials while bases are scoring.",
+          "image": "Super_Spies.png"
+        },
+        {
+          "name": "Time Travelers",
+          "description": "Replay actions and minions, and avoid the discard pile by placing cards in your hand or the bottom of your deck.",
+          "image": "Time_Travelers.png"
+        }
+      ]
+    },
+    {
+      "version": "The Big Geeky Box",
+      "factions": [
+        {
+          "name": "Geeks",
+          "description": "Use your knowledge of the game to disrupt other players' plans.",
+          "image": "Geeks.png"
+        }
+      ]
+    },
+    {
+      "version": "Monster Smash",
+      "factions": [
+        {
+          "name": "Giant Ants",
+          "description": "Weak minions with lots of +1 power counters that can flexibly move and allocate them.",
+          "image": "Giant_Ants.png"
+        },
+        {
+          "name": "Mad Scientists",
+          "description": "Play lots of +1 power counters, and gain bonuses for removing +1 power counters.",
+          "image": "Mad_Scientists.png"
+        },
+        {
+          "name": "Vampires",
+          "description": "Destroy your and others' minions to gain +1 power counters.",
+          "image": "Vampires.png"
+        },
+        {
+          "name": "Werewolves",
+          "description": "Minions with strong but temporary power bursts, bonuses based on power, and destruction.",
+          "image": "Werewolves.png"
+        }
+      ]
+    },
+    {
+      "version": "Pretty Pretty Smash Up",
+      "factions": [
+        {
+          "name": "Fairies",
+          "description": "Choose between effects and counter actions played on minions and bases.",
+          "image": "Fairies.png"
+        },
+        {
+          "name": "Kitty Cats",
+          "description": "Weaken other players' minions, temporarily take control of weak minions, and destroy minions you control.",
+          "image": "Kitty_Cats.png"
+        },
+        {
+          "name": "Mythic Horses",
+          "description": "Play multiple minions in a turn with bonuses for having multiple minions on the same base.",
+          "image": "Mythic_Horses.png"
+        },
+        {
+          "name": "Princesses",
+          "description": "Six power-5 minions with powerful talents and ongoing abilities, and a diverse assortment of supporting actions revolving around moving minions around, card draw and card retrieval.",
+          "image": "Princesses.png"
+        }
+      ]
+    },
+    {
+      "version": "Smash Up: Munchkin",
+      "factions": [
+        {
+          "name": "Clerics",
+          "description": "Return cards from the discard pile and prevent cards from going to the discard pile.",
+          "image": "Clerics.png"
+        },
+        {
+          "name": "Dwarves",
+          "description": "Gain and play treasures to boost the power of your minions.",
+          "image": "Dwarves.png"
+        },
+        {
+          "name": "Elves",
+          "description": "Help other players to indirectly help yourself at the right moment.",
+          "image": "Elves.png"
+        },
+        {
+          "name": "Halflings",
+          "description": "Draw many minions, play many minions and put minions on top of your deck.",
+          "image": "Halflings.png"
+        },
+        {
+          "name": "Mages",
+          "description": "Discard cards for benefits, such as power gain, minion destruction, extra cards, and monster manipulation.",
+          "image": "Mages.png"
+        },
+        {
+          "name": "Orcs",
+          "description": "Brute force against your opponents with bonuses for having more power than others.",
+          "image": "Orcs.png"
+        },
+        {
+          "name": "Thieves",
+          "description": "Steal action cards in play, gain treasures, and sell treasures for benefits, such as VPs, power gain, and minion destruction.",
+          "image": "Thieves.png"
+        },
+        {
+          "name": "Warriors",
+          "description": "Play and destroy monsters on bases to manipulate the breakpoint and gain treasures.",
+          "image": "Warriors.png"
+        }
+      ]
+    },
+    {
+      "version": "It’s Your Fault!",
+      "factions": [
+        {
+          "name": "Dragons",
+          "description": "Manipulate bases and make them unattractive for other players with your presence.",
+          "image": "Dragons.png"
+        },
+        {
+          "name": "Mythic Greeks",
+          "description": "Get bonus power from playing the diverse \"favors of the gods\" (= actions).",
+          "image": "Mythic_Greeks.png"
+        },
+        {
+          "name": "Sharks",
+          "description": "Move around and destroy weaker minions to get +1 power counters and extra minion plays.",
+          "image": "Sharks.png"
+        },
+        {
+          "name": "Superheroes a.k.a. Super Heroes",
+          "description": "Morph your weak minions into power-5-or-more minions.",
+          "image": "Superheroes.png"
+        },
+        {
+          "name": "Tornados",
+          "description": "Move minions, move your own minions, move other players' minions.",
+          "image": "Tornados.png"
+        }
+      ]
+    },
+    {
+      "version": "Cease and Desist",
+      "factions": [
+        {
+          "name": "Astroknights",
+          "description": "Ten unique minions that focus on drawing and playing actions that directly increase minion power.",
+          "image": "Astro_Knights.png"
+        },
+        {
+          "name": "Changebots",
+          "description": "Mobile faction where minions switch between having higher power and utilizing abilities.",
+          "image": "Changebots.png"
+        },
+        {
+          "name": "Ignobles",
+          "description": "Give control of your minions to others for benefits, often before taking them back.",
+          "image": "Ignobles.png"
+        },
+        {
+          "name": "Star Roamers",
+          "description": "Return your minions to hand for benefits, and manipulate how your minions are affected, like moving them instead of returning them or having your power-2 minions be affected instead of others.",
+          "image": "Star_Roamers.png"
+        }
+      ]
+    },
+    {
+      "version": "What Were We Thinking?",
+      "factions": [
+        {
+          "name": "Explorers",
+          "description": "Manipulate the next bases of the base deck, move/play extra minions on new bases to take early leads, and move minions all over the place.",
+          "image": "Explorers.png"
+        },
+        {
+          "name": "Grannies",
+          "description": "Manipulate your deck, draw/play actions from the top of your deck and draw/play minions from the bottom of your deck.",
+          "image": "Grannies.png"
+        },
+        {
+          "name": "Rock Stars",
+          "description": "Collect Groupies, gain advantages from bases with high breakpoints, play and move many minions at once to break bases.",
+          "image": "Rock_Stars.png"
+        },
+        {
+          "name": "Teddy Bears",
+          "description": "Low power minions who rise in power to challenge opponents, with actions focused on neutralizing enemy threats and drawing more cards.",
+          "image": "Tedyy_Bears.png"
+        }
+      ]
+    },
+    {
+      "version": "Big in Japan",
+      "factions": [
+        {
+          "name": "Itty Critters",
+          "description": "Play weak extra minions that go under your deck at the end of the turn.",
+          "image": "Itty_Critters.png"
+        },
+        {
+          "name": "Kaiju",
+          "description": "Gain power through your play-on-base actions and destroy other players' cards.",
+          "image": "Kaiju.png"
+        },
+        {
+          "name": "Magical Girls",
+          "description": "Abilities that get better the more minions you have on the same base.",
+          "image": "Magical_Girls.png"
+        },
+        {
+          "name": "Mega Troopers",
+          "description": "Special abilities that can help you during the scoring of bases.",
+          "image": "Mega_Troopers.png"
+        }
+      ]
+    },
+    {
+      "version": "That ’70s Expansion",
+      "factions": [
+        {
+          "name": "Disco Dancers",
+          "description": "Duplicate the effects caused by standard actions, thus increasing the number of affected minions.",
+          "image": "Disco.png"
+        },
+        {
+          "name": "Kung Fu Fighters",
+          "description": "Generate +1 power counters, drain them from any player's minions and destroy weaker minions.",
+          "image": "Kung_Fu.png"
+        },
+        {
+          "name": "Truckers",
+          "description": "Use play-on-base actions as vehicles to move themselves and gain power, and mess with other players' play-on-base actions.",
+          "image": "Trucker.png"
+        },
+        {
+          "name": "Vigilantes",
+          "description": "A group of seven power-4 minions with powerful and oppressive abilities, including hard removal, power boost and retaliation.",
+          "image": "Vigilante.png"
+        }
+      ]
+    },
+    {
+      "version": "The Bigger Geekier Box",
+      "factions": [
+        {
+          "name": "Geeks",
+          "description": "Use your knowledge of the game to disrupt other players' plans.",
+          "image": "Geeks.png"
+        },
+        {
+          "name": "Smash Up All Stars",
+          "description": "Draw and retrieve cards from your deck and discard pile to get your best cards out as soon as possible and keep them around for as long as possible.",
+          "image": "All_Stars.png"
+        }
+      ]
+    },
+    {
+      "version": "Oops, You Did It Again",
+      "factions": [
+        {
+          "name": "Ancient Egyptians",
+          "description": "Bury cards for use in the future and gain benefits from burying and uncovering cards.",
+          "image": "Ancient_Egyptians.png"
+        },
+        {
+          "name": "Cowboys",
+          "description": "Start duels with other players' minions, and boost your own power to win duels.",
+          "image": "Cowboys.png"
+        },
+        {
+          "name": "Samurai",
+          "description": "Give you various benefits whenever your minions go to the discard pile from play.",
+          "image": "Samurai.png"
+        },
+        {
+          "name": "Vikings",
+          "description": "Steal other players' cards and gain power at the cost of placing cards from your hand on the top of your deck.",
+          "image": "Vikings.png"
+        }
+      ]
+    }
+  ]
+}

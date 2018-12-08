@@ -143,7 +143,7 @@ function loadPandemic(xhttp) {
             roleObj.version = pandemicObj.versions[version].version;
             
             // display the version
-            txt += displayImage(id, value);
+            txt += displayImage(id, roleObj);
 
             // increment count
             count++;

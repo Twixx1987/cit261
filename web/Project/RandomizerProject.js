@@ -162,13 +162,17 @@ function displayImage(id, obj) {
        + "<div class='face front'><img src='../images/Pandemic/" + obj.image + "'"
        + " alt='" + obj.name + "'"
        + " class='thumbnail' id='" + id + "'/></div>"
-       + "<div class='face back'><img src='RoleBack.jpg'"
+       + "<div class='face back'><img src='../images/Pandemic/RoleBack.jpg'"
        + " alt='Card Back'"
        + " class='thumbnail' id='" + id + "'/></div>"
        + "<div class='face right'></div>"
        + "<div class='face left'></div>"
        + "<div class='face top'></div>"
        + "<div class='face bottom'></div>"
+       + "<div class='details'>"
+       + "<h4>" + obj.name + "</h4>"
+       + "<p>" + obj.abilities + "</p>"
+       + "</div>"
        + "</div>";
 
     // return the content

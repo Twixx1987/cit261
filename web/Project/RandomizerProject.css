@@ -21,6 +21,18 @@ a:hover, a:active {
     margin: 50px;
 }
 
+.details {
+    display: none;
+}
+
+.details h4 {
+    font-size: 16px;
+}
+
+.details p {
+    font-size: 14px;
+}
+
 .flex-container {
   display: flex;
   flex-wrap: wrap;

@@ -87,6 +87,11 @@ td {
     z-index: 5;
 }
 
+.element-3d:hover .details {
+    display: block;
+    z-index: 5;
+}
+
 .transition-all {
     transition: all .4s ease-in;
 }

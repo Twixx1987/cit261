@@ -160,7 +160,7 @@ function displayImage(id, obj) {
     // Create the image tag
     let txt = "<div id='" + id + "' class='card transition-all element-3d'"
        + " onclick='transformCharacter(this)' >"
-       + "<div class='face front'><img src='" + obj.image + "'"
+       + "<div class='face front'><img src='../images/" + obj.image + "'"
        + " alt='" + obj.name + "'"
        + " class='thumbnail' id='" + id + "'/></div>"
        + "<div class='face back'><img src='RoleBack.jpg'"

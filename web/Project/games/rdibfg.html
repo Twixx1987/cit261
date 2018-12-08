@@ -40,7 +40,11 @@
     <!-- the form tab used to enter player information and generate role selection -->
     <div id="form" class="tabcontent">
         <h3>Player Configuration</h3>
-        <p>Please enter the number of players you would like to join the game.</p>
+        <p>
+            Please enter the number of players you would like to join the game.
+            Battle for Greyport has a minimum of two players and a maximum limit 
+            of five players.
+        </p>
         <label for="numPlayers">Number of Players</label>
         <br />
         <input type="number" max="5" min="2" name="numPlayers" value="2" id="numPlayers" onchange="listPlayers()"/>

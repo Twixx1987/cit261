@@ -40,7 +40,11 @@
     <!-- the form tab used to enter player information and generate role selection -->
     <div id="form" class="tabcontent">
         <h3>Player Configuration</h3>
-        <p>Please enter the number of players you would like to join the game.</p>
+        <p>
+            Please enter the number of players you would like to join the game.
+            Smash Up has a minimum of two players but does not have a maximum
+            limit of players. It is recommended to have a maximum of ten players.
+        </p>
         <label for="numPlayers">Number of Players</label>
         <br />
         <input type="number" min="2" name="numPlayers" value="2" id="numPlayers" onchange="listPlayers()" />

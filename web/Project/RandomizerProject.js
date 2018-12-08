@@ -158,9 +158,8 @@ function loadPandemic(xhttp) {
 ******************************************************************/
 function displayImage(id, obj) {
     // Create the image tag
-    let txt = "<div id='" + id + "' class='card transition-all element-3d'"
-       + " onclick='transformCharacter(this)' >"
-       + "<div class='face front'><img src='../images/" + obj.image + "'"
+    let txt = "<div id='" + id + "' class='card transition-all element-3d'>"
+       + "<div class='face front'><img src='../images/Pandemic/" + obj.image + "'"
        + " alt='" + obj.name + "'"
        + " class='thumbnail' id='" + id + "'/></div>"
        + "<div class='face back'><img src='RoleBack.jpg'"

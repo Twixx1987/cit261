@@ -16,6 +16,11 @@ a:hover, a:active {
   color: #0040ff;
 } 
 
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
 /******************************************************************
 * The following menu code comes from W3Schools.com
 * https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_topnav

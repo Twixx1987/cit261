@@ -118,7 +118,9 @@ function openJson(url, callbackFunc) {
     xmlhttp.send();
 }
 
-// generate the settings list
+/******************************************************************
+* A function to generate the settings list
+******************************************************************/
 function loadPandemic(xhttp) {
     // create an object and parse the JSON file
     let pandemicObj = JSON.parse(xhttp.responseText);
@@ -151,7 +153,9 @@ function loadPandemic(xhttp) {
     document.getElementById("rolesList").innerHTML = txt;
 }
 
-// genearte the code for an image
+/******************************************************************
+* A function to genearte the code for an image
+******************************************************************/
 function displayImage(id, obj) {
     // Create the image tag
     let txt = "<div id='" + id + "' class='card transition-all element-3d'"

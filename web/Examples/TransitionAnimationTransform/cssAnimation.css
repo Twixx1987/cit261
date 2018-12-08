@@ -98,7 +98,10 @@ td {
     transform: rotate3d(0, 0, 1, 45deg);
 }
 
-/* code from MDN.org transform function */
+/******************************************************************
+* code from developer.mozilla.org transform function 
+* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transforms/Using_CSS_transforms
+******************************************************************/
 .element-3d {
     width: 108px;
     height: 150px;

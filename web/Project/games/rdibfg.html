@@ -10,18 +10,44 @@
     <title>Game Randomizer</title>
 </head>
 <body>
-    <h1>The Red Dragon Inn: Battle for Greyport Randomizer</h1>
+    <h1>RDI: Battle for Greyport Randomizer</h1>
     <div id="menu" class="menu">
         <a href="../RandomizerProject.html">Home</a>
         <a href="./pandemic.html">Pandemic</a>
         <a href="./rdi.html">The Red Dragon Inn</a>
-        <a href="#" class="active">Battle for Greyport</a>
+        <a href="#" class="active-menu-item">Battle for Greyport</a>
         <a href="./smashup.html">Smash Up</a>
         <a href="javascript:void(0);" class="icon" onclick="menuToggle()">
             <i class="fa fa-bars"></i>
         </a>
     </div>
 
+    <!-- The page tabs -->
+    <div class="tab">
+        <button class="tablinks active" onclick="switchTab(event, 'settings')">Character Settings</button>
+        <button class="tablinks" onclick="switchTab(event, 'form')">Player Configuration</button>
+    </div>
+
+    <!-- the settings tab used to display the role cards and details -->
+    <div id="settings" class="tabcontent active-tab">
+        <h3>Character Selection Settings</h3>
+        <p>Please select all the characters that you would like to chose from for this game.</p>
+        <div class="flex-container">
+
+        </div>
+    </div>
+
+    <!-- the form tab used to enter player information and generate role selection -->
+    <div id="form" class="tabcontent">
+        <h3>Player Configuration</h3>
+        <p>Please enter the number of players you would like to join the game.</p>
+        <label for="numPlayers">Number of Players</label>
+        <br />
+        <input type="number" max="5" min="2" name="numPlayers" value="2" id="numPlayers" onchange="listPlayers()"/>
+        <br />
+    </div>
+
+    <!-- legal footer information -->
     <div id="footer">
         <h4>Legal Information</h4>
         <p>

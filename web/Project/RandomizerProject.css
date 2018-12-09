@@ -129,7 +129,7 @@ td {
 
 .bottom {
     background: #051539;
-    transform: rotateX(-90deg) translateZ(51px);
+    transform: rotateX(-90deg) translateZ(98px);
     width: 100%;
     height: 0.66%;
 }
@@ -267,7 +267,7 @@ td {
     border-bottom: 1px dotted black;
 }
 
-.tooltip .tooltiptext {
+.tooltip > .tooltiptext {
     visibility: hidden;
     width: 120px;
     background-color: #555;
@@ -284,7 +284,7 @@ td {
     transition: opacity 0.3s;
 }
 
-.tooltip .tooltiptext::after {
+.tooltip > .tooltiptext::after {
     content: "";
     position: absolute;
     bottom: 100%;
@@ -295,7 +295,7 @@ td {
     border-color: transparent transparent #555 transparent;
 }
 
-.tooltip:hover .tooltiptext {
+.tooltip:hover > .tooltiptext {
     visibility: visible;
     opacity: 1;
 }

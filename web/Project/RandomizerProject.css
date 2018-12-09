@@ -83,11 +83,6 @@ td {
     z-index: 5;
 }
 
-.element-3d .details:hover {
-    display: block;
-    z-index: 5;
-}
-
 .transition-all {
     transition: all 0.4s ease-in;
 }
@@ -261,11 +256,13 @@ td {
 * The following tooltip code comes from W3Schools.com
 * https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_tooltip
 ******************************************************************/
+/* Style the tooltip */
 .tooltip {
     position: relative;
     display: inline-block;
 }
 
+/* Style the tooltip text */
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
@@ -280,11 +277,11 @@ td {
     left: 50%;
     margin-left: -60px;
     opacity: 0;
-    transition-delay: 0.4s;
-    transition: opacity 0.4s;
+    transition: opacity 0.4s linear 0.4s;
     line-height: normal;
 }
 
+/* Style the tooltip text arrow */
 .tooltip .tooltiptext::after {
     content: "";
     position: absolute;
@@ -296,6 +293,7 @@ td {
     border-color: transparent transparent #555 transparent;
 }
 
+/* display the tooltip text on tooltip hover */
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;

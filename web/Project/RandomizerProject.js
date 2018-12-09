@@ -158,7 +158,7 @@ function loadPandemic(xhttp) {
 ******************************************************************/
 function displayImage(id, obj) {
     // Create the image tag
-    let txt = "<div id='" + id + "' class='card transition-all element-3d'>"
+    let txt = "<div id='" + id + "' class='card transition-all element-3d tooltip'>"
        + "<div class='face front'><img src='../images/Pandemic/" + obj.image + "'"
        + " alt='" + obj.name + "'"
        + " class='thumbnail' id='" + id + "'/></div>"
@@ -168,7 +168,7 @@ function displayImage(id, obj) {
        + "<div class='face right'></div>"
        + "<div class='face left'></div>"
        + "<div class='face top'></div>"
-       + "<div class='face bottom tooltip'></div>"
+       + "<div class='face bottom'></div>"
        + "<div class='tooltiptext'>"
        + "<h4>" + obj.name + "</h4>"
        + "<p>" + obj.abilities + "</p>"

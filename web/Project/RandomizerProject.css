@@ -89,7 +89,7 @@ td {
 }
 
 .transition-all {
-    transition: all .4s ease-in;
+    transition: all 0.4s ease-in;
 }
 
 .front {
@@ -227,7 +227,7 @@ td {
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
-    transition: 0.3s;
+    transition: 0.4s;
     font-size: 17px;
 }
 
@@ -280,7 +280,8 @@ td {
     left: 50%;
     margin-left: -60px;
     opacity: 0;
-    transition: opacity 0.6s;
+    transition-delay: 0.4s;
+    transition: opacity 0.4s;
     line-height: normal;
 }
 

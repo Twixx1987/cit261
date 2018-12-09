@@ -143,7 +143,7 @@ function loadPandemic(xhttp) {
             roleObj.version = pandemicObj.versions[version].version;
             
             // display the version
-            txt += displayImage(id, roleObj);
+            txt += displayPandemicImage(id, roleObj);
 
             // increment count
             count++;
@@ -156,7 +156,7 @@ function loadPandemic(xhttp) {
 /******************************************************************
 * A function to genearte the code for an image
 ******************************************************************/
-function displayImage(id, obj) {
+function displayPandemicImage(id, obj) {
     // Create the image tag
     let txt = "<div id='" + id + "' class='card transition-all element-3d tooltip'>"
        + "<div class='face front'><img src='../images/Pandemic/" + obj.image + "'"

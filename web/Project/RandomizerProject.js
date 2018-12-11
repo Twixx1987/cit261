@@ -157,14 +157,18 @@ function loadPandemic(xhttp) {
 * A function to genearte the code for an image
 ******************************************************************/
 function displayPandemicImage(id, obj) {
+    // create local storage for the role selection
+    if (!localStorage.pandemicRoles) {
+        localStorage.pandemicRoles = [];
+    }
+
     // Create the image tag
     let txt = "<div id='" + id + "' class='card transition-all element-3d tooltip'>"
        + "<div class='face front'><img src='../images/Pandemic/" + obj.image + "'"
        + " alt='" + obj.name + "'"
        + " class='thumbnail' id='" + id + "'/></div>"
-       + "<div class='face back'><img src='../images/Pandemic/RoleBack.jpg'"
-       + " alt='Card Back'"
-       + " class='thumbnail' id='" + id + "'/></div>"
+       + "<div class='face back'><h4>" + obj.name + "</h4>"
+       + "<p>" + obj.abilities + "</p></div>"
        + "<div class='face right'></div>"
        + "<div class='face left'></div>"
        + "<div class='face top'></div>"
@@ -173,6 +177,7 @@ function displayPandemicImage(id, obj) {
        + "<h4>" + obj.name + "</h4>"
        + "<p>" + obj.abilities + "</p>"
        + "</div>"
+       + "<input type='checkbox' value='" + id + "' style='display:none;' name='" + id + ">"
        + "</div>";
 
     // return the content

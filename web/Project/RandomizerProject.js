@@ -209,12 +209,12 @@ function loadPandemic(xhttp) {
 function displayPandemicImage(id, obj) {
     // create local storage for the role selection
     if (!localStorage.pandemicRoles) {
-        localStorage.pandemicRoles = {};
+        localStorage.pandemicRoles = [];
     }
-
+    console.log(localStorage.pandemicRoles.indexOf(id));
     // Create the image tag
     let txt = "<div id='" + id + "' class='card transition-all element-3d "
-       + (localStorage.pandemicRoles[id] != id ? " checked" : "unchecked")
+       + (localStorage.pandemicRoles.indexOf(id) != -1 ? " checked" : "unchecked")
        + "' onclick='pandemicRoleDetails(this)'>"
        + "<div class='face front'><img src='../images/Pandemic/" + obj.image + "'"
        + " alt='" + obj.name + "'"
@@ -244,7 +244,6 @@ function pandemicRoleDetails(element) {
         // remove the role from local storage
         delete localStorage.pandemicRoles[id];
         console.log("remove role", id);
-
         // toggle the classes for the selected card
         element.classList.toggle("checked");
         element.classList.toggle("unchecked");
@@ -252,7 +251,6 @@ function pandemicRoleDetails(element) {
         // add the role to the local stoarge list
         localStorage.pandemicRoles[id] = id;
         console.log("add role", id);
-
         // toggle the classes for the selected card
         element.classList.toggle("checked");
         element.classList.toggle("unchecked");

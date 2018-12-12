@@ -240,12 +240,12 @@ function pandemicRoleDetails(element) {
     let id = element.getAttribute("id");
 
     // check to see if the role is in storage
-    if (localStorage.pandemicRoles.indexOf(id) != -1) {
-        // add the role to the local stoarge list
-        localStorage.pandemicRoles.push(id);
-    } else {
+    if (localStorage.pandemicRoles[id]) {
         // remove the role from local storage
-        delete localStorage.pandemicRoles.indexOf(id);
+        delete localStorage.pandemicRoles[id];
+    } else {
+        // add the role to the local stoarge list
+        localStorage.pandemicRoles[id] = id;
     }
 
     // get the current details element if it exists
@@ -254,11 +254,8 @@ function pandemicRoleDetails(element) {
     // set the fade and move variables
     let timer = 0;
 
-    // remove the current details div if it exists
-    if (currentDetail) {
-        // use the interval function to create an animation
-        let interval = setInterval(frame, 5);
-    }
+    // use the interval function to create an animation
+    let interval = setInterval(frame, 5);
 
     // rotation transform the element
     function frame() {
@@ -267,8 +264,11 @@ function pandemicRoleDetails(element) {
             // stop the animation
             clearInterval(interval);
 
-            // remove the current details div 
-            currentDetail.parentNode.removeChild(currentDetail);
+            // remove the current details div if it exists
+            if (currentDetail) {
+                // remove the current details div 
+                currentDetail.parentNode.removeChild(currentDetail);
+            }
 
             // toggle the classes for the selected card
             element.classList.toggle("checked");
@@ -289,8 +289,8 @@ function pandemicRoleDetails(element) {
             // insert the details element into the roles list element
             rolesList.insertBefore(details, rolesList.firstChild);
         } else {
-            // check to see if timer is at initial time
-            if (timer == 0) {
+            // check to see if timer is at initial time and the current detail exists
+            if (timer == 0 && currentDetail) {
                 // add a fade class to the details div
                 currentDetail.classList.add("fade");
             }

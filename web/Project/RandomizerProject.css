@@ -112,7 +112,7 @@ td {
     transform: rotateY(0turn);
 }
 
-unchecked {
+.unchecked {
     transform: rotateY(0.5turn);
 }
 

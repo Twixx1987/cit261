@@ -223,7 +223,7 @@ function displayPandemicImage(id, obj) {
        + "<div class='face top'></div>"
        + "<div class='face bottom'></div>"
        + "<input type='checkbox' value='" + id + "' style='display:none;' name='" + id + "'"
-       + (localStorage.pandemicRoles.indexOf(id) != -1 ? "checked>" : ">")
+       + (localStorage.pandemicRoles.indexOf(id) != -1 ? "checked" : "") + ">"
        + "</div>";
 
     // return the content
@@ -234,9 +234,12 @@ function displayPandemicImage(id, obj) {
 * A function to display the role details
 ******************************************************************/
 function pandemicRoleDetails(element) {
-    // remove the current details div
+    // get the current details element if it exists
     let current = document.getElementById("details");
-    current.parentNode.removeChild(current);
+
+    // remove the current details div if it exists
+    if (current)
+        current.parentNode.removeChild(current);
 
     // get the id of the element
     let id = element.getAttribute("id");

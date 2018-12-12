@@ -35,20 +35,6 @@ a:hover, a:active {
     }
 }
 
-.fade {
-    z-index: 2;
-    animation: animateFade 1s ease-in;
-}
-
-@keyframes animateFade {
-    0% { 
-        opacity: 1;
-    }
-    100% { 
-        opacity: 0;
-    }
-}
-
 #rolesList {
     position: relative;
     margin: 25px;

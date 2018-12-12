@@ -209,12 +209,12 @@ function loadPandemic(xhttp) {
 function displayPandemicImage(id, obj) {
     // create local storage for the role selection
     if (!localStorage.pandemicRoles) {
-        localStorage.pandemicRoles = [];
+        localStorage.pandemicRoles = {};
     }
 
     // Create the image tag
     let txt = "<div id='" + id + "' class='card transition-all element-3d "
-       + (localStorage.pandemicRoles.indexOf(id) != -1 ? " checked" : "unchecked")
+       + (localStorage.pandemicRoles[id] != id ? " checked" : "unchecked")
        + "' onclick='pandemicRoleDetails(this)'>"
        + "<div class='face front'><img src='../images/Pandemic/" + obj.image + "'"
        + " alt='" + obj.name + "'"
@@ -243,16 +243,30 @@ function pandemicRoleDetails(element) {
     if (localStorage.pandemicRoles[id]) {
         // remove the role from local storage
         delete localStorage.pandemicRoles[id];
+        console.log("remove role", id);
+
+        // toggle the classes for the selected card
+        element.classList.toggle("checked");
+        element.classList.toggle("unchecked");
     } else {
         // add the role to the local stoarge list
         localStorage.pandemicRoles[id] = id;
+        console.log("add role", id);
+
+        // toggle the classes for the selected card
+        element.classList.toggle("checked");
+        element.classList.toggle("unchecked");
     }
 
     // get the current details element if it exists
     let currentDetail = document.getElementById("details");
 
+    // toggle the classes for the selected card
+    element.classList.toggle("checked");
+    element.classList.toggle("unchecked");
+
     // set the fade and move variables
-    let timer = 0;
+    let fade = 100;
 
     // use the interval function to create an animation
     let interval = setInterval(frame, 5);
@@ -260,7 +274,7 @@ function pandemicRoleDetails(element) {
     // rotation transform the element
     function frame() {
         // if the element has faded completly
-        if (timer == 100) {
+        if (fade == 0) {
             // stop the animation
             clearInterval(interval);
 
@@ -269,10 +283,6 @@ function pandemicRoleDetails(element) {
                 // remove the current details div 
                 currentDetail.parentNode.removeChild(currentDetail);
             }
-
-            // toggle the classes for the selected card
-            element.classList.toggle("checked");
-            element.classList.toggle("unchecked");
 
             // load the sessionStorage object
             let obj = JSON.parse(sessionStorage.getItem(id));
@@ -290,12 +300,12 @@ function pandemicRoleDetails(element) {
             rolesList.insertBefore(details, rolesList.firstChild);
         } else {
             // check to see if timer is at initial time and the current detail exists
-            if (timer == 0 && currentDetail) {
+            if (currentDetail) {
                 // add a fade class to the details div
-                currentDetail.classList.add("fade");
+                currentDetail.style.opacity = fade;
             }
             // decrement the fade variable
-            timer++;
+            fade--;
         }
     }
 }

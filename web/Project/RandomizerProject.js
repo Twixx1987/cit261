@@ -246,7 +246,8 @@ function pandemicRoleDetails(element) {
         // add the role to the local stoarge list
         localStorage.pandemicRoles.push(id);
     } else {
-        localStorage.pandemicRoles.splice(localStorage.pandemicRoles.indexOf(id), 1);
+        // remove the role from local storage
+        delete localStorage.pandemicRoles.indexOf(id);
     }
 
     // get the current details element if it exists

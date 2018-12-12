@@ -213,7 +213,9 @@ function displayPandemicImage(id, obj) {
     }
 
     // Create the image tag
-    let txt = "<div id='" + id + "' class='card transition-all element-3d' onclick='pandemicRoleDetails(this)'>"
+    let txt = "<div id='" + id + "' class='card transition-all element-3d"
+       + (localStorage.pandemicRoles.indexOf(id) != -1 ? " checked" : "unchecked")
+       + "' onclick='pandemicRoleDetails(this)'>"
        + "<div class='face front'><img src='../images/Pandemic/" + obj.image + "'"
        + " alt='" + obj.name + "'"
        + " class='thumbnail' id='" + id + "'/></div>"
@@ -236,6 +238,17 @@ function displayPandemicImage(id, obj) {
 * A function to display the role details
 ******************************************************************/
 function pandemicRoleDetails(element) {
+    // get the id of the element
+    let id = element.getAttribute("id");
+
+    // check to see if the role is in storage
+    if (localStorage.pandemicRoles.indexOf(id) != -1) {
+        // add the role to the local stoarge list
+        localStorage.pandemicRoles.push(id);
+    } else {
+        localStorage.pandemicRoles.splice(localStorage.pandemicRoles.indexOf(id), 1);
+    }
+
     // get the current details element if it exists
     let current = document.getElementById("details");
 
@@ -256,8 +269,9 @@ function pandemicRoleDetails(element) {
             if (current)
                 current.parentNode.removeChild(current);
 
-            // get the id of the element
-            let id = element.getAttribute("id");
+            // toggle the classes for the selected card
+            element.classList.toggle("checked");
+            element.classList.toggle("unchecked");
 
             // load the sessionStorage object
             let obj = JSON.parse(sessionStorage.getItem(id));
@@ -278,7 +292,7 @@ function pandemicRoleDetails(element) {
             fade--;
 
             // update the object
-            content.style.opacity = fade / 100;
+            current.style.opacity = fade / 100;
         }
     }
 }

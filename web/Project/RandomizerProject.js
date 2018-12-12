@@ -223,7 +223,7 @@ function displayPandemicImage(id, obj) {
        + "<div class='face top'></div>"
        + "<div class='face bottom'></div>"
        + "<input type='checkbox' value='" + id + "' style='display:none;' name='" + id + "'"
-       + localStorage.pandemicRoles.indexOf(id) != -1 ? "checked>" : ">"
+       + (localStorage.pandemicRoles.indexOf(id) != -1 ? "checked>" : ">")
        + "</div>";
 
     // return the content

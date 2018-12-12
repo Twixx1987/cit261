@@ -119,38 +119,88 @@ function openJson(url, callbackFunc) {
 }
 
 /******************************************************************
-* A function to generate the settings list
+* A function to load the pandemic file to local storage
+******************************************************************/
+function loadPandemicLocal(xhttp) {
+    // check for storage support
+    if (typeof (Storage) !== "undefined") {
+        // create an object and parse the JSON file
+        let pandemicObj = JSON.parse(xhttp.responseText);
+
+        // create a counter to use as the key for session storage
+        let count = 1;
+
+        // loop through the object adding properties to session storage
+        for (let version in pandemicObj.versions) {
+            // loop through the characters adding them to session storage
+            for (let role in pandemicObj.versions[version].roles) {
+                // get the character image string for the key
+                let key = "Pandemic_Role_" + (count < 10 ? "0" + count : count);
+
+                // get the character object and append the version and key to its members
+                let roleObj = pandemicObj.versions[version].roles[role];
+                roleObj.version = pandemicObj.versions[version].version;
+
+                // stringify the character objectto store it in session storage
+                let value = JSON.stringify(roleObj);
+
+                // append the character to session storage
+                sessionStorage.setItem(key, value);
+
+                // increment count
+                count++;
+            }
+        }
+        // return that it succeeded
+        return true;
+    } else {
+        // create an error string to display
+        let error = "<h3>Your browser does not support web storage,"
+                  + " this page requires session storage support to work properly.</h3>";
+
+        // Notify the user that session storage is not supported
+        document.getElementById("rolesList").innerHTML = error;
+
+        // return that it failed
+        return false;
+    }
+}
+
+
+/******************************************************************
+* A function to load the pandemic data to the page
 ******************************************************************/
 function loadPandemic(xhttp) {
-    // create an object and parse the JSON file
-    let pandemicObj = JSON.parse(xhttp.responseText);
-
-    // create a counter to use as the role id
-    let count = 1;
+    // call load session to load the JSON file
+    let success = loadPandemicLocal(xhttp);
 
     // create a string variable to store the display contents
     let txt = "";
 
-    // loop through the object adding properties to session storage
-    for (let version in pandemicObj.versions) {
-        // loop through the characters adding them to session storage
-        for (let role in pandemicObj.versions[version].roles) {
-            // get the character string for the id
-            let id = "Role_" + (count < 10 ? "0" + count : count);
+    // check to see that loadLocal executed
+    if (success) {
+        // check to see if session storage exists
+        if (sessionStorage.getItem("Pandemic_Role_01") === null) {
+            // display an error message indicating no session storage
+            txt = "<h3>Error: Local storage failed to load properly.</h3>";
 
-            // get the character object and append the version to its members
-            let roleObj = pandemicObj.versions[version].roles[role];
-            roleObj.version = pandemicObj.versions[version].version;
-            
-            // display the version
-            txt += displayPandemicImage(id, roleObj);
+        } else {
+            // get the length of the sessionStorage object
+            let lslen = sessionStorage.length;
 
-            // increment count
-            count++;
+            // loop through the session storage keys displaying each one
+            for (let count = 0; count < lslen; count++) {
+                // create the option element
+                let key = sessionStorage.key(count);
+                let value = JSON.parse(sessionStorage.getItem(key));
+
+                // display the version
+                txt += displayPandemicImage(key, value);
+            }
         }
+        // display the data from the session storage in a nice format
+        document.getElementById("rolesList").innerHTML = txt;
     }
-    // display the data from the session storage in a nice format
-    document.getElementById("rolesList").innerHTML = txt;
 }
 
 /******************************************************************
@@ -163,23 +213,46 @@ function displayPandemicImage(id, obj) {
     }
 
     // Create the image tag
-    let txt = "<div id='" + id + "' class='card transition-all element-3d tooltip'>"
+    let txt = "<div id='" + id + "' class='card transition-all element-3d' onclick='pandemicRoleDetails(this)'>"
        + "<div class='face front'><img src='../images/Pandemic/" + obj.image + "'"
        + " alt='" + obj.name + "'"
        + " class='thumbnail' id='" + id + "'/></div>"
-       + "<div class='face back'><h4>" + obj.name + "</h4>"
-       + "<p>" + obj.abilities + "</p></div>"
+       + "<div class='face back'></div>"
        + "<div class='face right'></div>"
        + "<div class='face left'></div>"
        + "<div class='face top'></div>"
        + "<div class='face bottom'></div>"
-       + "<div class='tooltiptext'>"
-       + "<h4>" + obj.name + "</h4>"
-       + "<p>" + obj.abilities + "</p>"
-       + "</div>"
-       + "<input type='checkbox' value='" + id + "' style='display:none;' name='" + id + ">"
+       + "<input type='checkbox' value='" + id + "' style='display:none;' name='" + id + "'"
+       + localStorage.pandemicRoles.indexOf(id) != -1 ? "checked>" : ">"
        + "</div>";
 
     // return the content
     return txt;
+}
+
+/******************************************************************
+* A function to display the role details
+******************************************************************/
+function pandemicRoleDetails(element) {
+    // remove the current details div
+    let current = document.getElementById("details");
+    current.parentNode.removeChild(current);
+
+    // get the id of the element
+    let id = element.getAttribute("id");
+
+    // load the sessionStorage object
+    let obj = JSON.parse(sessionStorage.getItem(id));
+
+    // create an element to display the role details
+    let details = document.createElement("div");
+    details.id = "details";
+    details.classList.add("transition-all");
+    details.innerHTML = "<h4>" + obj.name + "</h4><p>" + obj.abilities + "</p>";
+
+    // get the roles list element
+    let rolesList = document.getElementById("rolesList");
+
+    // insert the details element into the roles list element
+    rolesList.insertBefore(details, rolesList.firstChild);
 }

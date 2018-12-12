@@ -16,6 +16,14 @@ a:hover, a:active {
   color: #0040ff;
 } 
 
+#details {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: #ccd9ff;
+    transform: translateX(100%);
+}
+
 #rolesList {
     position: relative;
     margin: 25px;

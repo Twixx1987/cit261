@@ -213,7 +213,7 @@ function displayPandemicImage(id, obj) {
     }
 
     // Create the image tag
-    let txt = "<div id='" + id + "' class='card transition-all element-3d"
+    let txt = "<div id='" + id + "' class='card transition-all element-3d "
        + (localStorage.pandemicRoles.indexOf(id) != -1 ? " checked" : "unchecked")
        + "' onclick='pandemicRoleDetails(this)'>"
        + "<div class='face front'><img src='../images/Pandemic/" + obj.image + "'"
@@ -226,8 +226,6 @@ function displayPandemicImage(id, obj) {
        + "<div class='face left'></div>"
        + "<div class='face top'></div>"
        + "<div class='face bottom'></div>"
-       + "<input type='checkbox' value='" + id + "' style='display:none;' name='" + id + "'"
-       + (localStorage.pandemicRoles.indexOf(id) != -1 ? "checked" : "") + ">"
        + "</div>";
 
     // return the content
@@ -254,7 +252,7 @@ function pandemicRoleDetails(element) {
     let currentDetail = document.getElementById("details");
 
     // set the fade and move variables
-    let fade = 100;
+    let timer = 0;
 
     // remove the current details div if it exists
     if (currentDetail) {
@@ -265,7 +263,7 @@ function pandemicRoleDetails(element) {
     // rotation transform the element
     function frame() {
         // if the element has faded completly
-        if (fade == 0) {
+        if (timer == 100) {
             // stop the animation
             clearInterval(interval);
 
@@ -291,11 +289,13 @@ function pandemicRoleDetails(element) {
             // insert the details element into the roles list element
             rolesList.insertBefore(details, rolesList.firstChild);
         } else {
+            // check to see if timer is at initial time
+            if (timer == 0) {
+                // add a fade class to the details div
+                currentDetail.classList.add("fade");
+            }
             // decrement the fade variable
-            fade--;
-
-            // update the object
-            currentDetail.style.opacity = fade / 100;
+            timer++;
         }
     }
 }

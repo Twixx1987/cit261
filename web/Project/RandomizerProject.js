@@ -251,24 +251,26 @@ function pandemicRoleDetails(element) {
     }
 
     // get the current details element if it exists
-    let current = document.getElementById("details");
+    let currentDetail = document.getElementById("details");
 
     // set the fade and move variables
     let fade = 100;
 
-    // set the timer interval
-    let interval = setInterval(frame, 5);
+    // remove the current details div if it exists
+    if (currentDetail) {
+        // use the interval function to create an animation
+        let interval = setInterval(frame, 5);
+    }
 
     // rotation transform the element
     function frame() {
-        // if the elements are rotated 90 degrees
+        // if the element has faded completly
         if (fade == 0) {
             // stop the animation
             clearInterval(interval);
 
-            // remove the current details div if it exists
-            if (current)
-                current.parentNode.removeChild(current);
+            // remove the current details div 
+            currentDetail.parentNode.removeChild(currentDetail);
 
             // toggle the classes for the selected card
             element.classList.toggle("checked");
@@ -293,7 +295,7 @@ function pandemicRoleDetails(element) {
             fade--;
 
             // update the object
-            current.style.opacity = fade / 100;
+            currentDetail.style.opacity = fade / 100;
         }
     }
 }

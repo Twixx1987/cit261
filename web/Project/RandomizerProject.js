@@ -219,7 +219,7 @@ function displayPandemicImage(id, obj) {
        + " class='thumbnail' id='" + id + "'/></div>"
        + "<div class='face back'><img src='../images/Pandemic/RoleBack.jpg'"
        + " alt='Card Back'"
-       + " class='thumbnail' id='" + key + "'/></div>"
+       + " class='thumbnail' id='" + id + "'/></div>"
        + "<div class='face right'></div>"
        + "<div class='face left'></div>"
        + "<div class='face top'></div>"

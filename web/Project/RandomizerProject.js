@@ -217,7 +217,9 @@ function displayPandemicImage(id, obj) {
        + "<div class='face front'><img src='../images/Pandemic/" + obj.image + "'"
        + " alt='" + obj.name + "'"
        + " class='thumbnail' id='" + id + "'/></div>"
-       + "<div class='face back'></div>"
+       + "<div class='face back'><img src='RoleBack.jpg'"
+       + " alt='Card Back'"
+       + " class='thumbnail' id='" + key + "'/></div>"
        + "<div class='face right'></div>"
        + "<div class='face left'></div>"
        + "<div class='face top'></div>"
@@ -237,25 +239,46 @@ function pandemicRoleDetails(element) {
     // get the current details element if it exists
     let current = document.getElementById("details");
 
-    // remove the current details div if it exists
-    if (current)
-        current.parentNode.removeChild(current);
+    // set the fade and move variables
+    let fade = 100;
 
-    // get the id of the element
-    let id = element.getAttribute("id");
+    // set the timer interval
+    let interval = setInterval(frame, 5);
 
-    // load the sessionStorage object
-    let obj = JSON.parse(sessionStorage.getItem(id));
+    // rotation transform the element
+    function frame() {
+        // if the elements are rotated 90 degrees
+        if (fade == 0) {
+            // stop the animation
+            clearInterval(interval);
 
-    // create an element to display the role details
-    let details = document.createElement("div");
-    details.id = "details";
-    details.classList.add("transition-all");
-    details.innerHTML = "<h4>" + obj.name + "</h4><p>" + obj.abilities + "</p>";
+            // remove the current details div if it exists
+            if (current)
+                current.parentNode.removeChild(current);
 
-    // get the roles list element
-    let rolesList = document.getElementById("rolesList");
+            // get the id of the element
+            let id = element.getAttribute("id");
 
-    // insert the details element into the roles list element
-    rolesList.insertBefore(details, rolesList.firstChild);
+            // load the sessionStorage object
+            let obj = JSON.parse(sessionStorage.getItem(id));
+
+            // create an element to display the role details
+            let details = document.createElement("div");
+            details.id = "details";
+            details.classList.add("transition-all");
+            details.innerHTML = "<h4>" + obj.name + "</h4><p>" + obj.abilities + "</p>";
+
+            // get the roles list element
+            let rolesList = document.getElementById("rolesList");
+
+            // insert the details element into the roles list element
+            rolesList.insertBefore(details, rolesList.firstChild);
+        } else {
+            // decrement the fade variable
+            fade--;
+
+            // update the object
+            content.style.opacity = fade / 100;
+        }
+    }
 }

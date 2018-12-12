@@ -20,8 +20,19 @@ a:hover, a:active {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
+    padding: 5px 25px;
     background-color: #ccd9ff;
-    transform: translateX(100%);
+    z-index: 2;
+    animation: animateDetails 1s ease-in;
+}
+
+@keyframes animateDetails {
+    0% { 
+        opacity: 0;
+    }
+    100% { 
+        opacity: 1;
+    }
 }
 
 #rolesList {

@@ -16,23 +16,35 @@ a:hover, a:active {
   color: #0040ff;
 } 
 
+#details div.transparent {
+    opacity: 0;
+}
+
+#details div {
+    position: relative;
+    left: 0;
+    width: inherit;
+    padding: 5px 25px;
+    transition: opacity 1s ease-in;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 #details {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
-    padding: 5px 25px;
     background-color: #ccd9ff;
     z-index: 2;
-    animation: animateDetails 1s ease-in;
-}
-
-@keyframes animateDetails {
-    0% { 
-        opacity: 0;
-    }
-    100% { 
-        opacity: 1;
-    }
+    width: inherit;
 }
 
 #rolesList {

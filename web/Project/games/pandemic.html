@@ -9,7 +9,7 @@
     <script src="../RandomizerProject.js"></script>
     <title>Game Randomizer</title>
 </head>
-<body onload="openJson('../json/pandemic.json', loadPandemic)">
+<body onload="openJson('https://twixx1987.github.io/cit261/web/Project/json/pandemic.json', loadPandemic)">
     <h1>Pandemic Randomizer</h1>
 
     <!-- The menu -->
@@ -27,33 +27,39 @@
     <!-- The page tabs -->
     <div class="tab">
         <button class="tablinks active" onclick="switchTab(event, 'settings')">Role Settings</button>
-        <button class="tablinks" onclick="switchTab(event, 'form')">Player Configuration</button>
+        <button class="tablinks" onclick="switchTab(event, 'playerForm')">Player Configuration</button>
     </div>
 
     <!-- the settings tab used to display the role cards and details -->
     <div id="settings" class="tabcontent active-tab">
         <h3>Role Selection Settings</h3>
         <p>Please select all the roles that you would like to chose from for this game.</p>
+        <div id="details"></div>
         <div id="rolesList" class="flex-container">
 
         </div>
     </div>
     
     <!-- the form tab used to enter player information and generate role selection -->
-    <div id="form" class="tabcontent">
+    <div id="playerForm" class="tabcontent">
         <h3>Player Configuration</h3>
         <p>
             Please enter the number of players you would like to join the game. 
             Pandemic has a minimum of two players and a maximum limit of five players.
         </p>
-        <label for="numPlayers">Number of Players</label>
-        <br />
-        <input type="number" max="5" min="2" name="numPlayers" value="2" id="numPlayers" onchange="listPlayers()" />
-        <br />
-        <input class="players" id="player1" type="text" placeholder="Player 1">
-        <br />
-        <input class="players" id="player2" type="text" placeholder="Player 2">
-        <br />
+        <div id="form">
+            <label for="numPlayers">Number of Players</label>
+            <br />
+            <input type="number" max="5" min="2" name="numPlayers" value="2" id="numPlayers" onchange="listPlayers()" />
+            <br />
+            <input class="players" id="player1" type="text" placeholder="Player 1">
+            <br />
+            <input class="players" id="player2" type="text" placeholder="Player 2">
+            <br />
+        </div>
+        <button id="generatePandemic" onclick="generatePandemic()">Generate Roles</button>
+        <div id="pandemicRandomization">
+        </div>
     </div>
 
     <!-- legal footer information -->

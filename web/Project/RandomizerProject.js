@@ -211,15 +211,15 @@ function displayPandemicImage(id, obj) {
     if (!localStorage.pandemicRoles) {
         localStorage.pandemicRoles = [];
     }
-    console.log(localStorage.pandemicRoles.indexOf(id));
+
     // Create the image tag
     let txt = "<div id='" + id + "' class='card transition-all element-3d "
        + (localStorage.pandemicRoles.indexOf(id) != -1 ? " checked" : "unchecked")
        + "' onclick='pandemicRoleDetails(this)'>"
-       + "<div class='face front'><img src='../images/Pandemic/" + obj.image + "'"
+       + "<div class='face front'><img src='https://twixx1987.github.io/cit261/web/Project/images/Pandemic/" + obj.image + "'"
        + " alt='" + obj.name + "'"
        + " class='thumbnail' id='" + id + "'/></div>"
-       + "<div class='face back'><img src='../images/Pandemic/RoleBack.jpg'"
+       + "<div class='face back'><img src='https://twixx1987.github.io/cit261/web/Project/images/Pandemic/RoleBack.jpg'"
        + " alt='Card Back'"
        + " class='thumbnail' id='" + id + "'/></div>"
        + "<div class='face right'></div>"
@@ -227,7 +227,7 @@ function displayPandemicImage(id, obj) {
        + "<div class='face top'></div>"
        + "<div class='face bottom'></div>"
        + "</div>";
-
+    
     // return the content
     return txt;
 }
@@ -239,71 +239,134 @@ function pandemicRoleDetails(element) {
     // get the id of the element
     let id = element.getAttribute("id");
 
+    // create an array to store the roles
+    let roles = [];
+
+    // get the roles from loacl storage
+    if (localStorage.pandemicRoles != "")
+        roles = JSON.parse(localStorage.pandemicRoles);
+
     // check to see if the role is in storage
-    if (localStorage.pandemicRoles[id]) {
+    if (roles.indexOf(id) != -1) {
         // remove the role from local storage
-        delete localStorage.pandemicRoles[id];
-        console.log("remove role", id);
-        // toggle the classes for the selected card
-        element.classList.toggle("checked");
-        element.classList.toggle("unchecked");
+        roles.splice(roles.indexOf(id), 1);
     } else {
         // add the role to the local stoarge list
-        localStorage.pandemicRoles[id] = id;
-        console.log("add role", id);
-        // toggle the classes for the selected card
-        element.classList.toggle("checked");
-        element.classList.toggle("unchecked");
+        roles.push(id);
     }
-
-    // get the current details element if it exists
-    let currentDetail = document.getElementById("details");
+    // put the new roles list into local storage
+    localStorage.pandemicRoles = JSON.stringify(roles);
+    
+    // get the detail div
+    let detail = document.getElementById("details");
+    
+    // get the current detail content
+    let currentDetail = detail.firstChild;
 
     // toggle the classes for the selected card
     element.classList.toggle("checked");
     element.classList.toggle("unchecked");
 
+    // load the sessionStorage object
+    let obj = JSON.parse(sessionStorage.getItem(id));
+
+    // create an element to display the new role details
+    let newDetail = document.createElement("div");
+    newDetail.innerHTML = "<h4>" + obj.name + "</h4><p>" + obj.abilities + "</p>";
+
     // set the fade and move variables
-    let fade = 100;
+    let timer = 0;
 
-    // use the interval function to create an animation
-    let interval = setInterval(frame, 5);
+    // fade the current details div if it exists
+    if (currentDetail) {
+        // fade the current details div 
+        currentDetail.classList.toggle("transparent");
 
-    // rotation transform the element
-    function frame() {
-        // if the element has faded completly
-        if (fade == 0) {
-            // stop the animation
-            clearInterval(interval);
+        // use the interval function to create an animation
+        let interval = setInterval(frame, 5);
 
-            // remove the current details div if it exists
-            if (currentDetail) {
-                // remove the current details div 
-                currentDetail.parentNode.removeChild(currentDetail);
+        // rotation transform the element
+        function frame() {
+            // if the element has faded completly
+            if (timer == 200) {
+                // stop the animation
+                clearInterval(interval);
+
+                // remove the current details div if it exists
+                if (currentDetail) {
+                    // remove the current details div 
+                    detail.removeChild(currentDetail);
+                }
+
+                // insert the details element into the roles list element
+                detail.appendChild(newDetail);
+            } else {
+                // decrement the fade variable
+                timer++;
             }
-
-            // load the sessionStorage object
-            let obj = JSON.parse(sessionStorage.getItem(id));
-
-            // create an element to display the role details
-            let details = document.createElement("div");
-            details.id = "details";
-            details.classList.add("transition-all");
-            details.innerHTML = "<h4>" + obj.name + "</h4><p>" + obj.abilities + "</p>";
-
-            // get the roles list element
-            let rolesList = document.getElementById("rolesList");
-
-            // insert the details element into the roles list element
-            rolesList.insertBefore(details, rolesList.firstChild);
-        } else {
-            // check to see if timer is at initial time and the current detail exists
-            if (currentDetail) {
-                // add a fade class to the details div
-                currentDetail.style.opacity = fade;
-            }
-            // decrement the fade variable
-            fade--;
         }
+    }
+    // just fade in the new detail
+    else {
+        // insert the details element into the roles list element
+        detail.appendChild(newDetail);
+    }
+
+}
+
+/******************************************************************
+* A function to display the role details
+******************************************************************/
+function generatePandemic() {
+    // initialize the variables
+    let playerCount, i, randomizationElement, error, j, random, txt, roleName;
+    let players, playerNames = [], roles = [];
+
+    // get the player count
+    playerCount = document.getElementById("numPlayers").value;
+
+    // get the player class elements
+    players = document.getElementsByClassName("players");
+
+    //loop through the players elements getting the values for the player names array
+    for (i = 0; i < players.length; i++) {
+        playerNames[i] = players[i].value;
+    }
+
+    // get the roles from local storage
+    roles = JSON.parse(localStorage.pandemicRoles);
+
+    // get the display element
+    randomizationElement = document.getElementById("pandemicRandomization");
+
+    // if the player count is greater than the role count throw an error messsage
+    if (playerCount > roles.length) {
+        // create the error message
+        error = "Error: there must be more roles selected than players.";
+
+        // set the error message
+        randomizationElement.innerHTML = error;
+    }
+    // randomly generate role selection for each player
+    else {
+        // initialize txt with the start of a unordered list
+        txt = "<ul>";
+
+        // for each player get a random role
+        for (j = 0; j < playerNames.length; j++) {
+            // get a random number within the roles array
+            random = Math.floor(Math.random() * roles.length);
+
+            // get the role name from session storage
+            roleName = JSON.parse(sessionStorage[roles[random]]).name;
+
+            // assign that role to the first player
+            txt += "<li>" + playerNames[j] + " will play " + roleName + "</li>";
+        }
+        // close the unordered list
+        txt += "</ul>";
+
+        // clear the randomization list
+        randomizationElement.innerHTML = txt;
     }
 }

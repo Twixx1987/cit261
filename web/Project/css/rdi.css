@@ -3,7 +3,7 @@
   width: 81px;
   margin: 10px;
   text-align: center;
-  line-height: 112px;
+  line-height: 81px;
   position: relative;
 }
 
@@ -13,7 +13,7 @@
 
 .thumbnail {
     width: 81px;
-    height: 112px;
+    height: 81px;
 }
 
 /******************************************************************

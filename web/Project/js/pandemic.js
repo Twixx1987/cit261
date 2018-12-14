@@ -70,12 +70,17 @@ function loadPandemic(xhttp) {
 
             // loop through the session storage keys displaying each one
             for (let count = 0; count < lslen; count++) {
-                // create the option element
+                // create the card element
                 let key = sessionStorage.key(count);
-                let value = JSON.parse(sessionStorage.getItem(key));
 
-                // display the version
-                txt += displayPandemicImage(key, value);
+                // check to see if the session storage item is a pandemic role
+                if (key.search("Pandemic_Role_") != -1) {
+                    // get the value object
+                    let value = JSON.parse(sessionStorage.getItem(key));
+
+                    // display the version
+                    txt += displayPandemicImage(key, value);
+                }
             }
         }
         // display the data from the session storage in a nice format

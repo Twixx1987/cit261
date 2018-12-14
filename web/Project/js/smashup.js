@@ -60,7 +60,7 @@ function loadSmashup(xhttp) {
     // check to see that loadLocal executed
     if (success) {
         // check to see if session storage exists
-        if (sessionStorage.getItem("Pandemic_Role_01") === null) {
+        if (sessionStorage.getItem("Smashup_Faction_01") === null) {
             // display an error message indicating no session storage
             txt = "<h3>Error: Local storage failed to load properly.</h3>";
 
@@ -72,10 +72,15 @@ function loadSmashup(xhttp) {
             for (let count = 0; count < lslen; count++) {
                 // create the option element
                 let key = sessionStorage.key(count);
-                let value = JSON.parse(sessionStorage.getItem(key));
+                
+                // check to see if the session storage item is a pandemic role
+                if (key.search("Smashup_Faction_") != -1) {
+                    // get the value object
+                    let value = JSON.parse(sessionStorage.getItem(key));
 
-                // display the version
-                txt += displayPandemicImage(key, value);
+                    // display the version
+                    txt += displayPandemicImage(key, value);
+                }
             }
         }
         // display the data from the session storage in a nice format

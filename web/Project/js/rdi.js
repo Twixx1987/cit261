@@ -72,10 +72,15 @@ function loadRdi(xhttp) {
             for (let count = 0; count < lslen; count++) {
                 // create the option element
                 let key = sessionStorage.key(count);
-                let value = JSON.parse(sessionStorage.getItem(key));
+                
+                // check to see if the session storage item is a pandemic role
+                if (key.search("Rdi_Character_") != -1) {
+                    // get the value object
+                    let value = JSON.parse(sessionStorage.getItem(key));
 
-                // display the version
-                txt += displayRdiImage(key, value);
+                    // display the version
+                    txt += displayRdiImage(key, value);
+                }
             }
         }
         // display the data from the session storage in a nice format

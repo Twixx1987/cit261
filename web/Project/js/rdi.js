@@ -158,9 +158,9 @@ function rdiCharacterDetails(element) {
     // create an element to display the new character details
     let newDetail = document.createElement("div");
     newDetail.innerHTML = "<h4>" + obj.name + "</h4><p>"
-        + (obj.good ? "<b>The Good:</b> " + obj.good : "")
+        + (obj.good ? "<b>The Good:</b> " + obj.good + "</p><p>" : "")
         + "<b>The Bad:</b> " + obj.bad
-        + (obj.worse ? "<b>The Worse:</b> " + obj.worse : "") + "</p>";
+        + (obj.worse ? "</p><p><b>The Worse:</b> " + obj.worse : "") + "</p>";
 
     // set the fade and move variables
     let timer = 0;

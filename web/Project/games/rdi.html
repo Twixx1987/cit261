@@ -27,7 +27,7 @@
     <!-- The page tabs -->
     <div class="tab">
         <button class="tablinks active" onclick="switchTab(event, 'settings')">Character Settings</button>
-        <button class="tablinks" onclick="switchTab(event, 'form')">Player Configuration</button>
+        <button class="tablinks" onclick="switchTab(event, 'playerForm')">Player Configuration</button>
     </div>
 
     <!-- the settings tab used to display the role cards and details -->
@@ -45,21 +45,23 @@
     </div>
 
     <!-- the form tab used to enter player information and generate role selection -->
-    <div id="form" class="tabcontent">
+    <div id="playerForm" class="tabcontent">
         <h3>Player Configuration</h3>
         <p>
             Please enter the number of players you would like to join the game.
             The Red Dragon Inn has a minimum of two players but does not have a maximum 
             limit of players. It is recommended to have a maximum of eight players.
         </p>
-        <label for="numPlayers">Number of Players</label>
-        <br />
-        <input type="number" min="2" name="numPlayers" value="2" id="numPlayers" onchange="listPlayers()" />
-        <br />
-        <input class="players" id="player1" type="text" placeholder="Player 1">
-        <br />
-        <input class="players" id="player2" type="text" placeholder="Player 2">
-        <br />
+        <div id="form">
+            <label for="numPlayers">Number of Players</label>
+            <br />
+            <input type="number" min="2" name="numPlayers" value="2" id="numPlayers" onchange="listPlayers()" />
+            <br />
+            <input class="players" id="player1" type="text" placeholder="Player 1">
+            <br />
+            <input class="players" id="player2" type="text" placeholder="Player 2">
+            <br />
+        </div>
         <div class="flex-container">
             <button class="btn" id="generateRdi" onclick="generateRdi()">Generate Characters</button>
         </div>

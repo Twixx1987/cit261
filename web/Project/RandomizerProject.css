@@ -52,15 +52,36 @@ a:hover, a:active {
     margin: 25px;
 }
 
+input {
+    border: thin solid #0033cc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 10px;
+}
+
+.btn {
+    border: none;
+    color: white;
+    padding: 15px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #0033cc;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    color: black;
+    background-color: #ccd9ff;
+}
+
 .flex-container {
   display: flex;
   flex-flow: row wrap;
   justify-content:space-around;
 }
 
-.flex-container > div.table {
-  width: 600px;
-  margin: 25px;
+.flex-container > button {
+  width: 150px;
   position: relative;
 }
 

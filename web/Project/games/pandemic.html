@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../RandomizerProject.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../RandomizerProject.js"></script>
+    <script src="../js/pandemic.js"></script>
     <title>Game Randomizer</title>
 </head>
 <body onload="openJson('../json/pandemic.json', loadPandemic)">
@@ -34,6 +35,10 @@
     <div id="settings" class="tabcontent active-tab">
         <h3>Role Selection Settings</h3>
         <p>Please select all the roles that you would like to chose from for this game.</p>
+        <div class="flex-container">
+            <button class="btn" id="clearSettings" onclick="clearSettings()">Clear Settings</button>
+            <button class="btn" id="applyAll" onclick="applyAll()">Select All Roles</button>
+        </div>
         <div id="details"></div>
         <div id="rolesList" class="flex-container">
 
@@ -57,7 +62,7 @@
             <input class="players" id="player2" type="text" placeholder="Player 2">
             <br />
         </div>
-        <button id="generatePandemic" onclick="generatePandemic()">Generate Roles</button>
+        <button class="btn" id="generatePandemic" onclick="generatePandemic()">Generate Roles</button>
         <div id="pandemicRandomization">
         </div>
     </div>

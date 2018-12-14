@@ -104,7 +104,7 @@ function displaySmashupImage(id, obj) {
        + "<div class='face front'><img src='../images/SmashUp/" + obj.image + "'"
        + " alt='" + obj.name + "'"
        + " class='thumbnail' id='" + id + "'/></div>"
-       + "<div class='face back'><img src='../images/SmashUp/SmashupBack.jpg'"
+       + "<div class='face back'><img src='../images/SmashUp/SmashupBack.png'"
        + " alt='Card Back'"
        + " class='thumbnail' id='" + id + "'/></div>"
        + "<div class='face right'></div>"

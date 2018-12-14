@@ -100,11 +100,11 @@ function displayRdiImage(id, obj) {
     // Create the image tag
     let txt = "<div id='" + id + "' class='card transition-all element-3d "
        + (localStorage.rdiCharacters.indexOf(id) != -1 ? " checked" : "unchecked")
-       + "' onclick='rdiRoleDetails(this)'>"
+       + "' onclick='rdiCharacterDetails(this)'>"
        + "<div class='face front'><img src='../images/RDI/" + obj.image + "'"
        + " alt='" + obj.name + "'"
        + " class='thumbnail' id='" + id + "'/></div>"
-       + "<div class='face back'><img src='../images/RDI/Back.jpg'"
+       + "<div class='face back'><img src='../images/RDI/RdiBack.jpg'"
        + " alt='Card Back'"
        + " class='thumbnail' id='" + id + "'/></div>"
        + "<div class='face right'></div>"
@@ -157,7 +157,10 @@ function rdiCharacterDetails(element) {
 
     // create an element to display the new character details
     let newDetail = document.createElement("div");
-    newDetail.innerHTML = "<h4>" + obj.name + "</h4><p>" + obj.abilities + "</p>";
+    newDetail.innerHTML = "<h4>" + obj.name + "</h4><p>"
+        + (obj.good ? "<b>The Good:</b> " + obj.good : "")
+        + "<b>The Bad:</b> " + obj.bad
+        + (obj.worse ? "<b>The Worse:</b> " + obj.worse : "") + "</p>";
 
     // set the fade and move variables
     let timer = 0;

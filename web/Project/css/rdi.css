@@ -20,6 +20,14 @@
 * code from developer.mozilla.org transform function 
 * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transforms/Using_CSS_transforms
 ******************************************************************/
+.element-3d {
+    width: 81px;
+    height: 81px;
+    perspective: 550px;
+    transform-style: preserve-3d;
+    z-index: 1;
+}
+
 .front {
     background: white;
     transform: translateZ(1px);
@@ -28,35 +36,35 @@
 }
 
 .back {
-    background: #051539;
+    background: #d8b14c;
     transform: rotateY(180deg) translateZ(1px);
     width: 100%;
     height: 100%;
 }
 
 .right {
-    background: #051539;
+    background: #d8b14c;
     transform: rotateY(90deg) translateZ(80px);
     width: 0.925%;
     height: 100%;
 }
 
 .left {
-    background: #051539;
+    background: #d8b14c;
     transform: rotateY(-90deg) translateZ(0px);
     width: 0.925%;
     height: 100%;
 }
 
 .top {
-    background: #051539;
+    background: #d8b14c;
     transform: rotateX(90deg) translateZ(0px);
     width: 100%;
     height: 0.66%;
 }
 
 .bottom {
-    background: #051539;
+    background: #d8b14c;
     transform: rotateX(-90deg) translateZ(50px);
     width: 100%;
     height: 0.66%;

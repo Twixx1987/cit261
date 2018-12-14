@@ -20,6 +20,14 @@
 * code from developer.mozilla.org transform function 
 * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transforms/Using_CSS_transforms
 ******************************************************************/
+.element-3d {
+    width: 81px;
+    height: 112px;
+    perspective: 550px;
+    transform-style: preserve-3d;
+    z-index: 1;
+}
+
 .front {
     background: white;
     transform: translateZ(1px);

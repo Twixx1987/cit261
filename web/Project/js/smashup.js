@@ -101,10 +101,10 @@ function displaySmashupImage(id, obj) {
     let txt = "<div id='" + id + "' class='card transition-all element-3d "
        + (localStorage.smashupFactions.indexOf(id) != -1 ? " checked" : "unchecked")
        + "' onclick='smashupFactionsDetails(this)'>"
-       + "<div class='face front'><img src='../images/Smashup/" + obj.image + "'"
+       + "<div class='face front'><img src='../images/SmashUp/" + obj.image + "'"
        + " alt='" + obj.name + "'"
        + " class='thumbnail' id='" + id + "'/></div>"
-       + "<div class='face back'><img src='../images/Smashup/SmashupBack.jpg'"
+       + "<div class='face back'><img src='../images/SmashUp/SmashupBack.jpg'"
        + " alt='Card Back'"
        + " class='thumbnail' id='" + id + "'/></div>"
        + "<div class='face right'></div>"
@@ -204,7 +204,7 @@ function smashupFactionsDetails(element) {
 ******************************************************************/
 function generateSmashup() {
     // initialize the variables
-    let playerCount, i, randomizationElement, error, j, random, txt, factionName;
+    let playerCount, i, randomizationElement, error, j, random, txt, factionName1, factionName2;
     let players, playerNames = [], factions = [];
 
     // get the player count
@@ -225,9 +225,9 @@ function generateSmashup() {
     randomizationElement = document.getElementById("smashupRandomization");
 
     // if the player count is greater than the faction count throw an error messsage
-    if (playerCount > factions.length) {
+    if (playerCount > factions.length / 2) {
         // create the error message
-        error = "Error: there must be more factions selected than players.";
+        error = "Error: there must be at least twice as many factions selected as there are players.";
 
         // set the error message
         randomizationElement.innerHTML = error;
@@ -242,11 +242,23 @@ function generateSmashup() {
             // get a random number within the factions array
             random = Math.floor(Math.random() * factions.length);
 
-            // get the faction name from session storage
-            factionName = JSON.parse(sessionStorage[factions[random]]).name;
+            // get the first faction name from session storage
+            factionName1 = JSON.parse(sessionStorage[factions[random]]).name;
+
+            // remove the faction from factions list
+            factions.splice(factions.indexOf(random), 1);
+
+            // get a new random number within the factions array
+            random = Math.floor(Math.random() * factions.length);
+
+            // get the second faction name from session storage
+            factionName2 = JSON.parse(sessionStorage[factions[random]]).name;
+
+            // remove the faction from factions list
+            factions.splice(factions.indexOf(random), 1);
 
             // assign that faction to the first player
-            txt += "<li>" + playerNames[j] + " will play " + factionName + "</li>";
+            txt += "<li>" + playerNames[j] + " will play " + factionName1 + " combined with " + factionName2 + "</li>";
         }
         // close the unordered list
         txt += "</ul>";

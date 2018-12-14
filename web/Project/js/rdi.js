@@ -248,6 +248,9 @@ function generateRdi() {
             // get the character name from session storage
             characterName = JSON.parse(sessionStorage[characters[random]]).name;
 
+            // remove the character from characters list
+            characters.splice(characters.indexOf(random), 1);
+
             // assign that character to the first player
             txt += "<li>" + playerNames[j] + " will play " + characterName + "</li>";
         }

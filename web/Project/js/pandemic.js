@@ -245,6 +245,9 @@ function generatePandemic() {
             // get the role name from session storage
             roleName = JSON.parse(sessionStorage[roles[random]]).name;
 
+            // remove the character from characters list
+            roles.splice(roles.indexOf(random), 1);
+
             // assign that role to the first player
             txt += "<li>" + playerNames[j] + " will play " + roleName + "</li>";
         }

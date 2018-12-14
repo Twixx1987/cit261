@@ -162,6 +162,10 @@ function rdibfgCharacterDetails(element) {
 
     // loop through the levels adding the level details to the details html
     for (let level in obj.levels) {
+        console.log(level);
+        console.log(level.level);
+        console.log(level.damage);
+        console.log(level.abilities);
         newDetail.innerHTML += "<tr><td><b>" + level.level + "</b></td>"
             + "<td>" + level.damage + "</td>"
             + "<td>" + level.abilities + "</td></tr>";

@@ -34,6 +34,11 @@
         <h3>Character Selection Settings</h3>
         <p>Please select all the characters that you would like to chose from for this game.</p>
         <div class="flex-container">
+            <button class="btn" id="clearSettings" onclick="clearSettings()">Clear Settings</button>
+            <button class="btn" id="applyAll" onclick="applyAll()">Select All Roles</button>
+        </div>
+        <div id="details"></div>
+        <div class="flex-container">
 
         </div>
     </div>
@@ -54,6 +59,11 @@
         <br />
         <input class="players" id="player2" type="text" placeholder="Player 2">
         <br />
+        <div class="flex-container">
+            <button class="btn" id="generateRdibfg" onclick="generateRdibfg()">Generate Roles</button>
+        </div>
+        <div id="rdibfgRandomization">
+        </div>
     </div>
 
     <!-- legal footer information -->

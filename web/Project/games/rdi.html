@@ -5,12 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../RandomizerProject.css" />
+    <link rel="stylesheet" href="../css/rdi.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../RandomizerProject.js"></script>
     <script src="../js/rdi.js"></script>
     <title>Game Randomizer</title>
 </head>
-<body>
+<body onload="openJson('../json/rdi.json', loadRdi)">
     <h1>The Red Dragon Inn Randomizer</h1>
     <div id="menu" class="menu">
         <a href="../RandomizerProject.html">Home</a>
@@ -38,7 +39,7 @@
             <button class="btn" id="applyAll" onclick="applyAll()">Select All Roles</button>
         </div>
         <div id="details"></div>
-        <div class="flex-container">
+        <div id="charactersList" class="flex-container">
 
         </div>
     </div>

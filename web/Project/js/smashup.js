@@ -1,7 +1,7 @@
 /******************************************************************
 * A function to load the pandemic file to local storage
 ******************************************************************/
-function loadPandemicLocal(xhttp) {
+function loadSmashupLocal(xhttp) {
     // check for storage support
     if (typeof (Storage) !== "undefined") {
         // create an object and parse the JSON file
@@ -50,7 +50,7 @@ function loadPandemicLocal(xhttp) {
 /******************************************************************
 * A function to load the pandemic data to the page
 ******************************************************************/
-function loadPandemic(xhttp) {
+function loadSmashup(xhttp) {
     // call load session to load the JSON file
     let success = loadPandemicLocal(xhttp);
 
@@ -195,7 +195,7 @@ function pandemicRoleDetails(element) {
 }
 
 /******************************************************************
-* A function to generate the role selection
+* A function to display the role details
 ******************************************************************/
 function generatePandemic() {
     // initialize the variables

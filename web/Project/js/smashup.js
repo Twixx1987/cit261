@@ -1,28 +1,28 @@
 /******************************************************************
-* A function to load the pandemic file to local storage
+* A function to load the smashup file to local storage
 ******************************************************************/
 function loadSmashupLocal(xhttp) {
     // check for storage support
     if (typeof (Storage) !== "undefined") {
         // create an object and parse the JSON file
-        let pandemicObj = JSON.parse(xhttp.responseText);
+        let smashupObj = JSON.parse(xhttp.responseText);
 
         // create a counter to use as the key for session storage
         let count = 1;
 
         // loop through the object adding properties to session storage
-        for (let version in pandemicObj.versions) {
+        for (let version in smashupObj.versions) {
             // loop through the characters adding them to session storage
-            for (let role in pandemicObj.versions[version].roles) {
+            for (let faction in smashupObj.versions[version].factions) {
                 // get the character image string for the key
-                let key = "Pandemic_Role_" + (count < 10 ? "0" + count : count);
+                let key = "Smashup_Faction_" + (count < 10 ? "0" + count : count);
 
                 // get the character object and append the version and key to its members
-                let roleObj = pandemicObj.versions[version].roles[role];
-                roleObj.version = pandemicObj.versions[version].version;
+                let factionObj = smashupObj.versions[version].factions[faction];
+                factionObj.version = smashupObj.versions[version].version;
 
                 // stringify the character objectto store it in session storage
-                let value = JSON.stringify(roleObj);
+                let value = JSON.stringify(factionObj);
 
                 // append the character to session storage
                 sessionStorage.setItem(key, value);
@@ -39,7 +39,7 @@ function loadSmashupLocal(xhttp) {
                   + " this page requires session storage support to work properly.</h3>";
 
         // Notify the user that session storage is not supported
-        document.getElementById("rolesList").innerHTML = error;
+        document.getElementById("factionsList").innerHTML = error;
 
         // return that it failed
         return false;
@@ -48,11 +48,11 @@ function loadSmashupLocal(xhttp) {
 
 
 /******************************************************************
-* A function to load the pandemic data to the page
+* A function to load the smashup data to the page
 ******************************************************************/
 function loadSmashup(xhttp) {
     // call load session to load the JSON file
-    let success = loadPandemicLocal(xhttp);
+    let success = loadSmashupLocal(xhttp);
 
     // create a string variable to store the display contents
     let txt = "";
@@ -73,38 +73,38 @@ function loadSmashup(xhttp) {
                 // create the option element
                 let key = sessionStorage.key(count);
                 
-                // check to see if the session storage item is a pandemic role
+                // check to see if the session storage item is a smashup faction
                 if (key.search("Smashup_Faction_") != -1) {
                     // get the value object
                     let value = JSON.parse(sessionStorage.getItem(key));
 
                     // display the version
-                    txt += displayPandemicImage(key, value);
+                    txt += displaySmashupImage(key, value);
                 }
             }
         }
         // display the data from the session storage in a nice format
-        document.getElementById("rolesList").innerHTML = txt;
+        document.getElementById("factionsList").innerHTML = txt;
     }
 }
 
 /******************************************************************
 * A function to genearte the code for an image
 ******************************************************************/
-function displayPandemicImage(id, obj) {
-    // create local storage for the role selection
-    if (!localStorage.pandemicRoles) {
-        localStorage.pandemicRoles = [];
+function displaySmashupImage(id, obj) {
+    // create local storage for the faction selection
+    if (!localStorage.smashupFactions) {
+        localStorage.smashupFactions = [];
     }
 
     // Create the image tag
     let txt = "<div id='" + id + "' class='card transition-all element-3d "
-       + (localStorage.pandemicRoles.indexOf(id) != -1 ? " checked" : "unchecked")
-       + "' onclick='pandemicRoleDetails(this)'>"
-       + "<div class='face front'><img src='../images/Pandemic/" + obj.image + "'"
+       + (localStorage.smashupFactions.indexOf(id) != -1 ? " checked" : "unchecked")
+       + "' onclick='smashupFactionsDetails(this)'>"
+       + "<div class='face front'><img src='../images/Smashup/" + obj.image + "'"
        + " alt='" + obj.name + "'"
        + " class='thumbnail' id='" + id + "'/></div>"
-       + "<div class='face back'><img src='../images/Pandemic/RoleBack.jpg'"
+       + "<div class='face back'><img src='../images/Smashup/SmashupBack.jpg'"
        + " alt='Card Back'"
        + " class='thumbnail' id='" + id + "'/></div>"
        + "<div class='face right'></div>"
@@ -118,29 +118,29 @@ function displayPandemicImage(id, obj) {
 }
 
 /******************************************************************
-* A function to display the role details
+* A function to display the faction details
 ******************************************************************/
-function pandemicRoleDetails(element) {
+function smashupFactionsDetails(element) {
     // get the id of the element
     let id = element.getAttribute("id");
 
-    // create an array to store the roles
-    let roles = [];
+    // create an array to store the factions
+    let factions = [];
 
-    // get the roles from loacl storage
-    if (localStorage.pandemicRoles != "")
-        roles = JSON.parse(localStorage.pandemicRoles);
+    // get the factions from loacl storage
+    if (localStorage.smashupFactions != "")
+        factions = JSON.parse(localStorage.smashupFactions);
 
-    // check to see if the role is in storage
-    if (roles.indexOf(id) != -1) {
-        // remove the role from local storage
-        roles.splice(roles.indexOf(id), 1);
+    // check to see if the faction is in storage
+    if (factions.indexOf(id) != -1) {
+        // remove the faction from local storage
+        factions.splice(factions.indexOf(id), 1);
     } else {
-        // add the role to the local stoarge list
-        roles.push(id);
+        // add the faction to the local stoarge list
+        factions.push(id);
     }
-    // put the new roles list into local storage
-    localStorage.pandemicRoles = JSON.stringify(roles);
+    // put the new factions list into local storage
+    localStorage.smashupFactions = JSON.stringify(factions);
     
     // get the detail div
     let detail = document.getElementById("details");
@@ -155,9 +155,9 @@ function pandemicRoleDetails(element) {
     // load the sessionStorage object
     let obj = JSON.parse(sessionStorage.getItem(id));
 
-    // create an element to display the new role details
+    // create an element to display the new faction details
     let newDetail = document.createElement("div");
-    newDetail.innerHTML = "<h4>" + obj.name + "</h4><p>" + obj.abilities + "</p>";
+    newDetail.innerHTML = "<h4>" + obj.name + "</h4><p>" + obj.description + "</p>";
 
     // set the fade and move variables
     let timer = 0;
@@ -183,7 +183,7 @@ function pandemicRoleDetails(element) {
                     detail.removeChild(currentDetail);
                 }
 
-                // insert the details element into the roles list element
+                // insert the details element into the factions list element
                 detail.appendChild(newDetail);
             } else {
                 // decrement the fade variable
@@ -193,19 +193,19 @@ function pandemicRoleDetails(element) {
     }
     // just fade in the new detail
     else {
-        // insert the details element into the roles list element
+        // insert the details element into the factions list element
         detail.appendChild(newDetail);
     }
 
 }
 
 /******************************************************************
-* A function to display the role details
+* A function to display the faction details
 ******************************************************************/
-function generatePandemic() {
+function generateSmashup() {
     // initialize the variables
-    let playerCount, i, randomizationElement, error, j, random, txt, roleName;
-    let players, playerNames = [], roles = [];
+    let playerCount, i, randomizationElement, error, j, random, txt, factionName;
+    let players, playerNames = [], factions = [];
 
     // get the player count
     playerCount = document.getElementById("numPlayers").value;
@@ -218,35 +218,35 @@ function generatePandemic() {
         playerNames[i] = players[i].value;
     }
 
-    // get the roles from local storage
-    roles = JSON.parse(localStorage.pandemicRoles);
+    // get the factions from local storage
+    factions = JSON.parse(localStorage.smashupFactions);
 
     // get the display element
-    randomizationElement = document.getElementById("pandemicRandomization");
+    randomizationElement = document.getElementById("smashupRandomization");
 
-    // if the player count is greater than the role count throw an error messsage
-    if (playerCount > roles.length) {
+    // if the player count is greater than the faction count throw an error messsage
+    if (playerCount > factions.length) {
         // create the error message
-        error = "Error: there must be more roles selected than players.";
+        error = "Error: there must be more factions selected than players.";
 
         // set the error message
         randomizationElement.innerHTML = error;
     }
-    // randomly generate role selection for each player
+    // randomly generate faction selection for each player
     else {
         // initialize txt with the start of a unordered list
         txt = "<ul>";
 
-        // for each player get a random role
+        // for each player get a random faction
         for (j = 0; j < playerNames.length; j++) {
-            // get a random number within the roles array
-            random = Math.floor(Math.random() * roles.length);
+            // get a random number within the factions array
+            random = Math.floor(Math.random() * factions.length);
 
-            // get the role name from session storage
-            roleName = JSON.parse(sessionStorage[roles[random]]).name;
+            // get the faction name from session storage
+            factionName = JSON.parse(sessionStorage[factions[random]]).name;
 
-            // assign that role to the first player
-            txt += "<li>" + playerNames[j] + " will play " + roleName + "</li>";
+            // assign that faction to the first player
+            txt += "<li>" + playerNames[j] + " will play " + factionName + "</li>";
         }
         // close the unordered list
         txt += "</ul>";
@@ -261,8 +261,8 @@ function generatePandemic() {
 **********************************************************************/
 function clearSettings() {
     // if there is local storage for the selected game clear it out
-    if (localStorage.pandemicRoles) {
-        localStorage.removeItem('pandemicRoles');
+    if (localStorage.smashupFactions) {
+        localStorage.removeItem('smashupFactions');
     }
 
     // get an array of card elements
@@ -278,14 +278,14 @@ function clearSettings() {
         }
     }
 
-    // create local storage for the role selection
-    if (!localStorage.pandemicRoles) {
-        localStorage.pandemicRoles = [];
+    // create local storage for the faction selection
+    if (!localStorage.smashupFactions) {
+        localStorage.smashupFactions = [];
     }
 }
 
 /*********************************************************************
-* This function selects all the roles
+* This function selects all the factions
 **********************************************************************/
 function applyAll() {
     // get an array of card elements
@@ -300,19 +300,19 @@ function applyAll() {
             cards[i].classList.remove("unchecked");
         }
 
-        // create an array to store the roles
-        let roles = [];
+        // create an array to store the factions
+        let factions = [];
 
-        // get the roles from loacl storage
-        if (localStorage.pandemicRoles != "")
-            roles = JSON.parse(localStorage.pandemicRoles);
+        // get the factions from loacl storage
+        if (localStorage.smashupFactions != "")
+            factions = JSON.parse(localStorage.smashupFactions);
 
-        // check to see if the role is in storage
-        if (roles.indexOf(cards[i].id) == -1) {
-            // add the role to the local stoarge list
-            roles.push(cards[i].id);
+        // check to see if the faction is in storage
+        if (factions.indexOf(cards[i].id) == -1) {
+            // add the faction to the local stoarge list
+            factions.push(cards[i].id);
         }
-        // put the new roles list into local storage
-        localStorage.pandemicRoles = JSON.stringify(roles);
+        // put the new factions list into local storage
+        localStorage.smashupFactions = JSON.stringify(factions);
     }
 }

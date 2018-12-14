@@ -36,38 +36,38 @@
 }
 
 .back {
-    background: #051539;
+    background: #dbdbdb;
     transform: rotateY(180deg) translateZ(1px);
     width: 100%;
     height: 100%;
 }
 
 .right {
-    background: #051539;
+    background: #dbdbdb;
     transform: rotateY(90deg) translateZ(80px);
-    width: 0.925%;
+    width: 2%;
     height: 100%;
 }
 
 .left {
-    background: #051539;
+    background: #dbdbdb;
     transform: rotateY(-90deg) translateZ(0px);
-    width: 0.925%;
+    width: 2%;
     height: 100%;
 }
 
 .top {
-    background: #051539;
+    background: #dbdbdb;
     transform: rotateX(90deg) translateZ(0px);
     width: 100%;
-    height: 0.66%;
+    height: 2%;
 }
 
 .bottom {
-    background: #051539;
-    transform: rotateX(-90deg) translateZ(50px);
+    background: #dbdbdb;
+    transform: rotateX(-90deg) translateZ(80px);
     width: 100%;
-    height: 0.66%;
+    height: 2%;
 }
 
 .face {

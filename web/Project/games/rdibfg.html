@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../RandomizerProject.css" />
-    <link rel="stylesheet" href="../css/rdibfg.css" />
+    <link rel="stylesheet" href="../css/rdi.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../RandomizerProject.js"></script>
     <script src="../js/rdibfg.js"></script>
@@ -27,7 +27,7 @@
     <!-- The page tabs -->
     <div class="tab">
         <button class="tablinks active" onclick="switchTab(event, 'settings')">Character Settings</button>
-        <button class="tablinks" onclick="switchTab(event, 'form')">Player Configuration</button>
+        <button class="tablinks" onclick="switchTab(event, 'playerForm')">Player Configuration</button>
     </div>
 
     <!-- the settings tab used to display the role cards and details -->
@@ -45,21 +45,23 @@
     </div>
 
     <!-- the form tab used to enter player information and generate role selection -->
-    <div id="form" class="tabcontent">
+    <div id="playerForm" class="tabcontent">
         <h3>Player Configuration</h3>
         <p>
             Please enter the number of players you would like to join the game.
             Battle for Greyport has a minimum of two players and a maximum limit 
             of five players.
         </p>
-        <label for="numPlayers">Number of Players</label>
-        <br />
-        <input type="number" max="5" min="2" name="numPlayers" value="2" id="numPlayers" onchange="listPlayers()"/>
-        <br />
-        <input class="players" id="player1" type="text" placeholder="Player 1">
-        <br />
-        <input class="players" id="player2" type="text" placeholder="Player 2">
-        <br />
+        <div id="form">
+            <label for="numPlayers">Number of Players</label>
+            <br />
+            <input type="number" max="5" min="2" name="numPlayers" value="2" id="numPlayers" onchange="listPlayers()" />
+            <br />
+            <input class="players" id="player1" type="text" placeholder="Player 1">
+            <br />
+            <input class="players" id="player2" type="text" placeholder="Player 2">
+            <br />
+        </div>
         <div class="flex-container">
             <button class="btn" id="generateRdibfg" onclick="generateRdibfg()">Generate Roles</button>
         </div>

@@ -1,25 +1,25 @@
 /******************************************************************
 * A function to load the rdi file to local storage
 ******************************************************************/
-function loadRdiLocal(xhttp) {
+function loadRdibfgLocal(xhttp) {
     // check for storage support
     if (typeof (Storage) !== "undefined") {
         // create an object and parse the JSON file
-        let rdiObj = JSON.parse(xhttp.responseText);
+        let rdibfgObj = JSON.parse(xhttp.responseText);
 
         // create a counter to use as the key for session storage
         let count = 1;
 
         // loop through the object adding properties to session storage
-        for (let version in rdiObj.versions) {
+        for (let version in rdibfgObj.versions) {
             // loop through the characters adding them to session storage
-            for (let character in rdiObj.versions[version].characters) {
+            for (let character in rdibfgObj.versions[version].characters) {
                 // get the character image string for the key
-                let key = "Rdi_Character_" + (count < 10 ? "0" + count : count);
+                let key = "Rdi_Bfg_Character_" + (count < 10 ? "0" + count : count);
 
                 // get the character object and append the version and key to its members
-                let characterObj = rdiObj.versions[version].characters[character];
-                characterObj.version = rdiObj.versions[version].version;
+                let characterObj = rdibfgObj.versions[version].characters[character];
+                characterObj.version = rdibfgObj.versions[version].version;
 
                 // stringify the character objectto store it in session storage
                 let value = JSON.stringify(characterObj);
@@ -50,9 +50,9 @@ function loadRdiLocal(xhttp) {
 /******************************************************************
 * A function to load the rdi data to the page
 ******************************************************************/
-function loadRdi(xhttp) {
+function loadRdibfg(xhttp) {
     // call load session to load the JSON file
-    let success = loadRdiLocal(xhttp);
+    let success = loadRdibfgLocal(xhttp);
 
     // create a string variable to store the display contents
     let txt = "";
@@ -72,14 +72,14 @@ function loadRdi(xhttp) {
             for (let count = 0; count < lslen; count++) {
                 // create the option element
                 let key = sessionStorage.key(count);
-                
+
                 // check to see if the session storage item is a pandemic role
                 if (key.search("Rdi_Bfg_Character_") != -1) {
                     // get the value object
                     let value = JSON.parse(sessionStorage.getItem(key));
 
                     // display the version
-                    txt += displayRdiImage(key, value);
+                    txt += displayRdibfgImage(key, value);
                 }
             }
         }
@@ -91,20 +91,20 @@ function loadRdi(xhttp) {
 /******************************************************************
 * A function to genearte the code for an image
 ******************************************************************/
-function displayRdiImage(id, obj) {
+function displayRdibfgImage(id, obj) {
     // create local storage for the character selection
-    if (!localStorage.rdiCharacters) {
-        localStorage.rdiCharacters = [];
+    if (!localStorage.rdibfgCharacters) {
+        localStorage.rdibfgCharacters = [];
     }
 
     // Create the image tag
     let txt = "<div id='" + id + "' class='card transition-all element-3d "
-       + (localStorage.rdiCharacters.indexOf(id) != -1 ? " checked" : "unchecked")
-       + "' onclick='rdiRoleDetails(this)'>"
+       + (localStorage.rdibfgCharacters.indexOf(id) != -1 ? " checked" : "unchecked")
+       + "' onclick='rdibfgCharacterDetails(this)'>"
        + "<div class='face front'><img src='../images/RDI/" + obj.image + "'"
        + " alt='" + obj.name + "'"
        + " class='thumbnail' id='" + id + "'/></div>"
-       + "<div class='face back'><img src='../images/RDI/Back.jpg'"
+       + "<div class='face back'><img src='../images/BFG/BfgBack.jpg'"
        + " alt='Card Back'"
        + " class='thumbnail' id='" + id + "'/></div>"
        + "<div class='face right'></div>"
@@ -120,7 +120,7 @@ function displayRdiImage(id, obj) {
 /******************************************************************
 * A function to display the character details
 ******************************************************************/
-function rdiCharacterDetails(element) {
+function rdibfgCharacterDetails(element) {
     // get the id of the element
     let id = element.getAttribute("id");
 
@@ -128,8 +128,8 @@ function rdiCharacterDetails(element) {
     let characters = [];
 
     // get the characters from loacl storage
-    if (localStorage.rdiCharacters != "")
-        characters = JSON.parse(localStorage.rdiCharacters);
+    if (localStorage.rdibfgCharacters != "")
+        characters = JSON.parse(localStorage.rdibfgCharacters);
 
     // check to see if the character is in storage
     if (characters.indexOf(id) != -1) {
@@ -140,7 +140,7 @@ function rdiCharacterDetails(element) {
         characters.push(id);
     }
     // put the new characters list into local storage
-    localStorage.rdiCharacters = JSON.stringify(characters);
+    localStorage.rdibfgCharacters = JSON.stringify(characters);
 
     // get the detail div
     let detail = document.getElementById("details");
@@ -157,7 +157,18 @@ function rdiCharacterDetails(element) {
 
     // create an element to display the new character details
     let newDetail = document.createElement("div");
-    newDetail.innerHTML = "<h4>" + obj.name + "</h4><p>" + obj.abilities + "</p>";
+    newDetail.innerHTML = "<h4>" + obj.name + "</h4><table>"
+        + "<tr><th>Level</th><th>Damage</th><th>Abilities</th></tr>";
+
+    // loop through the levels adding the level details to the details html
+    for (let level in obj.levels) {
+        newDetail.innerHTML += "<tr><td><b>" + level.level + "</b></td>"
+            + "<td>" + level.damage + "</td>"
+            + "<td>" + level.abilities + "</td></tr>";
+    }
+
+    // close the table
+    newDetail.innerHTML += "</table>";
 
     // set the fade and move variables
     let timer = 0;
@@ -219,10 +230,10 @@ function generateRdi() {
     }
 
     // get the characters from local storage
-    characters = JSON.parse(localStorage.rdiCharacters);
+    characters = JSON.parse(localStorage.rdibfgCharacters);
 
     // get the display element
-    randomizationElement = document.getElementById("rdiRandomization");
+    randomizationElement = document.getElementById("rdibfgRandomization");
 
     // if the player count is greater than the character count throw an error messsage
     if (playerCount > characters.length) {
@@ -261,8 +272,8 @@ function generateRdi() {
 **********************************************************************/
 function clearSettings() {
     // if there is local storage for the selected game clear it out
-    if (localStorage.rdiCharacters) {
-        localStorage.removeItem('rdiCharacters');
+    if (localStorage.rdibfgCharacters) {
+        localStorage.removeItem('rdibfgCharacters');
     }
 
     // get an array of card elements
@@ -279,8 +290,8 @@ function clearSettings() {
     }
 
     // create local storage for the character selection
-    if (!localStorage.rdiCharacters) {
-        localStorage.rdiCharacters = [];
+    if (!localStorage.rdibfgCharacters) {
+        localStorage.rdibfgCharacters = [];
     }
 }
 
@@ -304,8 +315,8 @@ function applyAll() {
         let characters = [];
 
         // get the characters from loacl storage
-        if (localStorage.rdiCharacters != "")
-            characters = JSON.parse(localStorage.rdiCharacters);
+        if (localStorage.rdibfgCharacters != "")
+            characters = JSON.parse(localStorage.rdibfgCharacters);
 
         // check to see if the character is in storage
         if (characters.indexOf(cards[i].id) == -1) {
@@ -313,6 +324,6 @@ function applyAll() {
             characters.push(cards[i].id);
         }
         // put the new characters list into local storage
-        localStorage.rdiCharacters = JSON.stringify(characters);
+        localStorage.rdibfgCharacters = JSON.stringify(characters);
     }
 }

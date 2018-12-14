@@ -62,12 +62,12 @@
         {
           "name": "Killer Plants",
           "description": "Play extra minions, usually straight from the deck, and grow more powerful on bases through multi-turn abilities.",
-          "image": "Killer_Plant.png"
+          "image": "Killer_Plants.png"
         },
         {
           "name": "Steampunks",
           "description": "Play powerful base actions that can be salvaged from the discard pile, and move your minions between bases.",
-          "image": "Steampunks.png"
+          "image": "Steampunk.png"
         }
       ]
     },
@@ -302,7 +302,7 @@
         {
           "name": "Teddy Bears",
           "description": "Low power minions who rise in power to challenge opponents, with actions focused on neutralizing enemy threats and drawing more cards.",
-          "image": "Tedyy_Bears.png"
+          "image": "Teddy_Bears.png"
         }
       ]
     },

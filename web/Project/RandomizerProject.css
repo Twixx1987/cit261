@@ -47,7 +47,7 @@ a:hover, a:active {
     width: inherit;
 }
 
-#rolesList, #charactersList {
+#rolesList, #charactersList, #factionsList {
     position: relative;
     margin: 25px;
 }

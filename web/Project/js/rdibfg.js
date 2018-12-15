@@ -157,18 +157,18 @@ function rdibfgCharacterDetails(element) {
 
     // create an element to display the new character details
     let newDetail = document.createElement("div");
-    newDetail.innerHTML = "<h4>" + obj.name + "</h4><table>"
-        + "<tr><th>Level</th><th>Damage</th><th>Abilities</th></tr>";
+    newDetail.innerHTML  = "<h4>" + obj.name + "</h4><table><thead>";
+    newDetail.innerHTML += "<tr><th>Level</th><th>Damage</th><th>Abilities</th></tr></thead><tbody>";
 
     // loop through the levels adding the level details to the details html
     for (let level in obj.levels) {
-        newDetail.innerHTML += "<tr><td><b>" + obj.levels[level].level + "</b></td>"
-            + "<td>" + obj.levels[level].damage + "</td>"
-            + "<td>" + obj.levels[level].abilities + "</td></tr>";
+        newDetail.innerHTML += "<tr><td><b>" + obj.levels[level].level + "</b></td>";
+        newDetail.innerHTML += "<td>" + obj.levels[level].damage + "</td>";
+        newDetail.innerHTML += "<td>" + obj.levels[level].abilities + "</td></tr>";
     }
 
     // close the table
-    newDetail.innerHTML += "</table>";
+    newDetail.innerHTML += "</tbody></table>";
 
     // set the fade and move variables
     let timer = 0;

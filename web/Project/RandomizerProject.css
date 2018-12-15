@@ -1,3 +1,7 @@
+body {
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
 #footer {
     font-size: 12px;
     background-color: #ccd9ff;
@@ -135,6 +139,7 @@ tr:nth-child(odd) {
 .menu {
   overflow: hidden;
   background-color: #001a66;
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /* Style the menu links */
@@ -212,6 +217,7 @@ tr:nth-child(odd) {
     padding: 14px 16px;
     transition: 0.4s;
     font-size: 17px;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /* Change background color of buttons on hover */

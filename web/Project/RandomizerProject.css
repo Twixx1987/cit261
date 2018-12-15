@@ -24,7 +24,7 @@ a:hover, a:active {
     position: relative;
     left: 0;
     width: inherit;
-    padding: 5px 25px;
+    padding: 5px 15px;
     transition: opacity 1s ease-in;
     animation: fadeIn 1s ease-in;
 }
@@ -85,11 +85,24 @@ input {
   position: relative;
 }
 
-td {
-    min-width: 150px;
-    max-width: 300px;
-    padding: 5px;
+table {
     border-collapse: collapse;
+}
+
+td {
+    padding: 5px;
+    border: solid thin #001a66;
+}
+
+th {
+    background-color: #0033cc;
+    padding: 5px;
+    border: solid thin #001a66;
+    color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #668cff;
 }
 
 /******************************************************************

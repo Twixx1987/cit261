@@ -99,7 +99,7 @@ function displayPandemicImage(id, obj) {
 
     // Create the image tag
     let txt = "<div id='" + id + "' class='card transition-all element-3d "
-       + (localStorage.pandemicRoles.indexOf(id) != -1 ? " checked" : "unchecked")
+       + (localStorage.pandemicRoles.indexOf(id) != -1 ? "checked" : "unchecked")
        + "' onclick='pandemicRoleDetails(this)'>"
        + "<div class='face front'><img src='../images/Pandemic/" + obj.image + "'"
        + " alt='" + obj.name + "'"

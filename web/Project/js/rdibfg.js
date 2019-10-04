@@ -234,7 +234,7 @@ function generateRdibfg() {
 
     // get the characters from local storage
     characters = JSON.parse(localStorage.rdibfgCharacters);
-
+    console.log(characters);
     // get the display element
     randomizationElement = document.getElementById("rdibfgRandomization");
 
@@ -258,10 +258,11 @@ function generateRdibfg() {
 
             // get the character name from session storage
             characterName = JSON.parse(sessionStorage[characters[random]]).name;
-console.log(characters);
+            console.log(characters);
+            console.log(characters.indexOf(random));
             // remove the character from characters list
             characters.splice(characters.indexOf(random), 1);
-console.log(characters);
+            console.log(characters);
             // assign that character to the first player
             txt += "<li>" + playerNames[j] + " will play " + characterName + "</li>";
         }

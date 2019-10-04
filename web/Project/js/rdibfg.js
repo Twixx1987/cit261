@@ -258,10 +258,10 @@ function generateRdibfg() {
 
             // get the character name from session storage
             characterName = JSON.parse(sessionStorage[characters[random]]).name;
-
+console.log(characters);
             // remove the character from characters list
             characters.splice(characters.indexOf(random), 1);
-
+console.log(characters);
             // assign that character to the first player
             txt += "<li>" + playerNames[j] + " will play " + characterName + "</li>";
         }

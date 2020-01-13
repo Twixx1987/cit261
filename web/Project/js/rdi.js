@@ -223,6 +223,7 @@ function generateRdi() {
 
     // get the characters from local storage
     characters = JSON.parse(localStorage.rdiCharacters);
+    console.log(characers);
 
     // get the display element
     randomizationElement = document.getElementById("rdiRandomization");
@@ -250,6 +251,7 @@ console.log(random);
 
             // remove the character from characters list
             characters.splice(characters.indexOf(random), 1);
+            console.log(characers);
 
             // assign that character to the first player
             txt += "<li>" + playerNames[j] + " will play " + characterName + "</li>";

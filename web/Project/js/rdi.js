@@ -244,7 +244,7 @@ function generateRdi() {
         for (j = 0; j < playerNames.length; j++) {
             // get a random number within the characters array
             random = Math.floor(Math.random() * characters.length);
-
+console.log(random);
             // get the character name from session storage
             characterName = JSON.parse(sessionStorage[characters[random]]).name;
 

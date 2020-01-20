@@ -242,10 +242,11 @@ function generateRdi() {
         txt = "<ul>";
 
         // for each player get a random character
-        for (j = 0; j < playerNames.length; j++) {
+        for (j = 0, k = characters.length; j < playerNames.length; j++, k--) {
             // get a random number within the characters array
-            random = Math.floor(Math.random() * characters.length);
-console.log(random);
+            random = Math.floor(Math.random() * k);
+            console.log("Length: ", k);
+            console.log("random: ", random);
             // get the character name from session storage
             characterName = JSON.parse(sessionStorage[characters[random]]).name;
 

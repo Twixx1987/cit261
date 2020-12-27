@@ -385,6 +385,38 @@
           "worse": "He is this powerful even with Banefall holding him back!"
         },
         {
+          "name": "Piper, Eagle-Eyed Sniper",
+          "image": "piper.jpg",
+          "race": "Elf",
+          "class": "Ranger",
+          "good": "Piper never misses a shot.",
+          "bad": "This applies to drinking contests as well as archery.",
+        },
+        {
+          "name": "Ripsnarl, Bad Dog",
+          "image": "ripsnarl.jpg",
+          "race": "Human",
+          "class": "Werewolf",
+          "bad": "Ripsnarl keeps his claws razor sharp.",
+          "worse": "…and Piper has the scars to prove it.",
+        },
+        {
+          "name": "Roxana, Adventurous Chef",
+          "image": "roxana.jpg",
+          "race": "Elf",
+          "class": "Chef",
+          "good": "Her classic dishes are legendary and bring people from far and wide to The Red Dragon Inn.",
+          "bad": "Her experimental dishes sometimes make those patrons go right back home.",
+        }, 
+        {
+          "name": "Evil Pooky",
+          "image": "evilpooky.jpg",
+          "race": "Magical Being",
+          "class": "Uninvited Nuisance",
+          "bad": "Hey look! It’s Deirdre! Wait a minute…",
+          "worse": "I don’t remember Deirdre being a vampire…",
+        },
+        {
           "name": "Chronos the Time Mage",
           "image": "Chronos.png",
           "race": "Human",

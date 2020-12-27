@@ -386,7 +386,7 @@
         },
         {
           "name": "Piper, Eagle-Eyed Sniper",
-          "image": "piper.jpg",
+          "image": "piper.png",
           "race": "Elf",
           "class": "Ranger",
           "good": "Piper never misses a shot.",
@@ -394,7 +394,7 @@
         },
         {
           "name": "Ripsnarl, Bad Dog",
-          "image": "ripsnarl.jpg",
+          "image": "ripsnarl.png",
           "race": "Human",
           "class": "Werewolf",
           "bad": "Ripsnarl keeps his claws razor sharp.",
@@ -402,7 +402,7 @@
         },
         {
           "name": "Roxana, Adventurous Chef",
-          "image": "roxana.jpg",
+          "image": "roxana.png",
           "race": "Elf",
           "class": "Chef",
           "good": "Her classic dishes are legendary and bring people from far and wide to The Red Dragon Inn.",
@@ -410,7 +410,7 @@
         }, 
         {
           "name": "Evil Pooky",
-          "image": "evilpooky.jpg",
+          "image": "evilpooky.png",
           "race": "Magical Being",
           "class": "Uninvited Nuisance",
           "bad": "Hey look! It’s Deirdre! Wait a minute…",

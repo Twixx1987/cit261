@@ -390,7 +390,7 @@
           "race": "Elf",
           "class": "Ranger",
           "good": "Piper never misses a shot.",
-          "bad": "This applies to drinking contests as well as archery.",
+          "bad": "This applies to drinking contests as well as archery."
         },
         {
           "name": "Ripsnarl, Bad Dog",
@@ -398,7 +398,7 @@
           "race": "Human",
           "class": "Werewolf",
           "bad": "Ripsnarl keeps his claws razor sharp.",
-          "worse": "…and Piper has the scars to prove it.",
+          "worse": "…and Piper has the scars to prove it."
         },
         {
           "name": "Roxana, Adventurous Chef",
@@ -406,15 +406,15 @@
           "race": "Elf",
           "class": "Chef",
           "good": "Her classic dishes are legendary and bring people from far and wide to The Red Dragon Inn.",
-          "bad": "Her experimental dishes sometimes make those patrons go right back home.",
+          "bad": "Her experimental dishes sometimes make those patrons go right back home."
         }, 
         {
           "name": "Evil Pooky",
           "image": "evilpooky.png",
           "race": "Magical Being",
           "class": "Uninvited Nuisance",
-          "bad": "Hey look! It’s Deirdre! Wait a minute…",
-          "worse": "I don’t remember Deirdre being a vampire…",
+          "bad": "Hey look! It's Deirdre! Wait a minute…",
+          "worse": "I don’t remember Deirdre being a vampire…"
         },
         {
           "name": "Chronos the Time Mage",

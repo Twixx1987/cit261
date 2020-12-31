@@ -199,6 +199,32 @@
           ]
         }
       ]
+    },
+    {
+      "version": "Red Dragon Inn: Smorgasbox",
+      "characters": [
+        {
+          "name": "Roxana, Adventurous Chef",
+          "image": "roxana.png",
+          "levels": [
+            {
+              "level": "Level 1",
+              "abilities": "Dual Wield. When yoiu level up, you may recruit a card from the reinforcements for free. (This will cause you to start the next encounter with an extra card.)",
+              "damage": "Yellow Die"
+            },
+            {
+              "level": "Level 2",
+              "abilities": "Dual Wield. When yoiu level up, you may recruit a card from the reinforcements for free. (This will cause you to start the next encounter with an extra card.)",
+              "damage": "White Die"
+            },
+            {
+              "level": "Level 3",
+              "abilities": "Taunt. Dual Wield.",
+              "damage": "White Die"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

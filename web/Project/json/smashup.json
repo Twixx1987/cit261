@@ -448,7 +448,7 @@
           "name": "Sheep",
           "description": "These are the AEG Sheep!",
           "image": "Sheep.png"
-        },
+        }
       ]
     },
     {
@@ -488,7 +488,7 @@
           "name": "S.H.I.E.L.D.",
           "description": "S.H.I.E.L.D. carefully monitors the world and stands ready to jump in to stop their foes. Its agents excel at both calling in extra characters for help and strengthening each other. Careful planning allows them to play cards in the right order to maximize their assets.",
           "image": "SHIELD.png"
-        }
+        },
         {
           "name": "Sinister Six",
           "description": "The Sinister Six love to prey on weakness. They have many ways to make bases weak, and get many benefits from weaker bases. They have several base modifiers and ways to reuse them and their characters. Since they make base breaking easier, they need to be careful to have the most power there when it happens.",

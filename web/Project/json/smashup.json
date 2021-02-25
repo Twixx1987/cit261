@@ -85,7 +85,7 @@
           "image": "Innsmouth.png"
         },
         {
-          "name": "Minions of Cthulhu a.k.a. Cthulhu Cultists",
+          "name": "Cthulhu Cultists",
           "description": "Play lots of actions, recover cards from the discard pile, and slow the game down all the while gaining Madness.",
           "image": "Minions_of_Cthulhu.png"
         },
@@ -118,16 +118,6 @@
           "name": "Time Travelers",
           "description": "Replay actions and minions, and avoid the discard pile by placing cards in your hand or the bottom of your deck.",
           "image": "Time_Travelers.png"
-        }
-      ]
-    },
-    {
-      "version": "The Big Geeky Box",
-      "factions": [
-        {
-          "name": "Geeks",
-          "description": "Use your knowledge of the game to disrupt other players' plans.",
-          "image": "Geeks.png"
         }
       ]
     },
@@ -227,7 +217,7 @@
       ]
     },
     {
-      "version": "It�s Your Fault!",
+      "version": "It's Your Fault!",
       "factions": [
         {
           "name": "Dragons",
@@ -245,7 +235,7 @@
           "image": "Sharks.png"
         },
         {
-          "name": "Superheroes a.k.a. Super Heroes",
+          "name": "Superheroes",
           "description": "Morph your weak minions into power-5-or-more minions.",
           "image": "Superheroes.png"
         },
@@ -332,7 +322,7 @@
       ]
     },
     {
-      "version": "That �70s Expansion",
+      "version": "That '70s Expansion",
       "factions": [
         {
           "name": "Disco Dancers",
@@ -393,6 +383,136 @@
           "name": "Vikings",
           "description": "Steal other players' cards and gain power at the cost of placing cards from your hand on the top of your deck.",
           "image": "Vikings.png"
+        }
+      ]
+    },
+    {
+      "version": "World Tour: International Incident",
+      "factions": [
+        {
+          "name": "Luchadors",
+          "description": "They’re going to the top rope! The Luchadors bring the high-flying stunts of Mexican wrestling to the Smash Up squared-circle!",
+          "image": "Luchadors.png"
+        },
+        {
+          "name": "Mounties",
+          "description": "Turn of the century Canada *cue silent film piano*… the Great White North is protected by the noble Mounties and their… battle moose! The Mounties always get their man, no matter how devious, all while upholding the noble demeanor of Canada.",
+          "image": "Mounties.png"
+        },
+        {
+          "name": "Musketeers",
+          "description": "One for all, and all for one! Or three! Or really four, because there were four of them, but we’ll ignore that, just like the title of the book! The Musketeers were the super heroes of Renaissance France, taking on corrupt elements with style and panache.",
+          "image": "Musketeers.png"
+        },
+        {
+          "name": "Sumo Wrestlers",
+          "description": "The powerful sumo wrestlers of Japan can really throw their weight around the bases! These massive warriors can knock back any enemies that come against them, but don’t let their initial girth fool you. They will sacrifice cards for power, and use that power to knock all opponents out of the ring … and base!",
+          "image": "Sumo_Wrestlers.png"
+        }
+      ]
+    },
+    {
+      "version": "World Tour: Culture Shock",
+      "factions": [
+        {
+          "name": "Russian Fairy Tales",
+          "description": "These minions are frequently transformed!",
+          "image": "Russian_Fairy_Tales.png"
+        },
+        {
+          "name": "West Africa",
+          "description": "Sharing stories and cards is valued!",
+          "image": "West_Africa.png"
+        },
+        {
+          "name": "Germany",
+          "description": "Uniting characters from the same tale gives benefits!",
+          "image": "Germany.png"
+        },
+        {
+          "name": "Inca Empire",
+          "description": "Known for roads and monumental architecture!",
+          "image": "Inca.png"
+        },
+        {
+          "name": "Polynesians",
+          "description": "Spreading out to as many islands as possible!",
+          "image": "Polynesians.png"
+        }
+      ]
+    },
+    {
+      "version": "Sheep",
+      "factions": [
+        {
+          "name": "Sheep",
+          "description": "These are the AEG Sheep!",
+          "image": "Sheep.png"
+        },
+      ]
+    },
+    {
+      "version": "Penguins",
+      "factions": [
+        {
+          "name" : "Penguins",
+          "description": "This is the 2019 promotional Smash Up Faction - the Penguins!",
+          "image": "Penguins.png"
+        }
+      ]
+    },
+    {
+      "version": "Marvel",
+      "factions": [
+        {
+          "name": "Avengers",
+          "description": "The Avengers faction assembles six mighty heroes whose different skills can handle any situation. Each has a signature action that can be used at any time, but is stronger when used with its hero. Though their numbers are few, they have several ways to cycle through their deck and recycle discarded cards to get what they need when they need it.",
+          "image": "Avengers.png"
+        },
+        {
+          "name": "Hydra",
+          "description": "Cut off one head and two shall take its place! Hydra is not afraid of character destruction since it makes them stronger, especially when their leaders order it. Hydra characters can overrun a base, and since they have several ways to swell their numbers, it won't be long until they are ready for more conquests.",
+          "image": "Hydra.png"
+        },
+        {
+          "name": "Kree",
+          "description": "The Kree are an advanced militaristic race who strike down their foes with ruthless efficiency. Their strengths are in extra action play, additional power, and card draw. Their cards can be deployed for either long-term advantage or for devastating combos.",
+          "image": "Kree.png"
+        },
+        {
+          "name": "Masters of Evil",
+          "description": "The Masters of Evil seek to control the world through any means! In addition to the VP rewards from bases, they've developed alternate methods of getting VPs, and they get stronger the more VPs they have. They are also good at destroying characters, to slow other players, and increase their strategic gain.",
+          "image": "Masters_of_Evil.png"
+        },
+        {
+          "name": "S.H.I.E.L.D.",
+          "description": "S.H.I.E.L.D. carefully monitors the world and stands ready to jump in to stop their foes. Its agents excel at both calling in extra characters for help and strengthening each other. Careful planning allows them to play cards in the right order to maximize their assets.",
+          "image": "SHIELD.png"
+        }
+        {
+          "name": "Sinister Six",
+          "description": "The Sinister Six love to prey on weakness. They have many ways to make bases weak, and get many benefits from weaker bases. They have several base modifiers and ways to reuse them and their characters. Since they make base breaking easier, they need to be careful to have the most power there when it happens.",
+          "image": "Sinister_Six.png"
+        },
+        {
+          "name": "Spider-Verse",
+          "description": "Web-slinging heroes from parallel universes have come together in a common fight to protect their neighborhoods. They specialize in swinging in before and after bases score to sway things in their favor -- as long as they have someone already there. But they can be even stronger when they join forces during their own turn, so they can be busy no matter whose turn it is.",
+          "image": "Spider-Verse.png"
+        },
+        {
+          "name": "Ultimates",
+          "description": "The Ultimates patrol the universe looking for cosmic threats. They are strong in movement, and movement makes them stronger. They also work well together, so they can spread out, and then unite as a powerful team where the need is greatest.",
+          "image": "Ultimates.png"
+        }
+      ]
+    },
+    {
+      "version": "Goblins",
+      "factions": [
+        {
+          "name" : "Goblins",
+          "description": "This is the 2021 promotional Smash Up Faction - the Goblins!",
+          "image": "Goblins.png"
         }
       ]
     }
